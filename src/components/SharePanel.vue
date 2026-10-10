@@ -52,12 +52,12 @@ const copied = ref(false)
 let copyTimer = null
 
 function shareResultToX() {
-  const text = t('share.xTextResult', { type: props.type })
+  const text = t('share.xTextResult', { type: props.type, url: APP_URL })
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank')
 }
 
 function shareAppToX() {
-  const text = t('share.xTextApp')
+  const text = t('share.xTextApp', { url: APP_URL })
   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank')
 }
 

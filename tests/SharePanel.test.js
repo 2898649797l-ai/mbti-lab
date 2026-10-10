@@ -4,6 +4,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import SharePanel from '../src/components/SharePanel.vue'
 import zh from '../src/locales/zh.json'
 import en from '../src/locales/en.json'
+import { APP_URL } from '../src/config.js'
 
 let wrapper
 afterEach(() => {
@@ -50,6 +51,8 @@ describe('SharePanel', () => {
     )
     const url = window.open.mock.calls[0][0]
     expect(decodeURIComponent(url)).toContain('INFJ')
+    expect(decodeURIComponent(url)).toContain(APP_URL)
+    expect(decodeURIComponent(url)).not.toContain('octopusgarage.github.io')
   })
 
   it('opens X with app text when sharing app', async () => {
@@ -60,7 +63,8 @@ describe('SharePanel', () => {
       '_blank'
     )
     const url = window.open.mock.calls[0][0]
-    expect(decodeURIComponent(url)).toContain('octopusgarage.github.io/mbti-lab')
+    expect(decodeURIComponent(url)).toContain(APP_URL)
+    expect(decodeURIComponent(url)).not.toContain('octopusgarage.github.io')
   })
 
   it('copies app URL to clipboard and shows copied feedback', async () => {
@@ -69,7 +73,7 @@ describe('SharePanel', () => {
     expect(copyBtn.textContent.trim()).toContain('复制链接')
     copyBtn.click()
     await flushPromises()
-    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('https://octopusgarage.github.io/mbti-lab')
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(APP_URL)
     expect(document.querySelector('[data-action="copy-link"]').textContent.trim()).toContain('已复制 ✓')
   })
 

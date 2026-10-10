@@ -4,6 +4,8 @@ import { describe, it, expect, vi } from 'vitest'
 import ShareCard from '../src/components/ShareCard.vue'
 import zh from '../src/locales/zh.json'
 import en from '../src/locales/en.json'
+import QRCode from 'qrcode'
+import { APP_URL } from '../src/config.js'
 
 // qrcode generates a data URL — mock it to return a stable string
 vi.mock('qrcode', () => ({
@@ -26,6 +28,7 @@ describe('ShareCard', () => {
     const img = wrapper.find('img.sc-qr')
     expect(img.exists()).toBe(true)
     expect(img.attributes('src')).toBe('data:image/png;base64,MOCK')
+    expect(QRCode.toDataURL).toHaveBeenCalledWith(APP_URL, expect.any(Object))
   })
 
   it('does not render the old plain text URL', async () => {

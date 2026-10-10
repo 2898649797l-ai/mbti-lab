@@ -12,10 +12,18 @@
         <router-link to="/" class="btn-retake">{{ $t('result.retake') }}</router-link>
       </div>
 
+      <p v-if="generating" class="poster-status" role="status">{{ $t('share.generating') }}</p>
+      <p v-if="exportError" class="poster-status" role="alert">{{ $t('share.exportError') }}</p>
+      <section v-if="posterUrl" class="poster-preview" aria-live="polite">
+        <p>{{ $t('share.saveHint') }}</p>
+        <img :src="posterUrl" :alt="$t('share.posterAlt', { type: result.type })" />
+        <a :href="posterUrl" :download="`mbti-${result.type}.png`">{{ $t('share.saveImage') }}</a>
+      </section>
+
       <SharePanel
         v-if="showPanel"
         :type="result.type"
-        :onSaveImage="() => shareCardRef?.capture()"
+        :onSaveImage="savePoster"
         @close="showPanel = false"
       />
 
@@ -41,6 +49,23 @@ const { load } = useResultStore()
 const result = ref(null)
 const shareCardRef = ref(null)
 const showPanel = ref(false)
+const posterUrl = ref('')
+const generating = ref(false)
+const exportError = ref(false)
+
+async function savePoster() {
+  if (generating.value) return
+  generating.value = true
+  exportError.value = false
+  posterUrl.value = ''
+  try {
+    posterUrl.value = await shareCardRef.value.capture()
+  } catch {
+    exportError.value = true
+  } finally {
+    generating.value = false
+  }
+}
 
 onMounted(() => {
   result.value = load()
@@ -91,6 +116,17 @@ onMounted(() => {
   text-decoration: none;
 }
 .btn-retake:hover { color: var(--blue); }
+.poster-status { padding: 20px; text-align: center; }
+.poster-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+.poster-preview p { color: var(--ink-light); font-size: 13px; }
+.poster-preview img { display: block; width: min(100%, 540px); height: auto; }
+.poster-preview a { color: var(--blue); }
 .no-result {
   flex: 1;
   display: flex;

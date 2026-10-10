@@ -1,6 +1,10 @@
 <template>
   <RouterView />
-  <div class="og-brand">🐙 OctopusGarage</div>
+  <footer class="site-footer">
+    <p>{{ $t('app.privacy') }}</p>
+    <p>{{ $t('app.disclaimer') }}</p>
+    <a href="https://github.com/OctopusGarage/mbti-lab" target="_blank" rel="noopener noreferrer">{{ $t('app.credit') }}</a>
+  </footer>
 </template>
 
 <script setup>
@@ -32,14 +36,12 @@ body {
   min-height: 100dvh;
 }
 
-.og-brand {
-  position: fixed;
-  bottom: 10px;
-  right: 14px;
-  font-size: 11px;
-  color: rgba(45, 58, 140, 0.3);
-  letter-spacing: 0.3px;
-  pointer-events: none;
-  z-index: 50;
+.site-footer {
+  padding: 20px 24px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--ink-light);
 }
+.site-footer a { color: var(--blue-mid); }
 </style>

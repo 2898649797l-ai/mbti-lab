@@ -10,8 +10,8 @@
         <!-- top bar -->
         <div class="sc-topbar">
           <div class="sc-site-group">
-            <span class="sc-site">MBTI Lab</span>
-            <span class="sc-brand">🐙 OctopusGarage</span>
+            <span class="sc-site">{{ $t('app.title') }}</span>
+            <span class="sc-brand">{{ $t('app.subtitle') }}</span>
           </div>
           <span class="sc-rarity-pill">全球占比 {{ typeData.rarity }}</span>
         </div>
@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import html2canvas from 'html2canvas'
 import QRCode from 'qrcode'
@@ -88,16 +88,15 @@ const accent = computed(() => theme.value.accent)
 
 async function capture() {
   if (qrReady) await qrReady  // ensure QR is rendered before capture
+  await nextTick()
   const canvas = await html2canvas(cardEl.value, {
     scale: 2,
     useCORS: true,
     backgroundColor: null,
+    onclone: (_document, element) => { element.style.visibility = 'visible' },
   })
   const url = canvas.toDataURL('image/png')
-  const a = document.createElement('a')
-  a.href = url
-  a.download = `mbti-${props.type}.png`
-  a.click()
+  return url
 }
 
 defineExpose({ capture })

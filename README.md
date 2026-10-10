@@ -1,5 +1,7 @@
 # MBTI Lab
 
+此副本正在准备中文测试版，临时名称为“性格探索”。Cloudflare Pages 部署配置和公开推广前的待办见 [部署说明](docs/CLOUDFLARE_DEPLOY.md)。原项目作者为 OctopusGarage，以下为上游项目说明；功能描述应以当前代码和实测为准。
+
 A bilingual MBTI personality test with rich results, share cards, and offline-friendly browser delivery.
 
 Your most recent assessment result is saved in the browser, so you can revisit the full report in the same browser at any time after completing the test.
