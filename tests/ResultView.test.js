@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, flushPromises } from '@vue/test-utils'
 import { nextTick } from 'vue'
 import { createI18n } from 'vue-i18n'
 import { createRouter, createMemoryHistory } from 'vue-router'
@@ -112,3 +112,34 @@ describe('ResultView empty state', () => {
 function linkHref(wrapper) {
   return wrapper.find('.no-result a').attributes('href')
 }
+
+describe('poster export feedback', () => {
+  it.each([false, true])('handles export failure = %s without losing the result', async (fails) => {
+    const result = {
+      type: 'INFJ',
+      percents: { EI: { E: 30, I: 70 }, NS: { N: 65, S: 35 }, FT: { F: 60, T: 40 }, JP: { J: 55, P: 45 } },
+    }
+    sessionStorage.setItem('mbti_result', JSON.stringify(result))
+    const imageUrl = 'data:image/png;base64,POSTER'
+    const capture = fails
+      ? vi.fn().mockRejectedValue(new Error('canvas export failed'))
+      : vi.fn().mockResolvedValue(imageUrl)
+    const ShareCardStub = {
+      setup(_props, { expose }) { expose({ capture }) },
+      template: '<div />',
+    }
+    await mountView('zh', { stubs: { ResultCard: true, ShareCard: ShareCardStub } })
+    await wrapper.find('.btn-share').trigger('click')
+    wrapper.findComponent({ name: 'SharePanel' }).props('onSaveImage')()
+    await flushPromises()
+    expect(capture).toHaveBeenCalledOnce()
+    expect(wrapper.find('.no-result').exists()).toBe(false)
+    if (fails) {
+      expect(wrapper.find('[role="alert"]').text()).toContain('海报生成失败')
+      expect(wrapper.find('.poster-preview').exists()).toBe(false)
+    } else {
+      expect(wrapper.find('.poster-preview img').attributes('src')).toBe(imageUrl)
+      expect(wrapper.find('.poster-preview a').attributes('download')).toBe('mbti-INFJ.png')
+    }
+  })
+})

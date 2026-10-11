@@ -1,7 +1,10 @@
 {
   "app": {
-    "title": "MBTI Lab",
-    "subtitle": "Professional Personality Test · Discover Your True Self"
+    "title": "Personality Explorer",
+    "subtitle": "Explore your personality preferences through everyday choices",
+    "privacy": "This version stores assessment results only in this browser. Clearing site data deletes them. The hosting provider may process access logs needed to serve the site.",
+    "disclaimer": "For self-exploration only. This is not the official MBTI assessment or a medical diagnosis. Type descriptions should not determine career or relationship decisions.",
+    "credit": "Based on the OctopusGarage / MBTI Lab open-source project"
   },
   "home": {
     "startShort": "Short · 60 Q",
@@ -36,10 +39,22 @@
     "notFound": "No result found.",
     "backHome": "← Back to home",
     "dimLabel": {
-      "EI": ["Extraverted E", "Introverted I"],
-      "NS": ["Intuitive N", "Observant S"],
-      "FT": ["Feeling F", "Thinking T"],
-      "JP": ["Judging J", "Prospecting P"]
+      "EI": [
+        "Extraverted E",
+        "Introverted I"
+      ],
+      "NS": [
+        "Intuitive N",
+        "Observant S"
+      ],
+      "FT": [
+        "Feeling F",
+        "Thinking T"
+      ],
+      "JP": [
+        "Judging J",
+        "Prospecting P"
+      ]
     }
   },
   "share": {
@@ -49,8 +64,12 @@
     "saveImage": "Save Image",
     "copyLink": "Copy Link",
     "copied": "Copied ✓",
-    "xTextResult": "My MBTI type is {type}! Come find out yours 👉 https://octopusgarage.github.io/mbti-lab",
-    "xTextApp": "Check out this interesting MBTI personality test! 👉 https://octopusgarage.github.io/mbti-lab",
-    "scanLabel": "Scan to take the test"
+    "xTextResult": "My MBTI type is {type}! Come find out yours 👉 {url}",
+    "xTextApp": "Check out this interesting MBTI personality test! 👉 {url}",
+    "scanLabel": "Scan to take the test",
+    "generating": "Generating your poster…",
+    "exportError": "Could not generate the poster. Please try again.",
+    "saveHint": "Download below, or press and hold the image to save it.",
+    "posterAlt": "{type} Personality Explorer result poster"
   }
 }
