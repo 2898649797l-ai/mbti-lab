@@ -5,89 +5,63 @@ import SharePanel from '../src/components/SharePanel.vue'
 import zh from '../src/locales/zh.json'
 import en from '../src/locales/en.json'
 import { APP_URL } from '../src/config.js'
-
 let wrapper
 afterEach(() => {
   wrapper?.unmount()
   wrapper = null
+  vi.unstubAllGlobals()
 })
-
 function mountPanel(props = {}) {
-  const i18n = createI18n({ legacy: false, locale: 'zh', messages: { zh, en } })
   wrapper = mount(SharePanel, {
     props,
-    global: { plugins: [i18n] },
+    global: { plugins: [createI18n({ legacy: false, locale: 'zh', messages: { zh, en } })] },
     attachTo: document.body,
   })
-  return wrapper
 }
-
-describe('SharePanel', () => {
+describe('mobile sharing sheet', () => {
   beforeEach(() => {
-    vi.stubGlobal('open', vi.fn())
-    Object.assign(navigator, {
-      clipboard: { writeText: vi.fn().mockResolvedValue(undefined) },
-    })
+    Object.assign(navigator, { clipboard: { writeText: vi.fn().mockResolvedValue(undefined) } })
   })
-
-  it('shows only Section B when type is not provided', () => {
+  it('only offers the app link without a personal result', () => {
     mountPanel()
-    expect(!!document.querySelector('[data-section="result"]')).toBe(false)
-    expect(!!document.querySelector('[data-section="app"]')).toBe(true)
+    expect(document.querySelector('[data-section="result"]')).toBeNull()
+    expect(document.querySelector('[data-section="app"]')).not.toBeNull()
   })
-
-  it('shows both sections when type is provided', () => {
+  it('copies a type caption and plain app URL, without answers or score parameters', async () => {
     mountPanel({ type: 'INFJ' })
-    expect(!!document.querySelector('[data-section="result"]')).toBe(true)
-    expect(!!document.querySelector('[data-section="app"]')).toBe(true)
-  })
-
-  it('opens X with type-specific text when sharing result', async () => {
-    mountPanel({ type: 'INFJ', onSaveImage: vi.fn() })
-    await document.querySelector('[data-action="share-result-x"]').click()
-    expect(window.open).toHaveBeenCalledWith(
-      expect.stringContaining('twitter.com/intent/tweet'),
-      '_blank'
-    )
-    const url = window.open.mock.calls[0][0]
-    expect(decodeURIComponent(url)).toContain('INFJ')
-    expect(decodeURIComponent(url)).toContain(APP_URL)
-    expect(decodeURIComponent(url)).not.toContain('octopusgarage.github.io')
-  })
-
-  it('opens X with app text when sharing app', async () => {
-    mountPanel()
-    await document.querySelector('[data-action="share-app-x"]').click()
-    expect(window.open).toHaveBeenCalledWith(
-      expect.stringContaining('twitter.com/intent/tweet'),
-      '_blank'
-    )
-    const url = window.open.mock.calls[0][0]
-    expect(decodeURIComponent(url)).toContain(APP_URL)
-    expect(decodeURIComponent(url)).not.toContain('octopusgarage.github.io')
-  })
-
-  it('copies app URL to clipboard and shows copied feedback', async () => {
-    mountPanel()
-    const copyBtn = document.querySelector('[data-action="copy-link"]')
-    expect(copyBtn.textContent.trim()).toContain('复制链接')
-    copyBtn.click()
+    document.querySelector('[data-action="copy-text"]').click()
     await flushPromises()
-    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(APP_URL)
-    expect(document.querySelector('[data-action="copy-link"]').textContent.trim()).toContain('已复制 ✓')
+    const text = navigator.clipboard.writeText.mock.calls[0][0]
+    expect(text).toContain('INFJ')
+    expect(text).toContain('心事观察员')
+    expect(text).toContain(APP_URL)
+    expect(text).not.toMatch(/percents|answers|mbti_result/)
+    document.querySelector('[data-action="copy-link"]').click()
+    await flushPromises()
+    expect(navigator.clipboard.writeText).toHaveBeenLastCalledWith(APP_URL)
+    expect(document.querySelector('[data-action="copy-link"]').textContent).toContain('已复制')
   })
-
-  it('emits close when backdrop is clicked', async () => {
+  it('shows a manual copy fallback when the clipboard is unavailable', async () => {
+    navigator.clipboard.writeText.mockRejectedValue(new Error('denied'))
     mountPanel()
-    await document.querySelector('.sp-overlay').click()
-    expect(wrapper.emitted('close')).toBeTruthy()
+    document.querySelector('[data-action="copy-link"]').click()
+    await flushPromises()
+    expect(document.querySelector('[role="status"]').textContent).toContain('手动复制')
+    expect(document.querySelector('textarea').value).toContain(APP_URL)
   })
-
-  it('calls onSaveImage and emits close when save image is clicked', async () => {
+  it('calls the export callback and closes', () => {
     const onSaveImage = vi.fn()
     mountPanel({ type: 'INFJ', onSaveImage })
-    await document.querySelector('[data-action="save-image"]').click()
-    expect(onSaveImage).toHaveBeenCalled()
+    document.querySelector('[data-action="save-image"]').click()
+    expect(onSaveImage).toHaveBeenCalledOnce()
     expect(wrapper.emitted('close')).toBeTruthy()
+  })
+  it('closes on backdrop and Escape', async () => {
+    mountPanel()
+    document.querySelector('.sp-overlay').click()
+    document
+      .querySelector('.sp-sheet')
+      .dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))
+    expect(wrapper.emitted('close')).toHaveLength(2)
   })
 })
