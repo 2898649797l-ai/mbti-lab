@@ -1,9 +1,8 @@
 <template>
-  <button class="lang-toggle" @click="toggle">
-    {{ locale === 'zh' ? 'EN' : '中' }}
+  <button class="lang-toggle" @click="toggle" :aria-label="$t('app.switchLanguage')">
+    {{ locale === 'zh' ? 'EN' : '中文' }}
   </button>
 </template>
-
 <script setup>
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
@@ -11,19 +10,16 @@ function toggle() {
   locale.value = locale.value === 'zh' ? 'en' : 'zh'
 }
 </script>
-
 <style scoped>
 .lang-toggle {
-  background: rgba(255,255,255,0.9);
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: 14px;
   border: 1px solid var(--cream-border);
-  border-radius: 20px;
-  padding: 6px 16px;
-  font-size: 13px;
-  font-weight: 600;
+  background: white;
   color: var(--ink);
-  cursor: pointer;
-  letter-spacing: 0.5px;
-  transition: background 0.2s;
+  font-size: 16px;
+  font-weight: 700;
 }
-.lang-toggle:hover { background: var(--white); }
 </style>

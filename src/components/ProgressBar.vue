@@ -1,39 +1,48 @@
 <template>
-  <div class="progress-wrap">
-    <div class="progress-label">{{ $t('test.progress', { current: current + 1, total }) }}</div>
-    <div class="progress-track">
-      <div class="progress-fill" :style="{ width: pct + '%' }" />
+  <div class="progress-block">
+    <div class="progress-caption">
+      <span>{{ $t('test.progress', { current: current + 1, total }) }}</span
+      ><span>{{ Math.round(((current + 1) / total) * 100) }}%</span>
+    </div>
+    <div
+      class="progress-track"
+      role="progressbar"
+      :aria-label="$t('test.progressLabel')"
+      :aria-valuenow="current + 1"
+      :aria-valuemin="1"
+      :aria-valuemax="total"
+    >
+      <div :style="{ width: ((current + 1) / total) * 100 + '%' }" />
     </div>
   </div>
 </template>
-
 <script setup>
-import { computed } from 'vue'
-const props = defineProps({ current: Number, total: Number })
-const pct = computed(() => Math.round(((props.current + 1) / props.total) * 100))
+defineProps({ current: Number, total: Number })
 </script>
-
 <style scoped>
-.progress-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.progress-block {
+  flex: 1;
+  min-width: 0;
 }
-.progress-label {
-  font-size: 13px;
+.progress-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
   color: var(--ink-light);
-  letter-spacing: 0.3px;
+  margin-bottom: 8px;
 }
 .progress-track {
-  height: 4px;
+  height: 7px;
+  border-radius: 10px;
   background: var(--blue-light);
-  border-radius: 4px;
   overflow: hidden;
 }
-.progress-fill {
+.progress-track > div {
   height: 100%;
-  background: var(--blue-mid);
-  border-radius: 4px;
-  transition: width 0.4s ease;
+  background: var(--blue);
+  border-radius: 10px;
+  transition: width 0.2s;
 }
 </style>

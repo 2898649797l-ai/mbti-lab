@@ -2,23 +2,47 @@
   "app": {
     "title": "性格探索",
     "subtitle": "从日常选择出发，探索你的性格倾向",
-    "privacy": "本版本的测评结果仅保存在当前浏览器；清除网站数据会删除结果。托管平台可能处理提供服务所需的访问日志。",
+    "privacy": "答题进度与最近一次结果保存在当前浏览器，清除网站数据后会删除。本网站不上传你的答案或结果；托管平台可能处理必要的访问日志。",
     "disclaimer": "本问卷仅供自我探索，不是官方 MBTI 测评或医学诊断；类型描述不应作为职业或关系决策的依据。",
-    "credit": "基于 OctopusGarage / MBTI Lab 开源项目"
+    "credit": "基于 OctopusGarage / MBTI Lab 开源项目",
+    "switchLanguage": "切换语言"
   },
   "home": {
-    "startShort": "精简版 · 60 题",
-    "startFull": "完整版 · 93 题",
+    "startShort": "60 题体验版",
+    "startFull": "93 题完整版",
     "shortDesc": "约 10–15 分钟",
     "fullDesc": "约 20–25 分钟",
     "viewLastResult": "查看上次结果 →",
     "lastResultLabel": "上次测试结果：",
-    "browseTypes": "📖 查看 16 种人格附录"
+    "browseTypes": "📖 查看 16 种人格附录",
+    "eyebrow": "认识自己，从一个选择开始",
+    "headline": "你的性格，\n不止四个字母。",
+    "orbit": "每一种，都有自己的闪光点",
+    "free": "免费 · 无需登录",
+    "continue": "继续答题",
+    "draftProgress": "已保存到第 {current} / {total} 题",
+    "restartShort": "重新开始 60 题",
+    "restartTitle": "重新开始这次测试？",
+    "restartBody": "当前答题进度会被清除，上次完成的结果会保留。",
+    "confirmRestart": "清除进度并开始",
+    "keepDraft": "保留进度",
+    "exploreTitle": "16 种不同的打开方式",
+    "exploreDesc": "先逛逛人格图鉴，看看不同的人如何面对日常。"
   },
   "test": {
     "progress": "第 {current} / {total} 题",
     "prev": "← 上一题",
-    "or": "或"
+    "or": "或",
+    "prompt": "哪一种更像平时的你？",
+    "hint": "选择更接近日常状态的一项，不必追求“正确答案”。",
+    "progressLabel": "答题进度",
+    "exit": "暂时离开",
+    "exitHint": "可以随时离开，支持保存时下次可继续。",
+    "invalidDraft": "原答题进度已损坏或不兼容，请重新开始。",
+    "storageWarning": "当前浏览器无法保存数据。仍可完成测试，但关闭或刷新可能丢失进度和结果。",
+    "saved": "进度已保存在这台设备",
+    "unsaved": "本次进度暂未保存",
+    "next": "已选好，正在进入下一题…"
   },
   "types": {
     "backHome": "返回首页",
@@ -34,34 +58,34 @@
     "famous": "著名同类型人物",
     "bestMatch": "最佳匹配",
     "cognitiveStack": "认知功能栈",
-    "shareBtn": "分享",
+    "shareBtn": "保存我的人格卡",
     "retake": "重新测试",
     "notFound": "暂无测试结果。",
     "backHome": "← 返回首页",
     "dimLabel": {
-      "EI": [
-        "外向 E",
-        "内向 I"
-      ],
-      "NS": [
-        "直觉 N",
-        "感知 S"
-      ],
-      "FT": [
-        "情感 F",
-        "思维 T"
-      ],
-      "JP": [
-        "判断 J",
-        "随性 P"
-      ]
-    }
+      "EI": ["外向 E", "内向 I"],
+      "NS": ["直觉 N", "感知 S"],
+      "FT": ["情感 F", "思维 T"],
+      "JP": ["判断 J", "随性 P"]
+    },
+    "tagline": "一句话认识你",
+    "daily": "日常里的你",
+    "pitfalls": "容易踩的小坑",
+    "growth": "给自己的两个提醒",
+    "workStyle": "适合你的工作节奏",
+    "dimensions": "这次答题的倾向",
+    "percentNote": "百分比来自本次答案的分布，不是能力得分或人格准确率。",
+    "closeNote": "45%–55% 表示两侧倾向接近，不必把自己固定在某一边。",
+    "close": "两侧倾向接近",
+    "radarNote": "雷达图显示 E、N、F、J 四侧的答题比例，数值高低不代表好坏。",
+    "profileNote": "这是基于类型的自我探索提示。每个人都有差异，你可以保留有共鸣的部分。",
+    "storageWarning": "这次结果未能保存到浏览器。你现在仍可查看和保存图片，刷新或关闭后可能无法找回。"
   },
   "share": {
-    "shareResult": "分享我的结果",
+    "shareResult": "我的人格卡",
     "shareApp": "推荐给朋友",
     "shareToX": "分享到 X",
-    "saveImage": "保存图片",
+    "saveImage": "下载图片",
     "copyLink": "复制链接",
     "copied": "已复制 ✓",
     "xTextResult": "我的 MBTI 是 {type}！快来测测你的性格 👉 {url}",
@@ -69,7 +93,17 @@
     "scanLabel": "扫码测测你的",
     "generating": "正在生成海报…",
     "exportError": "海报生成失败，请重试。",
-    "saveHint": "点击下方链接下载，或长按图片保存。",
-    "posterAlt": "{type} 性格探索结果海报"
+    "saveHint": "点击下载，或长按图片保存到相册。微信内若无法下载，请长按图片，或在系统浏览器打开。",
+    "posterAlt": "{type} 性格探索结果海报",
+    "copyText": "复制分享文案",
+    "copyFailed": "未能自动复制，请长按下方文字手动复制。",
+    "textLabel": "分享文案",
+    "close": "关闭",
+    "retry": "重新生成",
+    "help": "保存图片后，可以在小红书或聊天中自行分享。",
+    "caption": "我的性格倾向是 {type} · {nickname}\n{tagline}\n你是哪一种？来一起探索：{url}\n#性格探索 #人格测试",
+    "appCaption": "从日常选择出发，探索自己的性格倾向。免费，无需登录：{url}",
+    "posterTitle": "人格探索卡",
+    "posterNote": "自我探索参考 · 不定义全部的你"
   }
 }

@@ -1,92 +1,83 @@
 <template>
-  <Transition name="fade" mode="out-in">
-    <div class="question-card" :key="question.id">
-      <div class="options">
-        <button
-          class="option"
-          :class="{ selected: selected === 'a' }"
-          @click="$emit('answer', 'a')"
-        >
-          <span class="option-letter">A</span>
-          <span class="option-text">{{ question[locale].a }}</span>
-        </button>
-        <div class="divider">{{ $t('test.or') }}</div>
-        <button
-          class="option"
-          :class="{ selected: selected === 'b' }"
-          @click="$emit('answer', 'b')"
-        >
-          <span class="option-letter">B</span>
-          <span class="option-text">{{ question[locale].b }}</span>
-        </button>
-      </div>
+  <div class="question-card">
+    <div class="options">
+      <button
+        v-for="choice in ['a', 'b']"
+        :key="choice"
+        class="option"
+        :class="{ selected: selected === choice }"
+        :disabled="disabled"
+        :aria-pressed="selected === choice"
+        @click="$emit('answer', choice)"
+      >
+        <span class="option-letter">{{ choice.toUpperCase() }}</span
+        ><span class="option-text">{{ question[locale][choice] }}</span
+        ><span class="option-check" aria-hidden="true">{{ selected === choice ? '✓' : '' }}</span>
+      </button>
     </div>
-  </Transition>
+  </div>
 </template>
-
 <script setup>
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
-defineProps({ question: Object, selected: String })
+defineProps({ question: Object, selected: String, disabled: Boolean })
 defineEmits(['answer'])
 </script>
-
 <style scoped>
-.question-card { width: 100%; }
-
 .options {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 16px;
 }
-
 .option {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 24px;
-  background: var(--white);
-  border: 2px solid transparent;
-  border-radius: var(--radius);
-  cursor: pointer;
+  gap: 12px;
+  width: 100%;
+  padding: 22px 16px;
+  min-height: 94px;
+  background: white;
+  border: 2px solid #e9dfcf;
+  border-radius: 22px;
   text-align: left;
-  transition: all 0.15s ease;
-  box-shadow: var(--shadow);
+  color: var(--ink);
+  transition:
+    border-color 0.12s,
+    background 0.12s;
 }
-@media (hover: hover) {
-  .option:hover { border-color: var(--blue-mid); transform: translateY(-1px); }
+.option.selected {
+  border-color: var(--blue);
+  background: var(--blue-light);
 }
-.option.selected { border-color: var(--blue-mid); background: var(--blue-light); }
-
+.option:disabled {
+  opacity: 1;
+  color: var(--ink);
+}
 .option-letter {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--blue-light);
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: #f4efff;
   color: var(--blue);
-  font-weight: 700;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 800;
 }
 .option.selected .option-letter {
-  background: var(--blue-mid);
   color: white;
+  background: var(--blue);
 }
-.option-text { font-size: 15px; line-height: 1.6; color: var(--ink); }
-
-.divider {
-  text-align: center;
-  font-size: 12px;
-  color: var(--ink-light);
-  padding: 10px 0;
-  letter-spacing: 1px;
+.option-text {
+  flex: 1;
+  font-size: 17px;
+  line-height: 1.7;
 }
-
-/* transition */
-.fade-enter-active, .fade-leave-active { transition: opacity 0.2s, transform 0.2s; }
-.fade-enter-from { opacity: 0; transform: translateX(20px); }
-.fade-leave-to { opacity: 0; transform: translateX(-20px); }
+.option-check {
+  width: 14px;
+  flex-shrink: 0;
+  color: var(--blue);
+  font-weight: 800;
+}
 </style>
