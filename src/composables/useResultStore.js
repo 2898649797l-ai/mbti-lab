@@ -1,58 +1,19 @@
-// Single module at the route seam for the result handoff.
-//
-// Two storage adapters sit behind this interface:
-// - sessionStorage carries the fresh handoff from TestView to ResultView,
-//   read-and-consume so a stale session entry can never shadow the
-//   persisted history on later visits (e.g. arriving via HomeView's
-//   "view last result" link).
-// - localStorage persists the latest result as history.
-//
-// Keys, JSON encoding/decoding, completedAt stamping, entry validation
-// (type letters and finite percents), and fresh-then-history precedence
-// all live here; views never touch storage directly.
-
 const SESSION_KEY = 'mbti_result'
 const HISTORY_KEY = 'mbti_lab_result'
-
-// Position-ordered valid letters for an MBTI type. Absorbs the validation
-// the deleted src/utils/formatMbtiType.js used to encode (and test in isolation).
 const TYPE_POSITIONS = [
-  ['E', 'I'], // energy
-  ['N', 'S'], // information
-  ['T', 'F'], // decisions
-  ['J', 'P'], // lifestyle
+  ['E', 'I'],
+  ['N', 'S'],
+  ['T', 'F'],
+  ['J', 'P'],
 ]
-
-// Dimension keys of `result.percents` with the letters each may hold.
 const DIMENSIONS = [
   { key: 'EI', letters: ['E', 'I'] },
   { key: 'NS', letters: ['N', 'S'] },
   { key: 'FT', letters: ['F', 'T'] },
   { key: 'JP', letters: ['J', 'P'] },
 ]
-
-// Canonicalize a type string ('infp' -> 'INFP'); '' when any letter is
-// invalid for its position, the length is wrong, or it is not a string.
-function normalizeType(value) {
-  if (typeof value !== 'string') return ''
-  const letters = value.trim().toUpperCase().split('')
-  if (letters.length !== TYPE_POSITIONS.length) return ''
-  return TYPE_POSITIONS.every((options, i) => options.includes(letters[i]))
-    ? letters.join('')
-    : ''
-}
-
-// Every dimension must be present with finite numbers for both letters.
-function hasFinitePercents(percents) {
-  if (!percents || typeof percents !== 'object') return false
-  return DIMENSIONS.every(({ key, letters }) => {
-    const dim = percents[key]
-    if (!dim || typeof dim !== 'object') return false
-    return letters.every((letter) => Number.isFinite(dim[letter]))
-  })
-}
-
-// Decode one stored entry; null for anything malformed.
+let volatileResult = null
+let handoffResult = null
 function parseEntry(raw) {
   if (!raw) return null
   let value
@@ -61,29 +22,68 @@ function parseEntry(raw) {
   } catch {
     return null
   }
-  if (!value || typeof value !== 'object') return null
-  const type = normalizeType(value.type)
-  if (!type || !hasFinitePercents(value.percents)) return null
+  if (!value || typeof value !== 'object' || typeof value.type !== 'string') return null
+  const type = value.type.trim().toUpperCase()
+  if (type.length !== 4 || !TYPE_POSITIONS.every((options, i) => options.includes(type[i])))
+    return null
+  if (
+    !DIMENSIONS.every(({ key, letters }) =>
+      letters.every(
+        (letter) =>
+          Number.isFinite(value.percents?.[key]?.[letter]) &&
+          value.percents[key][letter] >= 0 &&
+          value.percents[key][letter] <= 100,
+      ),
+    )
+  )
+    return null
   return { ...value, type }
 }
-
 export function useResultStore() {
-  // Persist a completed result: stamp it once and write the same entry to
-  // the fresh handoff (session) and the history (local).
   function submit(result) {
     const entry = { ...result, completedAt: Date.now() }
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify(entry))
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(entry))
+    handoffResult = entry
+    let persisted = false
+    try {
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(entry))
+    } catch {
+      /* use memory */
+    }
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(entry))
+      persisted = true
+    } catch {
+      /* use memory */
+    }
+    volatileResult = persisted ? null : entry
+    return persisted
   }
-
-  // Resolve the result to display: the fresh handoff first (consumed on
-  // read), then the persisted history. null when nothing valid remains.
   function load() {
-    const fresh = parseEntry(sessionStorage.getItem(SESSION_KEY))
-    sessionStorage.removeItem(SESSION_KEY)
+    // A newly completed test wins even if a failed session write left an old entry.
+    if (handoffResult) {
+      const fresh = handoffResult
+      handoffResult = null
+      try {
+        sessionStorage.removeItem(SESSION_KEY)
+      } catch {
+        /* unavailable */
+      }
+      return fresh
+    }
+    let fresh = null
+    try {
+      fresh = parseEntry(sessionStorage.getItem(SESSION_KEY))
+      sessionStorage.removeItem(SESSION_KEY)
+    } catch {
+      /* fallback */
+    }
     if (fresh) return fresh
-    return parseEntry(localStorage.getItem(HISTORY_KEY))
+    if (volatileResult) return volatileResult
+    try {
+      return parseEntry(localStorage.getItem(HISTORY_KEY))
+    } catch {
+      return null
+    }
   }
-
   return { submit, load }
 }

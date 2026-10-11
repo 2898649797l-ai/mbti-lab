@@ -8,14 +8,14 @@ export function useTest() {
   const answers = ref([]) // 'a' | 'b' | null per question
 
   function loadQuestions(allQuestions, shortVersion) {
-    questions.value = shortVersion ? allQuestions.filter(q => q.short) : allQuestions
+    questions.value = shortVersion ? allQuestions.filter((q) => q.short) : allQuestions
     answers.value = new Array(questions.value.length).fill(null)
     currentIndex.value = 0
   }
 
-  function answer(choice) {
+  function answer(choice, advance = true) {
     answers.value[currentIndex.value] = choice
-    if (currentIndex.value < questions.value.length - 1) {
+    if (advance && currentIndex.value < questions.value.length - 1) {
       currentIndex.value++
     }
   }
@@ -24,8 +24,8 @@ export function useTest() {
     if (currentIndex.value > 0) currentIndex.value--
   }
 
-  const isComplete = computed(() =>
-    answers.value.length > 0 && answers.value.every(a => a !== null)
+  const isComplete = computed(
+    () => answers.value.length > 0 && answers.value.every((a) => a !== null),
   )
 
   const scores = computed(() => {

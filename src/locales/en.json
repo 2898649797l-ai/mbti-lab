@@ -2,23 +2,47 @@
   "app": {
     "title": "Personality Explorer",
     "subtitle": "Explore your personality preferences through everyday choices",
-    "privacy": "This version stores assessment results only in this browser. Clearing site data deletes them. The hosting provider may process access logs needed to serve the site.",
+    "privacy": "Your draft and latest result stay in this browser and are deleted when site data is cleared. We do not upload your answers or results. The host may process necessary access logs.",
     "disclaimer": "For self-exploration only. This is not the official MBTI assessment or a medical diagnosis. Type descriptions should not determine career or relationship decisions.",
-    "credit": "Based on the OctopusGarage / MBTI Lab open-source project"
+    "credit": "Based on the OctopusGarage / MBTI Lab open-source project",
+    "switchLanguage": "Switch language"
   },
   "home": {
-    "startShort": "Short · 60 Q",
-    "startFull": "Full · 93 Q",
+    "startShort": "60-question experience",
+    "startFull": "93-question full test",
     "shortDesc": "~10–15 minutes",
     "fullDesc": "~20–25 minutes",
     "viewLastResult": "View last result →",
     "lastResultLabel": "Last result:",
-    "browseTypes": "📖 Browse 16 Types"
+    "browseTypes": "📖 Browse 16 Types",
+    "eyebrow": "GET TO KNOW YOUR EVERYDAY SELF",
+    "headline": "You are more\nthan four letters.",
+    "orbit": "Every type has its own spark",
+    "free": "Free · No sign-in",
+    "continue": "Continue your test",
+    "draftProgress": "Saved at question {current} of {total}",
+    "restartShort": "Start a new 60-question test",
+    "restartTitle": "Start a new test?",
+    "restartBody": "This will clear your current draft. Your last completed result will remain.",
+    "confirmRestart": "Clear draft and start",
+    "keepDraft": "Keep my progress",
+    "exploreTitle": "16 ways to show up",
+    "exploreDesc": "Browse the profiles and explore how different people approach everyday life."
   },
   "test": {
     "progress": "Q {current} / {total}",
     "prev": "← Previous",
-    "or": "or"
+    "or": "or",
+    "prompt": "Which sounds more like you?",
+    "hint": "Choose your usual response. There is no right answer.",
+    "progressLabel": "Test progress",
+    "exit": "Leave for now",
+    "exitHint": "You can leave and return when browser storage is available.",
+    "invalidDraft": "Your saved draft is damaged or incompatible. Please start again.",
+    "storageWarning": "This browser cannot save data. You can finish the test, but refreshing or closing may lose your progress and result.",
+    "saved": "Progress saved on this device",
+    "unsaved": "Progress has not been saved",
+    "next": "Selected. Moving to the next question…"
   },
   "types": {
     "backHome": "Home",
@@ -34,34 +58,34 @@
     "famous": "Famous People Like You",
     "bestMatch": "Best Match",
     "cognitiveStack": "Cognitive Stack",
-    "shareBtn": "Share",
+    "shareBtn": "Save my personality card",
     "retake": "Retake Test",
     "notFound": "No result found.",
     "backHome": "← Back to home",
     "dimLabel": {
-      "EI": [
-        "Extraverted E",
-        "Introverted I"
-      ],
-      "NS": [
-        "Intuitive N",
-        "Observant S"
-      ],
-      "FT": [
-        "Feeling F",
-        "Thinking T"
-      ],
-      "JP": [
-        "Judging J",
-        "Prospecting P"
-      ]
-    }
+      "EI": ["Extraverted E", "Introverted I"],
+      "NS": ["Intuitive N", "Observant S"],
+      "FT": ["Feeling F", "Thinking T"],
+      "JP": ["Judging J", "Prospecting P"]
+    },
+    "tagline": "You in one line",
+    "daily": "You in everyday life",
+    "pitfalls": "Patterns to watch",
+    "growth": "Two reminders for you",
+    "workStyle": "Your working rhythm",
+    "dimensions": "Preferences in this test",
+    "percentNote": "Percentages describe the distribution of your answers, not ability scores or personality accuracy.",
+    "closeNote": "45%–55% means the two preferences are close. You do not need to fit only one side.",
+    "close": "Preferences are close",
+    "radarNote": "The chart shows the E, N, F and J sides of your answers. Higher is not better.",
+    "profileNote": "These are type-based prompts for reflection. Everyone is different; keep what resonates with you.",
+    "storageWarning": "Your result could not be saved in this browser. You can still read it and save a picture now, but refreshing or closing may lose it."
   },
   "share": {
-    "shareResult": "Share My Result",
+    "shareResult": "My personality card",
     "shareApp": "Recommend to Friends",
     "shareToX": "Share on X",
-    "saveImage": "Save Image",
+    "saveImage": "Download image",
     "copyLink": "Copy Link",
     "copied": "Copied ✓",
     "xTextResult": "My MBTI type is {type}! Come find out yours 👉 {url}",
@@ -69,7 +93,17 @@
     "scanLabel": "Scan to take the test",
     "generating": "Generating your poster…",
     "exportError": "Could not generate the poster. Please try again.",
-    "saveHint": "Download below, or press and hold the image to save it.",
-    "posterAlt": "{type} Personality Explorer result poster"
+    "saveHint": "Download the image or press and hold to save it. In WeChat, try a long press or open this page in your system browser if downloading fails.",
+    "posterAlt": "{type} Personality Explorer result poster",
+    "copyText": "Copy sharing caption",
+    "copyFailed": "Automatic copy failed. Select the text below and copy it manually.",
+    "textLabel": "Sharing caption",
+    "close": "Close",
+    "retry": "Generate again",
+    "help": "Save the image and share it yourself in a post or chat.",
+    "caption": "My personality preference: {type} · {nickname}\n{tagline}\nExplore yours: {url}\n#PersonalityExplorer #PersonalityTest",
+    "appCaption": "Explore your personality preferences through everyday choices. Free, no sign-in: {url}",
+    "posterTitle": "PERSONALITY EXPLORER CARD",
+    "posterNote": "For reflection · You are more than a type"
   }
 }
