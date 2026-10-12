@@ -63,10 +63,22 @@
     "notFound": "No result found.",
     "backHome": "← Back to home",
     "dimLabel": {
-      "EI": ["Extraverted E", "Introverted I"],
-      "NS": ["Intuitive N", "Observant S"],
-      "FT": ["Feeling F", "Thinking T"],
-      "JP": ["Judging J", "Prospecting P"]
+      "EI": [
+        "Extraverted E",
+        "Introverted I"
+      ],
+      "NS": [
+        "Intuitive N",
+        "Observant S"
+      ],
+      "FT": [
+        "Feeling F",
+        "Thinking T"
+      ],
+      "JP": [
+        "Judging J",
+        "Prospecting P"
+      ]
     },
     "tagline": "You in one line",
     "daily": "You in everyday life",
@@ -105,5 +117,23 @@
     "appCaption": "Explore your personality preferences through everyday choices. Free, no sign-in: {url}",
     "posterTitle": "PERSONALITY EXPLORER CARD",
     "posterNote": "For reflection · You are more than a type"
+  },
+  "report": {
+    "sections": {
+      "core": "Meet this illustrative profile",
+      "daily": "Everyday scenes: chats and invitations",
+      "friendship": "Communication and friendship",
+      "close": "In close relationships",
+      "work": "Learning and working",
+      "blindspots": "Strengths, blind spots and pressure",
+      "growth": "Small steps to try"
+    },
+    "neighbors": "One letter apart: what changes?",
+    "neighborNote": "These are differences in emphasis within a shared situation, not rankings of ability or worth.",
+    "manual": "A social user manual",
+    "quirkNote": "Three playful editorial lines. Keep what resonates; none needs to define you.",
+    "editorialNote": "These are editorial examples based on a type, not individually detected facts. Relationship and pressure stories invite reflection; they do not measure attachment, mental state or ability.",
+    "balancedNotice": "Some dimensions are close to the middle. Use the type story as a comparison; the relevant sections explain how both preferences may appear. Your actual experience matters more than four letters.",
+    "showChart": "View chart"
   }
 }
