@@ -1,6 +1,6 @@
 import { types } from '../data/types.js'
-import { reportStories } from '../data/reportStories.js'
-export const REPORT_VERSION = 'r1'
+import { reportContentR2 } from '../data/reportContentR2.js'
+export const REPORT_VERSION = 'r2'
 export const DIMENSIONS = [{key:'EI',letters:['E','I']},{key:'NS',letters:['N','S']},{key:'FT',letters:['F','T']},{key:'JP',letters:['J','P']}]
 export const SECTION_IDS = ['core','daily','friendship','close','work','blindspots','growth']
 export const dimensionStories = {
@@ -46,7 +46,7 @@ export function getNeighbors(type,locale='zh') {
 }
 export function getDetailedReport(type,locale='zh',percents=null) {
   if(!isType(type)) return null
-  const language=locale==='en'?1:0, data=types[type], story=reportStories[type], notes=getDimensionInterpretations(percents,locale)
+  const language=locale==='en'?1:0, data=types[type], story=reportContentR2[type], notes=getDimensionInterpretations(percents,locale)
   const note=i=>notes[i]?.text||dimensionStories[type[i]][language]
-  return {version:REPORT_VERSION,sections:SECTION_IDS.map((id,i)=>({id,paragraphs:[story[i][language],...(i===1?[note(0)]:i===2?[note(2)]:i===3?[note(1)]:i===4?[note(3)]:[])]})),quirks:story[7][language],neighbors:getNeighbors(type,locale),strengths:data.strengths[locale]}
+  return {version:REPORT_VERSION,sections:SECTION_IDS.map((id,i)=>({id,paragraphs:[story[locale === 'en' ? 'en' : 'zh'][i],...(i===1?[note(0)]:i===2?[note(2)]:i===3?[note(1)]:i===4?[note(3)]:[])]})),highlights:story.highlights[language],actions:story.actions[language].map(([context,step,phrase])=>({context,step,phrase})),quirks:story.highlights[language],neighbors:getNeighbors(type,locale),strengths:data.strengths[locale]}
 }

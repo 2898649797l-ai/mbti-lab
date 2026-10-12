@@ -119,13 +119,13 @@
   },
   "report": {
     "sections": {
-      "core": "Meet this illustrative profile",
-      "daily": "Everyday scenes: chats and invitations",
-      "friendship": "Communication and friendship",
-      "close": "In close relationships",
-      "work": "Learning and working",
-      "blindspots": "Strengths, blind spots and pressure",
-      "growth": "Small steps to try"
+      "core": "Core tendencies",
+      "daily": "Everyday situations",
+      "friendship": "Friendship & communication",
+      "close": "Closeness & boundaries",
+      "work": "Learning & working",
+      "blindspots": "Strengths & blind spots",
+      "growth": "Growth actions"
     },
     "neighbors": "One letter apart: what changes?",
     "neighborNote": "These are differences in emphasis within a shared situation, not rankings of ability or worth.",
@@ -263,6 +263,20 @@
     "emptyHint": "Start the 60-question personality test or explore a 12-question life quiz.",
     "auto": "Your choice advances automatically",
     "retry": "Retry result",
-    "retest": "Retake test"
+    "retest": "Retake test",
+    "overview": "Tendency overview",
+    "contents": "Contents",
+    "share": "Share",
+    "reportActions": "Report actions",
+    "related": "Explore this topic",
+    "context": "In context",
+    "sceneNames": {
+      "chat": "Conversation & response",
+      "boundaries": "Distance & boundaries",
+      "repair": "Disagreement & repair"
+    },
+    "searchTypes": "Search personality types",
+    "searchPlaceholder": "Type code or nickname, e.g. ENFJ",
+    "noTypes": "No match. Try a type code or another nickname."
   }
 }

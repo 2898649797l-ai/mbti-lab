@@ -1,8 +1,9 @@
 import r1 from '../data/reportVersions/r1.json'
+import r2 from '../data/reportVersions/r2.json'
 import { APP_URL } from '../config.js'
 import { DIMENSIONS, isType, validPercents } from './detailedReport.js'
 export const MAX_PROFILE_URL = 2000
-export const PROFILE_DICTIONARIES = { r1 }
+export const PROFILE_DICTIONARIES = { r1, r2 }
 export const SCENE_IDS = ['chat', 'boundaries', 'repair']
 export class SnapshotError extends Error {
   constructor(code) {
@@ -65,7 +66,7 @@ export function createSnapshot({
     throw new SnapshotError('name')
   const s = {
     v: 1,
-    r: 'r1',
+    r: 'r2',
     n: name.trim(),
     s: scenes.map((x) => ({ id: x.testId, v: x.version, a: [...x.scores] })),
   }

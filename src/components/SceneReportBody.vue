@@ -1,5 +1,6 @@
 <template>
   <div v-if="report" class="scene-report-body">
+    <section class="feature-card"><h2>{{ $t('ux.overview') }}</h2><p v-for="axis in report.axes" :key="axis.id">{{ axis.summary }}</p></section>
     <section v-for="axis in report.axes" :key="axis.id" class="feature-card">
       <h2>{{ axis.label }}</h2>
       <div class="axis-labels">
@@ -23,7 +24,7 @@
         }}
       </p>
       <p>{{ axis.summary }}</p>
-      <h3>{{ $t('social.friendship') }}</h3>
+      <h3>{{ $t('ux.context') }} · {{ $t('social.friendship') }}</h3>
       <p>{{ axis.friendship }}</p>
       <h3>{{ $t('social.close') }}</h3>
       <p>{{ axis.close }}</p>
@@ -59,7 +60,7 @@ const report = computed(() => sceneReport(props.result, locale.value))
 }
 .scene-track {
   height: 10px;
-  background: #ffcfb5;
+  background: #e5e7eb;
   border-radius: 20px;
   position: relative;
   overflow: hidden;

@@ -1,0 +1,3 @@
+<template><nav class="report-dock" :aria-label="$t('ux.reportActions')"><button class="secondary-button" @click="$emit('contents')">{{ $t('ux.contents') }}</button><button class="primary-button" @click="$emit('share')">{{ $t('ux.share') }}</button></nav></template>
+<script setup>defineEmits(['contents','share'])</script>
+<style scoped>.report-dock{position:fixed;z-index:40;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#fff;border-top:1px solid var(--cream-border);display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px 20px calc(10px + env(safe-area-inset-bottom))}.report-dock button{min-height:48px;padding:10px}</style>

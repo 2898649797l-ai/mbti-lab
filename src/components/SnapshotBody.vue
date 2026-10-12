@@ -36,32 +36,12 @@
         />
       </details>
     </section>
-    <template v-if="profile"
-      ><details
-        class="feature-card"
-        v-for="section in profile.report.sections"
-        :key="section.id"
-        :open="section.id === 'core'"
-      >
-        <summary>{{ $t('report.sections.' + section.id) }}</summary>
-        <p v-for="text in section.paragraphs" :key="text">{{ text }}</p>
-      </details>
-      <details class="feature-card">
-        <summary>{{ $t('report.neighbors') }}</summary>
-        <div v-for="neighbor in profile.report.neighbors" :key="neighbor.type">
-          <strong>{{ snapshot.m.t }} / {{ neighbor.type }}</strong>
-          <p>{{ neighbor.text }}</p>
-        </div>
-      </details>
-      <section class="feature-card manual-card">
-        <h2>{{ $t('report.manual') }}</h2>
-        <p v-for="line in profile.report.quirks" :key="line">{{ line }}</p>
-      </section></template
-    >
+    <ReportReader v-if="profile" :report="profile.report" />
     <p class="feature-muted">{{ $t('social.snapshotNote') }}</p>
   </div>
 </template>
 <script setup>
+import ReportReader from './ReportReader.vue'
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import DimensionBars from './DimensionBars.vue'
@@ -76,7 +56,7 @@ const sceneReports = computed(() => props.snapshot.s.map((s) => sharedSceneRepor
 </script>
 <style scoped>
 .snapshot-hero {
-  background: #eee6ff;
+  background: #f8f9fb;
 }
 .snapshot-type {
   display: block;
@@ -84,7 +64,7 @@ const sceneReports = computed(() => props.snapshot.s.map((s) => sharedSceneRepor
   margin: 16px 0;
 }
 .manual-card {
-  background: #edf5dd;
+  background: #f8f9fb;
 }
 summary {
   min-height: 44px;
