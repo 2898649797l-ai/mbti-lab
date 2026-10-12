@@ -17,8 +17,13 @@
           ></ResultCard
         >
         <div class="actions">
-          <router-link to="/profile" class="secondary-button">{{ $t('social.myProfile') }} →</router-link>
-          <router-link to="/compare" class="secondary-button">{{ $t('social.compareTitle') }} →</router-link>
+          <router-link to="/explore" class="secondary-button">{{ $t('scene.more') }} →</router-link>
+          <router-link to="/profile" class="secondary-button"
+            >{{ $t('social.myProfile') }} →</router-link
+          >
+          <router-link to="/compare" class="secondary-button"
+            >{{ $t('social.compareTitle') }} →</router-link
+          >
           <button class="secondary-button btn-share" @click="showPanel = true">
             {{ $t('share.copyText') }} ↗</button
           ><router-link to="/" class="text-button btn-retake">{{

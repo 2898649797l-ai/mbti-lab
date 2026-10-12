@@ -63,22 +63,10 @@
     "notFound": "No result found.",
     "backHome": "← Back to home",
     "dimLabel": {
-      "EI": [
-        "Extraverted E",
-        "Introverted I"
-      ],
-      "NS": [
-        "Intuitive N",
-        "Observant S"
-      ],
-      "FT": [
-        "Feeling F",
-        "Thinking T"
-      ],
-      "JP": [
-        "Judging J",
-        "Prospecting P"
-      ]
+      "EI": ["Extraverted E", "Introverted I"],
+      "NS": ["Intuitive N", "Observant S"],
+      "FT": ["Feeling F", "Thinking T"],
+      "JP": ["Judging J", "Prospecting P"]
     },
     "tagline": "You in one line",
     "daily": "You in everyday life",
@@ -143,7 +131,7 @@
     "includeType": "Show my type and summary",
     "includePercents": "Publish four dimension percentages (off by default)",
     "privacyWarning": "Anyone with the link can see selected content. It is a fixed snapshot; old links cannot be revoked. Do not enter information you wish to keep private.",
-    "noResult": "Complete a personality test first. Once scene quizzes are available, their results can be shared independently.",
+    "noResult": "Complete a personality test or any scene quiz to choose results to share.",
     "visiblePreview": "What a friend will see",
     "createLink": "Create sharing link",
     "readyLink": "Your link is ready",
@@ -188,24 +176,64 @@
     "beforeExport": "Review the words and confirm the QR destination. The image only uses the content below.",
     "qrTarget": "QR destination",
     "homeQr": "Site home (default)",
-    "profileQr": "My previewed snapshot",
+    "profileQr": "Previewed snapshot page",
+    "addQrProfile": "Use a previewed snapshot for the QR code",
+    "qrProfileLink": "Full snapshot link from this site (optional)",
+    "previewQrProfile": "Read and preview the QR destination",
     "actualTarget": "View actual QR address",
     "generateCard": "Generate 1080×1440 image",
     "navigation": "Explore and share",
     "errors": {
+      "name": "The display name can have up to 20 Unicode characters. Please shorten it.",
       "invalid": "Invalid or damaged snapshot. Check the link and display-name length.",
       "version": "This snapshot version is not supported; it will not be guessed using current content.",
       "tooLong": "The full link exceeds 2000 characters. Share fewer results or shorten the name.",
       "empty": "Choose at least one result to share.",
       "site": "Paste a full personality snapshot link from this current site.",
       "noType": "The friend did not publish a personality type, so a type comparison is unavailable."
-    }
+    },
+    "includeScene": "Publish “{name}” (including two preference positions)"
   },
   "scene": {
     "names": {
       "chat": "Chat and response",
       "boundaries": "Distance and boundaries",
       "repair": "Disagreement and repair"
-    }
+    },
+    "eyebrow": "Life-scene self-exploration",
+    "exploreTitle": "Understand yourself through everyday interactions",
+    "intro": "Three original quizzes about conversation, distance and disagreement. They are not psychometrically validated scales and do not change your personality type. Each can be completed independently.",
+    "twelve": "12 questions · 5 choices",
+    "start": "Start this exploration",
+    "continue": "Continue at question {current}",
+    "lastResult": "View this quiz’s latest result",
+    "answerHint": "Think about everyday interactions with friends or people close to you. There is no correct answer.",
+    "scaleLabel": "Choose how closely this describes your usual response",
+    "scale": {
+      "1": "Very unlike me",
+      "2": "Not much like me",
+      "3": "Unsure / depends",
+      "4": "Quite like me",
+      "5": "Very like me"
+    },
+    "next": "Next",
+    "finish": "View result",
+    "restart": "Restart this quiz",
+    "restartHint": "Only this quiz’s draft is cleared. Other quizzes and recent results are kept.",
+    "incomplete": "Some answers are incomplete. Check them and try again.",
+    "unknown": "This quiz was not found",
+    "reportIntro": "Explore the emphasis in this answer set, then discuss it in a real relationship.",
+    "scoreNote": "The 0–100 position equally combines forward and reverse items. It is not ability, accuracy or a population percentile. Values 45–55 retain both sides without forcing a category. Many unsure responses may reflect limited information, rather than greater flexibility.",
+    "scoreLabel": "Preference position",
+    "flexible": "Depends on context",
+    "leans": "Leans toward: {side}",
+    "script": "Words you could try",
+    "summary": "Two lines to share",
+    "shareProfile": "Choose results for my personality page",
+    "retake": "Take this quiz again",
+    "more": "Explore other quizzes",
+    "resultMissing": "No valid result for this quiz is available here, or its saved version is incompatible. You can restart without clearing other results.",
+    "posterSubtitle": "An emphasis in this answer set, not a definition of you",
+    "details": "Expand relationship suggestions and sample wording"
   }
 }

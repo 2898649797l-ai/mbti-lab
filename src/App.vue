@@ -2,7 +2,10 @@
   <div class="app-shell">
     <RouterView />
     <footer
-      v-if="route.path !== '/test'"
+      v-if="
+        route.path !== '/test' &&
+        (!route.path.startsWith('/quiz/') || route.path.endsWith('/result'))
+      "
       class="site-footer"
       :class="{ 'result-footer': route.path === '/result' }"
     >

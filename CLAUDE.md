@@ -1,42 +1,15 @@
-# CLAUDE.md
+# Project guidance
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Commands
-
-```bash
-npm run dev      # Start Vite dev server at http://localhost:5173/mbti-lab/
-npm run build    # Production build → dist/
-npm run preview  # Preview built output
-npm run test     # Run Vitest tests
-```
-
-No linting/formatting toolchain is configured.
+Vue 3 / Vite / Hash Router, bilingual Chinese and English. Use Node24, npm ci, npm test -- --run, npm run build. No separate lint toolchain. Cloudflare Pages production tracks main; .github/workflows/mobile-checks.yml verifies tests and build.
 
 ## Architecture
 
-**MBTI Lab** is a bilingual (Chinese/English) Vue 3 SPA for personality testing, deployed to GitHub Pages at `https://octopusgarage.github.io/mbti-lab/`.
+Original personality flow remains /test and /result with 60/93 questions, src/composables/useTest.js and original storage keys. Keep its scoring and result compatibility. Detailed reports use editorial scenes plus dimension interpretations; src/data/reportVersions/r1.json is the immutable dictionary for shared snapshots.
 
-### Routing (4 routes)
-- `/` → `HomeView` — test version selection (short 60Q / full 93Q)
-- `/test` → `TestView` — question loop
-- `/result` → `ResultView` — scoring display + share card
-- `/types` → `TypesView` — 16-type profile appendix
+/profile selects public fields; /p/:payload reads a versioned Base64URL JSON snapshot without writing assessment storage; /compare accepts manual types or same-site snapshots. Shared scores are opt-in and no compatibility percentage is calculated. Keep full URLs <=2000 characters, names <=20 Unicode characters, and never encode answers.
 
-### Data Flow
-`HomeView` (select mode) → `TestView` (questions) → on completion, writes result to `sessionStorage` and navigates to `ResultView` → saves to `localStorage` via `useHistory`.
+/explore lists three scene quizzes; /quiz/:testId and its /result implement independent drafts and latest results. src/data/testRegistry.js records definitions and scoring/report adapters. src/data/scenes/v1.js stays immutable after release. Forward/reverse six-item axes normalize to0–100;45–55 retains the middle.
 
-### Core Logic
-- **`src/composables/useTest.js`** — scoring engine. Each question in `src/data/questions.js` has `dimension` (E/I, N/S, F/T, J/P), `direction` (which letter A or B scores), and optional `short` flag for the 60Q version. Final MBTI type is determined by whichever side exceeds 50% on each dimension.
-- **`src/composables/useHistory.js`** — localStorage persistence for the last test result.
+New production dependencies, APIs, databases and analytics are outside the current scope. Images use existing html2canvas/QRCode. PosterExporter previews the exact content and QR target; default is home and snapshot destinations require preview. Changed inputs invalidate prior images and approved destinations.
 
-### Internationalization
-vue-i18n 9 (Composition API mode, `legacy: false`), Chinese default with English fallback. Questions and type profiles each carry `zh`/`en` fields directly in the data objects. UI strings live in `src/locales/zh.json` and `src/locales/en.json`. `LangToggle.vue` switches `i18n.global.locale`.
-
-### Visualization & Export
-- `RadarChart.vue` — ECharts 5 radar chart across all 4 dimensions
-- `DimensionBars.vue` — per-dimension percentage bars
-- `ShareCard.vue` — styled export card with type-specific gradients; uses `html2canvas` to export PNG
-
-### Deployment
-Push to `main` → `.github/workflows/deploy.yml` runs `npm ci && npm run build` on Node 20, then deploys `dist/` via `actions/deploy-pages`. The Vite `base` is `/mbti-lab/`.
+Every new UI/content field needs zh and en. User device feedback is separate from desktop Chromium checks. Do not mark unperformed mobile/WeChat/network/participant tests or unresolved source permissions as passed. Status and rollback records are in docs/CONTENT_SOCIAL_RELEASE.md.
