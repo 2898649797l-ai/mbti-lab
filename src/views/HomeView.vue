@@ -34,7 +34,7 @@
         <button v-else class="primary-button" @click="start('short')">
           {{ $t('home.startShort') }} →
         </button>
-        <p class="mode-caption">{{ $t('home.shortDesc') }} · {{ $t('home.free') }}</p>
+        <p class="mode-caption">{{ $t('home.shortDesc') }} · {{ $t('home.noSignIn') }}</p>
         <button class="full-button" @click="start('full')">
           {{ $t('home.startFull') }} <span>{{ $t('home.fullDesc') }}</span> →
         </button>

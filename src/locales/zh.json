@@ -4,7 +4,6 @@
     "subtitle": "从日常选择出发，探索你的性格倾向",
     "privacy": "答案与最近结果保存在当前浏览器，本网站没有结果上传接口。主动分享时，选中的结果随快照链接公开，任何持有链接的人可查看。托管平台可能处理必要的访问日志。",
     "disclaimer": "本问卷仅供自我探索，不是官方 MBTI 测评或医学诊断；类型描述不应作为职业或关系决策的依据。",
-    "credit": "基于 OctopusGarage / MBTI Lab 开源项目",
     "switchLanguage": "切换语言"
   },
   "home": {
@@ -18,7 +17,7 @@
     "eyebrow": "认识自己，从一个选择开始",
     "headline": "你的性格，\n不止四个字母。",
     "orbit": "每一种，都有自己的闪光点",
-    "free": "免费 · 无需登录",
+    "noSignIn": "无需登录",
     "continue": "继续答题",
     "draftProgress": "已保存到第 {current} / {total} 题",
     "restartShort": "重新开始 60 题",
@@ -102,7 +101,7 @@
     "retry": "重新生成",
     "help": "保存图片后，可以在小红书或聊天中自行分享。",
     "caption": "我的性格倾向是 {type} · {nickname}\n{tagline}\n你是哪一种？来一起探索：{url}\n#性格探索 #人格测试",
-    "appCaption": "从日常选择出发，探索自己的性格倾向。免费，无需登录：{url}",
+    "appCaption": "从日常选择出发，探索自己的性格倾向。无需登录：{url}",
     "posterTitle": "人格探索卡",
     "posterNote": "自我探索参考 · 不定义全部的你"
   },

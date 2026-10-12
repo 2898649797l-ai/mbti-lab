@@ -11,12 +11,6 @@
     >
       <p>{{ $t('app.privacy') }}</p>
       <p>{{ $t('app.disclaimer') }}</p>
-      <a
-        href="https://github.com/OctopusGarage/mbti-lab"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{ $t('app.credit') }}</a
-      >
     </footer>
   </div>
 </template>
@@ -173,12 +167,6 @@ textarea:focus-visible {
 }
 .site-footer p + p {
   margin-top: 8px;
-}
-.site-footer a {
-  display: inline-block;
-  margin-top: 10px;
-  min-height: 44px;
-  padding-top: 8px;
 }
 .result-footer {
   padding-bottom: calc(108px + env(safe-area-inset-bottom));
