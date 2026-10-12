@@ -119,13 +119,13 @@
   },
   "report": {
     "sections": {
-      "core": "先认识这份画像",
-      "daily": "日常场景：群聊与邀约",
-      "friendship": "沟通与友情",
-      "close": "亲近关系里的你",
-      "work": "学习与工作节奏",
-      "blindspots": "优势背面与压力时刻",
-      "growth": "可以尝试的下一步"
+      "core": "核心倾向",
+      "daily": "日常表现",
+      "friendship": "友情与沟通",
+      "close": "亲近关系与边界",
+      "work": "学习与工作方式",
+      "blindspots": "优势与盲点",
+      "growth": "成长行动"
     },
     "neighbors": "只差一个字母，有什么不同？",
     "neighborNote": "下面是在同一情境中的侧重点对照，不是能力或价值排名。",
@@ -263,6 +263,20 @@
     "emptyHint": "从60题人格测试开始，或去探索一项12题生活小测。",
     "auto": "选择后自动进入下一题",
     "retry": "重试生成结果",
-    "retest": "重新测试"
+    "retest": "重新测试",
+    "overview": "倾向概览",
+    "contents": "目录",
+    "share": "分享",
+    "reportActions": "报告操作",
+    "related": "继续探索",
+    "context": "情境解释",
+    "sceneNames": {
+      "chat": "聊天与回应",
+      "boundaries": "距离与边界",
+      "repair": "分歧与修复"
+    },
+    "searchTypes": "搜索人格图鉴",
+    "searchPlaceholder": "类型代码或昵称，例如 ENFJ",
+    "noTypes": "没有找到，试试类型代码或其他昵称。"
   }
 }

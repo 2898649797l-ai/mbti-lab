@@ -39,7 +39,7 @@ describe('portable result snapshots', () => {
     expect(s.s).toEqual([{ id: 'chat', v: '1', a: [50, 75] }])
     const p = snapshotProfile(decodeSnapshot(encodeSnapshot(s)))
     expect(p.report.sections.find((x) => x.id === 'daily').paragraphs[1]).toContain('两侧接近')
-    expect(snapshotProfile(s, 'en').report.sections[0].paragraphs[0]).toMatch(/shared direction/)
+    expect(snapshotProfile(s, 'en').report.sections[0].paragraphs[0]).toMatch(/shared direction/i)
   })
   it('supports a scene-only profile without inventing an MBTI result', () => {
     const s = createSnapshot({ scenes: [{ testId: 'repair', version: '1', scores: [50, 50] }] })
@@ -64,7 +64,7 @@ describe('portable result snapshots', () => {
     const s = createSnapshot({ result })
     for (const bad of [
       { ...s, r: '__proto__' },
-      { ...s, r: 'r2' },
+      { ...s, r: 'r99' },
       { ...s, v: 2 },
       { ...s, answers: [] },
       { ...s, m: { t: 'XXXX' } },

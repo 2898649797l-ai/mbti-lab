@@ -12,8 +12,8 @@
 | 线上地址 | https://mbti-lab.pages.dev/ |
 | 最近功能/配置基线 | `980811f58bed678547df72cd9cbb7d56238b33a5`，移除闲置架构审核工作流 |
 | 本文件建立时状态 | 本地代码与上述基线一致；PR #1–#9均已合并，当前没有打开的PR |
-| 开发阶段 | 全流程改版阶段1：基础体验完成；阶段2内容阅读、阶段3社交分享继续开发 |
-| 本次验证 | 基础体验：本地21个测试文件、181项测试通过；构建通过；首页320/375/390/430/960px无横向溢出 |
+| 开发阶段 | 全流程改版阶段1已合并部署；阶段2内容与阅读完成，阶段3社交分享继续开发 |
+| 本次验证 | 内容阅读：本地22个测试文件、185项测试通过；构建通过；报告/图鉴窄屏检查见第12节 |
 
 这里记录的是可核查的功能基线，**不是宣称文档更新后仓库HEAD仍等于该提交**。最新HEAD用 `git log -1 --oneline` 查看；文档修订用 `git log -1 -- PROJECT_STATUS.md` 查看，避免为了写入文档自身提交SHA反复提交。
 
@@ -32,7 +32,7 @@
 | --- | --- | --- |
 | 首页与人格问卷 | 手机单列、60题主要入口、93题次要入口、继续草稿、重测确认、答题反馈和重复点击锁、返回原答案并修改 | `src/views/HomeView.vue`、`TestView.vue`、`src/composables/useTest.js` |
 | 本地恢复 | 每题及返回保存位置/答案，版本与损坏校验；存储拒绝时提示并保留本次结果 | `src/composables/useDraftStore.js`、`useResultStore.js` |
-| 16类双语报告 | 一句话画像、优势、生活故事、友情与亲近关系、学习工作、盲点、成长提示和4个相邻类型对照；中文正文约1042–1119字 | `src/data/types.js`、`reportStories.js`、`src/utils/detailedReport.js` |
+| 16类双语报告 | 一句话画像、优势、生活故事、友情与亲近关系、学习工作、盲点、成长提示和4个相邻类型对照；r2中文正文（含成长行动，不含邻型补充）1203–1259汉字，英文对应；三条重点和三项情境/动作/话术 | `src/data/types.js`、`reportStories.js`、`src/utils/detailedReport.js` |
 | 维度与图表 | 45%–55%显示两侧接近；报告分区折叠、雷达图按需展开与加载 | `src/components/DetailedResult.vue`、`DimensionBars.vue`、`RadarChart.vue` |
 | 人格主页 | 选择公开字段后生成版本化快照；可只分享生活小测；四维比例和每项小测默认不公开 | `src/views/ProfileBuilderView.vue`、`ProfileView.vue`、`src/utils/profileSnapshot.js` |
 | 朋友对照 | 手选类型或读取本站快照，区分友情/亲密关系；双方许可才显示数值，近中间不描述为强烈对立，无契合度百分比 | `src/views/CompareView.vue`、`src/utils/comparison.js` |
@@ -64,7 +64,7 @@ Node 24；Vue 3、Vite、Vue Router（Hash）、Vue I18n、ECharts、html2canvas
 - `src/router/index.js`：页面路由与按需加载。
 - `src/data/questions.js` / `src/composables/useTest.js`：原题库与计分，修改前要核查60/93题回归。
 - `src/data/testRegistry.js` / `src/utils/sceneScoring.js`：小测注册、版本、计分与报告适配。每轴6题，正反向各3题，等权换算0–100，45–55保留中间。
-- `src/data/reportVersions/r1.json`：已发布快照的人格报告字典；`src/data/scenes/v1.js`：已发布小测定义。**保持旧版本不变，内容升级建立新版本并保留旧字典。**
+- `src/data/reportVersions/r1.json`：已发布快照的人格报告字典；`src/data/scenes/v1.js`：已发布小测定义。**保持旧版本不变，内容升级建立新版本并保留旧字典。** r2编辑源为`src/data/reportContentR2.js`，冻结字典`src/data/reportVersions/r2.json`；冻结脚本接收版本参数并拒绝覆盖已有版本。
 - `src/utils/profileSnapshot.js`：快照校验、编码/解码、链接限制与同站导入。
 - `src/config.js`：首页分享地址由访问域名与Vite base生成；绑定域名后核查二维码，不能硬编码localhost。
 - `src/locales/zh.json` / `en.json`：双语界面；`src/App.vue`与`src/styles/features.css`：全局布局。
@@ -78,7 +78,7 @@ Node 24；Vue 3、Vite、Vue Router（Hash）、Vue I18n、ECharts、html2canvas
 | 人格草稿 | `localStorage.personality_explorer_draft`，`original-93-v1` | 记录mode、answers、currentIndex与version；完成清除；损坏/不兼容时提示重开 |
 | 小测草稿 | `personality_scene_draft_<testId>` | 按ID隔离，记录测试版本、五级答案与位置；存储拒绝时有内存降级 |
 | 小测结果 | `personality_scene_result_<testId>` | 含testId/version/scores/completedAt；各项独立，不覆盖人格结果 |
-| 分享快照 | URL fragment中的Base64URL JSON；`v=1`、人格字典`r1`、小测`v='1'` | 不编码原始答案；昵称≤20个Unicode字符；完整URL≤2000字符；未知版本/损坏拒绝解析 |
+| 分享快照 | URL fragment中的Base64URL JSON；`v=1`、新人格字典`r2`（仍读取旧`r1`）、小测`v='1'` | 不编码原始答案；昵称≤20个Unicode字符；完整URL≤2000字符；未知版本/损坏拒绝解析 |
 
 原人格计分独立四舍五入时两侧可能合计101；新快照保留两侧原值，兼容早期4值格式，不强行改原计分。访问别人快照不覆盖本机测评结果。快照对持有链接者可见、不能撤回、无账号认证。
 
@@ -201,3 +201,12 @@ npm ci
 - 验证：181项/21文件测试、构建通过；首页五宽度DOM无横向溢出，桌面480px单列；结果中心入口与记录可见。原175项回归继续覆盖60/93题与小测计分。专项真机/微信/三网/试用不在本轮安排，旧待验继续保留。
 - 发布前回退基线：main d8e93c7，Cloudflare成功部署 6440a5bb-ea65-4a81-8e49-37f840d27f4f；GitHub verify run 38261937204成功。
 - 下一步：阶段2重写16类r2双语报告、目录和图鉴；阶段3统一社交与分享。已发布r1和scenes/v1没有改动。
+
+### 阶段2交接
+
+- PR #10已合并至 main b40501c，GitHub verify run 38268563605成功；Cloudflare生产部署 d8f5fabf-a194-4cb7-9f04-2e5105e9cda4成功，此版本为阶段2回退依据。
+- 当前分支 codex/mobile-ux-reports。16类原昵称保留，整篇r2双语场景报告、三重点、三行动；独立折叠及目录展开定位，四维条优先/雷达补充，友情/边界/盲点链接相关小测。小测v1内容不改，展示改为概览→情境→话术。
+- 图鉴支持代码/中英文昵称搜索、320单列/375以上双列、#/types?type=ENFJ直达。报告目录/分享栏替换本机报告的单保存浮条。
+- r1 SHA256：04adc656fc10c49b73e860add708f4946d90d071fbdbba960edb416387bb9413。旧r1快照保留原文，r2快照和本机旧结果使用新报告；原章节ID及v=1载荷不改，r1缺省highlights/actions仍可渲染。新快照r=r2，原问卷/小测版本与键不改。
+- 验证：185项/22文件与构建通过；含16类内容长度、双语字段、冻结版本拒绝覆盖、旧新快照和目录独立展开。剩余阶段3：对照来源/提交、主页摘要、统一分享/实际卡片验证；真实设备和旧暂停项继续保留。
+- 浏览器本地检查：ENFJ直达报告320/375/390/430/960px无横向溢出；点击目录后亲近关系章节展开、核心仍展开，定位标题距视口顶部约20px；ENFJ搜索仅显示一项。阶段1生产CI与Cloudflare均已成功。

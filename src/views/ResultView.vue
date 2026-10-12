@@ -9,7 +9,7 @@
         <p v-if="route.query.unsaved === '1'" role="status" class="notice">
           {{ $t('result.storageWarning') }}
         </p>
-        <ResultCard :type="result.type" :percents="result.percents"
+        <ResultCard ref="reportRef" :type="result.type" :percents="result.percents"
           ><template #action
             ><button class="hero-save" :disabled="generating" @click="savePoster">
               {{ $t('result.shareBtn') }} ↓
@@ -60,16 +60,14 @@
         <router-link to="/" class="secondary-button">{{ $t('result.backHome') }}</router-link>
       </div>
     </main>
-    <div v-if="result" class="result-dock">
-      <button class="primary-button" :disabled="generating" @click="savePoster">
-        {{ $t(generating ? 'share.generating' : 'result.shareBtn') }} ↓
-      </button>
-    </div>
+<ReportDock v-if="result" @contents="reportRef?.contents()" @share="savePoster" />
   </div>
 </template>
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
+import ReportDock from '../components/ReportDock.vue'
+const reportRef=ref(null)
 import LangToggle from '../components/LangToggle.vue'
 import ResultCard from '../components/ResultCard.vue'
 import ShareCard from '../components/ShareCard.vue'

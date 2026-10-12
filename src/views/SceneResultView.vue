@@ -75,6 +75,6 @@ const posterModel = computed(() => ({
 </script>
 <style scoped>
 .scene-hero {
-  background: #fff0df;
+  background: #f8f9fb;
 }
 </style>
