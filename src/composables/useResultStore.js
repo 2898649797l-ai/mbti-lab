@@ -40,6 +40,12 @@ function parseEntry(raw) {
   return { ...value, type }
 }
 export function useResultStore() {
+  function peek() {
+    if (handoffResult) return handoffResult
+    try { const fresh = parseEntry(sessionStorage.getItem(SESSION_KEY)); if (fresh) return fresh } catch { /* unavailable */ }
+    if (volatileResult) return volatileResult
+    try { return parseEntry(localStorage.getItem(HISTORY_KEY)) } catch { return null }
+  }
   function submit(result) {
     const entry = { ...result, completedAt: Date.now() }
     handoffResult = entry
@@ -85,5 +91,5 @@ export function useResultStore() {
       return null
     }
   }
-  return { submit, load }
+  return { submit, load, peek }
 }

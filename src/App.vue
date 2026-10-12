@@ -20,6 +20,7 @@
 <script setup>
 import { RouterView, useRoute } from 'vue-router'
 import { watch } from 'vue'
+import './styles/features.css'
 import { useI18n } from 'vue-i18n'
 const route = useRoute()
 const { t, locale } = useI18n()
