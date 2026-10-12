@@ -1,5 +1,7 @@
 # Project guidance
 
+Read `AGENTS.md` and `PROJECT_STATUS.md` first. `PROJECT_STATUS.md` is the canonical project state and cross-device handoff record. Every change to code, content, tests, dependencies, configuration, workflows or other documentation must meaningfully update it in the same commit or PR: date, changed behavior, actual validation, remaining work and a handoff/change entry. Update it before ending work or switching devices; preserve user changes and never record unperformed checks as passed. The CI documentation check detects a missing update but does not write the record for you.
+
 Vue 3 / Vite / Hash Router, bilingual Chinese and English. Use Node24, npm ci, npm test -- --run, npm run build. No separate lint toolchain. Cloudflare Pages production tracks main; .github/workflows/mobile-checks.yml verifies tests and build.
 
 ## Architecture

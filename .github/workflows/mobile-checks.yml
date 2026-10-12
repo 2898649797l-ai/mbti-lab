@@ -11,6 +11,39 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require project status update
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE_SHA: ${{ github.event.before }}
+          CURRENT_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          base="${PR_BASE_SHA:-$PUSH_BASE_SHA}"
+          if [[ -z "$base" || "$base" =~ ^0+$ ]]; then
+            base="$(git hash-object -t tree /dev/null)"
+          fi
+          changed="$(git diff --name-only --no-renames "$base" "$CURRENT_SHA")"
+          if [[ -z "$changed" ]]; then
+            echo "No project changes to check."
+            exit 0
+          fi
+          if ! git cat-file -e "$CURRENT_SHA:PROJECT_STATUS.md"; then
+            echo "::error::PROJECT_STATUS.md must remain in the repository."
+            exit 1
+          fi
+          updated=false
+          while IFS= read -r path; do
+            if [[ "$path" == "PROJECT_STATUS.md" ]]; then
+              updated=true
+            fi
+          done <<< "$changed"
+          if [[ "$updated" != true ]]; then
+            echo "::error::Update PROJECT_STATUS.md with the change, validation and remaining work in this commit or PR."
+            exit 1
+          fi
+          echo "PROJECT_STATUS.md was updated with the project changes."
       - uses: actions/setup-node@v4
         with:
           node-version: 24

@@ -1,5 +1,7 @@
 # 性格探索 / Personality Explorer
 
+跨设备开发先阅读[项目详细信息与当前进度](PROJECT_STATUS.md)和[开发维护要求](AGENTS.md)。每次项目内容更新必须在同一提交或PR中同步更新进度记录；具体流程、兼容约定、验证状态和待办均以该记录为入口。
+
 面向手机的中英文人格与生活场景自我探索网站，免费免登录，部署在 https://mbti-lab.pages.dev/ 。基于 OctopusGarage / MBTI Lab；本副本保留原60/93题及其计分方式。
 
 ## 当前功能
