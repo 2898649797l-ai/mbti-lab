@@ -60,10 +60,6 @@ const entries = Object.values(sceneTests).map((test, i) => ({
   font-size: 14px;
   font-weight: 700;
 }
-.explore-scene:nth-of-type(2) {
-  background: #edf5dd;
-}
-.explore-scene:nth-of-type(3) {
-  background: #fff0df;
-}
+
+
 </style>

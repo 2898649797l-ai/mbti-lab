@@ -12,13 +12,14 @@
     <p v-if="invalid" role="status" class="notice">{{ $t('test.invalidDraft') }}</p>
     <p v-if="!available" role="status" class="notice">{{ $t('test.storageWarning') }}</p>
     <h1 class="scene-question">{{ test.questions[index].prompt[locale] }}</h1>
-    <p class="feature-muted">{{ $t('scene.answerHint') }}</p>
+    <p class="feature-muted">{{ $t('scene.answerHint') }} · {{ $t('ux.auto') }}</p>
     <fieldset class="scene-choices">
       <legend class="sr-only">{{ $t('scene.scaleLabel') }}</legend>
       <label
         v-for="choice in choices"
         :key="choice"
         :class="{ selected: answers[index] === choice }"
+        @click="choose(choice)"
         ><input
           type="radio"
           name="scene-choice"
@@ -32,12 +33,10 @@
     <div class="quiz-actions">
       <button class="secondary-button" :disabled="index === 0 || submitting" @click="back">
         {{ $t('test.prev') }}</button
-      ><button class="primary-button" :disabled="!answers[index] || submitting" @click="next">
-        {{ $t(index === 11 ? 'scene.finish' : 'scene.next') }} →
-      </button>
+      >
     </div>
     <p class="feature-muted" role="status">{{ $t(available ? 'test.saved' : 'test.unsaved') }}</p>
-    <button class="text-button" @click="confirmRestart = true">{{ $t('scene.restart') }}</button>
+    <button class="text-button" :disabled="submitting" @click="confirmRestart = true">{{ $t('scene.restart') }}</button>
     <section
       v-if="confirmRestart"
       class="feature-card"
@@ -50,7 +49,7 @@
         {{ $t('home.keepDraft') }}
       </button>
     </section>
-    <p v-if="failure" class="notice" role="alert">{{ $t('scene.incomplete') }}</p>
+    <section v-if="failure" class="notice" role="alert"><p>{{ $t('scene.incomplete') }}</p><button class="secondary-button" @click="finish">{{ $t('ux.retry') }}</button></section>
   </main>
   <main v-else class="feature-main">
     <h1>{{ $t('scene.unknown') }}</h1>
@@ -58,7 +57,7 @@
   </main>
 </template>
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onUnmounted, nextTick } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import LangToggle from '../components/LangToggle.vue'
@@ -78,10 +77,14 @@ const id = computed(() => String(route.params.testId)),
   confirmRestart = ref(false),
   submitting = ref(false),
   failure = ref(false)
+let timer = null
+function cancel() { clearTimeout(timer); timer = null }
+onUnmounted(cancel)
 watch(
   id,
   () => {
-    confirmRestart.value = false
+    cancel()
+    confirmRestart.value = route.query.restart === '1'
     submitting.value = false
     failure.value = false
     if (!test.value) return
@@ -90,6 +93,7 @@ watch(
     available.value = state.available
     answers.value = state.draft ? [...state.draft.answers] : Array(12).fill(null)
     index.value = state.draft?.currentIndex || 0
+    if (answers.value.every(a => a !== null)) nextTick(finish)
   },
   { immediate: true },
 )
@@ -97,24 +101,27 @@ function save() {
   available.value = store.saveDraft(id.value, answers.value, index.value)
 }
 function choose(choice) {
+  if (submitting.value || !choices.includes(choice)) return
+  submitting.value = true
   answers.value[index.value] = choice
   failure.value = false
   save()
+  timer = setTimeout(() => {
+    timer = null
+    if (index.value === 11) finish()
+    else { index.value++; save(); submitting.value = false; scroll() }
+  }, 280)
 }
+function scroll() { nextTick(() => window.scrollTo?.({ top: 0, behavior: 'instant' })) }
 function back() {
-  if (index.value > 0) {
+  if (!submitting.value && index.value > 0) {
     index.value--
     save()
+    scroll()
   }
 }
-function next() {
-  if (!answers.value[index.value] || submitting.value) return
-  if (index.value < 11) {
-    index.value++
-    save()
-    window.scrollTo?.({ top: 0 })
-    return
-  }
+function finish() {
+  if (!test.value || !answers.value.every(a => a !== null)) return
   submitting.value = true
   try {
     const result = testRegistry[id.value].score(answers.value),
@@ -127,6 +134,8 @@ function next() {
   }
 }
 function restart() {
+  cancel()
+  submitting.value = false
   store.clearDraft(id.value)
   answers.value = Array(12).fill(null)
   index.value = 0
@@ -181,7 +190,7 @@ progress {
 }
 .quiz-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 10px;
   position: sticky;
   bottom: 0;

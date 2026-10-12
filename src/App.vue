@@ -1,12 +1,14 @@
 <template>
   <div class="app-shell">
-    <RouterView />
+    <RouterView :key="route.fullPath" />
+    <BottomNav v-if="showNav" />
     <footer
       v-if="
         route.path !== '/test' &&
         (!route.path.startsWith('/quiz/') || route.path.endsWith('/result'))
       "
       class="site-footer"
+      :style="showNav ? { paddingBottom: 'calc(100px + env(safe-area-inset-bottom))' } : {}"
       :class="{ 'result-footer': route.path === '/result' }"
     >
       <p>{{ $t('app.privacy') }}</p>
@@ -16,10 +18,12 @@
 </template>
 <script setup>
 import { RouterView, useRoute } from 'vue-router'
-import { watch } from 'vue'
+import BottomNav from './components/BottomNav.vue'
+import { computed, watch } from 'vue'
 import './styles/features.css'
 import { useI18n } from 'vue-i18n'
 const route = useRoute()
+const showNav = computed(() => !['/test', '/result'].includes(route.path) && !route.path.startsWith('/quiz/') && !route.path.startsWith('/p/'))
 const { t, locale } = useI18n()
 watch(
   locale,
@@ -39,21 +43,21 @@ watch(
   padding: 0;
 }
 :root {
-  --cream: #fffaf1;
-  --cream-border: #e9dfcf;
+  --cream: #ffffff;
+  --cream-border: #e1e3e8;
   --gold: #93612d;
-  --ink: #272139;
-  --ink-light: #655d73;
+  --ink: #25262c;
+  --ink-light: #61636d;
   --blue: #6840c8;
   --blue-mid: #7955ce;
   --blue-light: #eee6ff;
   --white: #fff;
-  --bg: #fffaf1;
-  --radius: 22px;
+  --bg: #ffffff;
+  --radius: 14px;
   --shadow: 0 6px 24px #42315e0a;
 }
 html {
-  background: #ede8e1;
+  background: #f4f5f7;
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
@@ -115,7 +119,7 @@ textarea:focus-visible {
   height: 20px;
   border-radius: 7px;
   background: var(--blue);
-  transform: rotate(-12deg);
+
   display: inline-block;
 }
 .text-button {
@@ -134,7 +138,7 @@ textarea:focus-visible {
   justify-content: center;
   width: 100%;
   min-height: 54px;
-  border-radius: 18px;
+  border-radius: 12px;
   padding: 14px 20px;
   font-weight: 700;
   text-align: center;
