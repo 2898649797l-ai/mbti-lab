@@ -1,85 +1,43 @@
-# MBTI Lab
+# 性格探索 / Personality Explorer
 
-此副本正在准备中文测试版，临时名称为“性格探索”。Cloudflare Pages 部署配置和公开推广前的待办见 [部署说明](docs/CLOUDFLARE_DEPLOY.md)。原项目作者为 OctopusGarage，以下为上游项目说明；功能描述应以当前代码和实测为准。
+面向手机的中英文人格与生活场景自我探索网站，免费免登录，部署在 https://mbti-lab.pages.dev/ 。基于 OctopusGarage / MBTI Lab；本副本保留原60/93题及其计分方式。
 
-A bilingual MBTI personality test with rich results, share cards, and offline-friendly browser delivery.
+## 当前功能
 
-Your most recent assessment result is saved in the browser, so you can revisit the full report in the same browser at any time after completing the test.
+- 16类中英文详细报告：具体生活故事、友情与亲近关系、学习与工作、优势与盲点、成长建议、四个相邻类型区别；中文正文约1042–1119字。
+- 原人格测试支持草稿恢复、返回改答与最近结果；45%–55%显示两侧接近，图表按需展开。
+- 三项原创生活小测：聊天与回应、距离与边界、分歧与修复。各12题、两轴、五级回答；每项独立保存草稿和最近结果，可独立完成。
+- 我的人格主页：分享前选择字段，四维比例与小测默认不公开。版本化结果通过URL fragment携带，不含原始答案；昵称最多20个Unicode字符，完整链接最多2000字符。
+- 朋友对照：手选类型或读取本站快照，分友情与亲密关系情境；仅在双方允许时显示数值，不提供契合度或关系预测。
+- 原人格卡及新增个人说明卡、双人卡、小测卡：1080×1440 PNG，导出前预览，二维码默认首页，也可选择已预览的快照。
 
-[![Deploy](https://github.com/OctopusGarage/mbti-lab/actions/workflows/deploy.yml/badge.svg)](https://github.com/OctopusGarage/mbti-lab/actions/workflows/deploy.yml)
-[![Vue](https://img.shields.io/badge/Vue-3-42b883?logo=vuedotjs&logoColor=white)](https://vuejs.org)
-[![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)](https://vite.dev)
-![License](https://img.shields.io/badge/license-MIT-yellow)
+## 本地开发
 
-**Live:** https://octopusgarage.github.io/mbti-lab/
+Node 24：
 
-## Why
-
-Personality tests often hide the useful report behind registration, ads, or a paywall. MBTI Lab keeps the whole flow in the browser: answer, see the result, export a share card, and leave without giving up personal data.
-
-## Features
-
-- **16 personality types** - complete four-letter type output with descriptions and matches.
-- **Two test lengths** - short mode with 60 questions, full mode with 93 questions.
-- **Rich report** - strengths, careers, representative people, compatible types, and type appendix.
-- **Visual results** - dimension bars and a radar chart powered by ECharts.
-- **Share card** - export a designed result image with a QR code back to the app.
-- **Bilingual** - Chinese and English can be switched at any time.
-- **Offline capable** - works as a PWA after first load.
-- **Private by default** - result history stays in local browser storage.
-
-## Quick Start
-
-```bash
-npm install
+```sh
+npm ci
 npm run dev
-```
-
-Open `http://localhost:5173/mbti-lab/`.
-
-Production checks:
-
-```bash
+npm test -- --run
 npm run build
-npm test
 ```
 
-## RalphWorks issue and PR workflows
+Vue 3、Vite、Hash Router、Vue I18n、ECharts、html2canvas、QRCode。没有新增生产依赖、服务器API、数据库、统计、支付、账号或私信。Cloudflare Pages以main为生产分支；GitHub Pages工作流仅手动触发。
 
-Maintainers can add `ralphworks:run` to an open issue to start a checked implementation run. A successful run opens a draft PR and requests a model review. Other labels handle PRD sub-issues, dependency queues, PR feedback, and branch updates. This repository checks implementation changes with `npm test -- --run && npm run build`; maintainers review and merge the resulting PRs.
+## 数据与解释
 
-See the [RalphWorks issue and PR workflow guide](https://github.com/OctopusGarage/ralphworks/blob/main/docs/ISSUE_WORKFLOWS.md) for setup, labels, and retry steps.
+答案与最近结果保存在本机浏览器。主动分享的快照对持有链接者可见，旧链接不能撤回。访问别人主页不会覆盖自己的结果；快照没有认证标识。
 
-## Product Flow
+四维百分比是原问卷的答案分布，不是能力或准确率。原计分独立四舍五入时两侧可能合计101，新快照保留两侧原值并兼容早期四值格式。场景小测的0–100倾向值不是百分位；全中立答案保留两侧接近，也可能只是信息不足。报告与小测均供探索讨论，不声称心理测量验证，不作为诊断、职业或关系决策依据。
 
-| Step | What happens |
-|---|---|
-| Choose mode | Pick short or full assessment based on time available. |
-| Answer questions | Progress is tracked locally while the user moves through the test. |
-| Reveal type | The app computes the four MBTI dimensions and shows the type profile. |
-| Explore report | Users can inspect strengths, careers, matches, and the 16-type appendix. |
-| Share | Export an image card without signing in. |
+## 维护与发布
 
-To start an assessment, choose a test length on the home page — short with 60 questions or full with 93 — and the question loop begins at `/test`.
-After the final question, the app opens the result report at `/result` with the four-letter type, per-dimension percentages, and a radar chart, and the last result is kept in local browser storage so the home page can link back to it for later viewing.
+- [本轮验收和阶段部署](docs/CONTENT_SOCIAL_RELEASE.md)
+- [Cloudflare部署与回退](docs/CLOUDFLARE_DEPLOY.md)
+- [材料来源状态](docs/CONTENT_SOURCES.md)
 
-## Tech Stack
+r1人格报告字典与生活小测v1发布后保持不变；未来内容修改创建新版本并保留旧字典。既有mbti_result、mbti_lab_result及原草稿键继续兼容；场景数据按测试ID使用独立键。
 
-Vue 3, Vite, Vue Router, Vue I18n, ECharts, html2canvas, QRCode, Vitest.
+上游README标注MIT，但尚未核实完整授权文本及原题库/图标来源；按用户要求本轮暂缓核实，不标为已确认授权。新增故事、题目和解释为本轮原创编辑内容，系统字体与CSS图形，无新增图库素材。
 
-## Add to Home Screen
-
-MBTI Lab can run as a standalone app:
-
-- **iOS:** open in Safari, tap Share, choose "Add to Home Screen".
-- **Android:** open in Chrome, choose "Install app" or "Add to Home screen".
-- **Desktop:** open in Chrome or Edge, use the install action in the address bar.
-
-## Related
-
-- [Bracket Guess](https://github.com/OctopusGarage/bracket-guess) - a browser-only bracket picker and poster exporter.
-- [OctopusGarage](https://github.com/OctopusGarage) - small tools for AI agents, local automation, and browser-native products.
-
-## License
-
-MIT
+功能参考alfredang/mbti、kenimo49/persona-hub、swampus/ocean-badges，只借鉴功能组织和设计方式，未复制其代码、题目或插画。原作者署名保留：[OctopusGarage/mbti-lab](https://github.com/OctopusGarage/mbti-lab)。
