@@ -86,12 +86,14 @@ function onAnswer(choice) {
       currentIndex.value++
       persist()
       busy.value = false
+      window.scrollTo?.({ top: 0, behavior: 'instant' })
     }
   }, 280)
 }
 function back() {
   if (!busy.value) {
     goBack()
+    window.scrollTo?.({ top: 0, behavior: 'instant' })
     persist()
   }
 }

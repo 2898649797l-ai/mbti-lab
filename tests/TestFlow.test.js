@@ -31,6 +31,7 @@ const seedResult = {
   },
 }
 beforeEach(() => {
+  vi.stubGlobal('scrollTo', vi.fn())
   vi.stubGlobal('localStorage', storage())
   vi.stubGlobal('sessionStorage', storage())
   useResultStore().submit(seedResult)

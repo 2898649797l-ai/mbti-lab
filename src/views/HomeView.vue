@@ -8,12 +8,7 @@
       <div class="eyebrow">{{ $t('home.eyebrow') }}</div>
       <h1>{{ $t('home.headline') }}</h1>
       <p class="intro">{{ $t('app.subtitle') }}</p>
-      <div class="personality-orbit" aria-hidden="true">
-        <span class="orbit-sticker sticker-one">INFP</span><span class="orbit-star">✳</span
-        ><span class="orbit-sticker sticker-two">ENTP</span
-        ><span class="orbit-sticker sticker-three">ISFJ</span
-        ><span class="orbit-caption">{{ $t('home.orbit') }}</span>
-      </div>
+
       <p v-if="invalid" role="status" class="notice">{{ $t('test.invalidDraft') }}</p>
       <p v-if="!storageAvailable" role="status" class="notice">{{ $t('test.storageWarning') }}</p>
       <div class="start-options">
@@ -44,6 +39,9 @@
           >{{ $t('home.lastResultLabel') }} <strong>{{ lastResult.type }}</strong></span
         ><span>{{ $t('home.viewLastResult') }}</span></router-link
       >
+      <section><h2>{{ $t('scene.exploreTitle') }}</h2>
+        <article v-for="entry in entries" :key="entry.test.id" class="scene-entry-card"><h3>{{ entry.test.title[locale] }}</h3><p>{{ entry.test.description[locale] }}</p><span>{{ $t('scene.twelve') }}</span><router-link :to="'/quiz/' + entry.test.id">{{ entry.draft.draft ? $t('scene.continue', {current: entry.draft.draft.currentIndex + 1}) : $t('scene.start') }} →</router-link></article>
+      </section>
       <section class="explore-card">
         <span class="explore-symbol" aria-hidden="true">✦</span>
         <div>
@@ -55,9 +53,6 @@
       <button class="text-button recommend" @click="showPanel = true">
         {{ $t('share.shareApp') }} ↗
       </button>
-      <router-link to="/explore" class="secondary-button scene-entry"
-        >{{ $t('scene.exploreTitle') }} →</router-link
-      >
       <nav class="feature-nav" :aria-label="$t('social.navigation')">
         <router-link to="/profile">{{ $t('social.myProfile') }} →</router-link
         ><router-link to="/compare">{{ $t('social.compareTitle') }} →</router-link>
@@ -90,13 +85,20 @@
 </template>
 <script setup>
 import { ref, onMounted, watch, nextTick } from 'vue'
-import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import { sceneTests } from '../data/testRegistry.js'
+import { useSceneStore } from '../composables/useSceneStore.js'
+import { useRouter, useRoute } from 'vue-router'
 import LangToggle from '../components/LangToggle.vue'
 import SharePanel from '../components/SharePanel.vue'
 import { useResultStore } from '../composables/useResultStore.js'
 import { useDraftStore } from '../composables/useDraftStore.js'
+const { locale } = useI18n()
+const scenes = useSceneStore()
+const entries = Object.values(sceneTests).map(test => ({ test, draft: scenes.loadDraft(test.id) }))
 const router = useRouter(),
   store = useDraftStore()
+const route = useRoute()
 const lastResult = ref(null),
   draft = ref(null),
   invalid = ref(false),
@@ -128,6 +130,7 @@ onMounted(() => {
   draft.value = state.draft
   invalid.value = state.invalid
   storageAvailable.value = state.available
+  if (route.query.restart === '1') start('short')
 })
 function start(mode) {
   if (draft.value) pendingMode.value = mode
@@ -161,7 +164,7 @@ function resume() {
   letter-spacing: 0.1em;
 }
 h1 {
-  font-size: clamp(34px, 10vw, 44px);
+  font-size: clamp(30px, 8vw, 36px);
   line-height: 1.22;
   letter-spacing: -0.04em;
   margin: 18px 0 12px;

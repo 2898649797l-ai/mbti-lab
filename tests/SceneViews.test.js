@@ -11,12 +11,14 @@ import zh from '../src/locales/zh.json'
 import en from '../src/locales/en.json'
 let wrapper, router
 beforeEach(() => {
+  vi.useFakeTimers()
   localStorage.clear()
   sessionStorage.clear()
   vi.stubGlobal('scrollTo', vi.fn())
 })
 afterEach(() => {
   wrapper?.unmount()
+  vi.useRealTimers()
   vi.unstubAllGlobals()
 })
 async function open(path) {
@@ -44,11 +46,41 @@ async function open(path) {
   await flushPromises()
 }
 describe('scene quiz interactions', () => {
+  it('locks answers and back during feedback, and cancels on test switch', async () => {
+    await open('/quiz/chat')
+    await wrapper.findAll('input[type="radio"]')[4].setValue(true)
+    expect(wrapper.findAll('input[type="radio"]').every(r => r.element.disabled)).toBe(true)
+    await wrapper.find('.quiz-actions .secondary-button').trigger('click')
+    expect(useSceneStore().loadDraft('chat').draft.currentIndex).toBe(0)
+    await router.push('/quiz/boundaries')
+    await flushPromises()
+    await vi.advanceTimersByTimeAsync(280)
+    expect(wrapper.text()).toContain('1 / 12')
+    expect(useSceneStore().loadDraft('boundaries').draft).toBeNull()
+  })
+  it('delivers an all-answered restored draft without another click', async () => {
+    useSceneStore().saveDraft('chat', Array(12).fill(3), 11)
+    await open('/quiz/chat')
+    await flushPromises()
+    expect(router.currentRoute.value.path).toBe('/quiz/chat/result')
+    expect(useSceneStore().loadDraft('chat').draft).toBeNull()
+  })
+  it('cancels feedback on exit but keeps the chosen answer', async () => {
+    await open('/quiz/chat')
+    await wrapper.findAll('input[type="radio"]')[3].setValue(true)
+    await router.push('/explore')
+    await flushPromises()
+    await vi.advanceTimersByTimeAsync(280)
+    expect(useSceneStore().loadDraft('chat').draft.currentIndex).toBe(0)
+    expect(useSceneStore().loadDraft('chat').draft.answers[0]).toBe(4)
+  })
   it('saves each choice, restores after remount and permits earlier answer changes', async () => {
     await open('/quiz/chat')
     await wrapper.findAll('input[type="radio"]')[4].setValue(true)
-    await wrapper.find('.quiz-actions .primary-button').trigger('click')
+    await vi.advanceTimersByTimeAsync(280)
     await wrapper.findAll('input[type="radio"]')[1].setValue(true)
+    await vi.advanceTimersByTimeAsync(280)
+    await wrapper.find('.quiz-actions .secondary-button').trigger('click')
     await wrapper.find('.quiz-actions .secondary-button').trigger('click')
     expect(wrapper.findAll('input[type="radio"]')[4].element.checked).toBe(true)
     await wrapper.findAll('input[type="radio"]')[0].setValue(true)
@@ -62,10 +94,10 @@ describe('scene quiz interactions', () => {
     async (id) => {
       localStorage.setItem('mbti_lab_result', 'preserve-me')
       await open('/quiz/' + id)
-      expect(wrapper.find('.quiz-actions .primary-button').attributes('disabled')).toBeDefined()
+      expect(wrapper.find('.quiz-actions .secondary-button').attributes('disabled')).toBeDefined()
       for (let i = 0; i < 12; i++) {
         await wrapper.findAll('input[type="radio"]')[2].setValue(true)
-        await wrapper.find('.quiz-actions .primary-button').trigger('click')
+        await vi.advanceTimersByTimeAsync(280)
         await flushPromises()
       }
       expect(router.currentRoute.value.path).toBe('/quiz/' + id + '/result')

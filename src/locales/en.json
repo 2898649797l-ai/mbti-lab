@@ -62,10 +62,22 @@
     "notFound": "No result found.",
     "backHome": "← Back to home",
     "dimLabel": {
-      "EI": ["Extraverted E", "Introverted I"],
-      "NS": ["Intuitive N", "Observant S"],
-      "FT": ["Feeling F", "Thinking T"],
-      "JP": ["Judging J", "Prospecting P"]
+      "EI": [
+        "Extraverted E",
+        "Introverted I"
+      ],
+      "NS": [
+        "Intuitive N",
+        "Observant S"
+      ],
+      "FT": [
+        "Feeling F",
+        "Thinking T"
+      ],
+      "JP": [
+        "Judging J",
+        "Prospecting P"
+      ]
     },
     "tagline": "You in one line",
     "daily": "You in everyday life",
@@ -234,5 +246,23 @@
     "resultMissing": "No valid result for this quiz is available here, or its saved version is incompatible. You can restart without clearing other results.",
     "posterSubtitle": "An emphasis in this answer set, not a definition of you",
     "details": "Expand relationship suggestions and sample wording"
+  },
+  "ux": {
+    "navigation": "Main navigation",
+    "test": "Test",
+    "explore": "Explore",
+    "results": "Results",
+    "resultsTitle": "Results on this device",
+    "localOnly": "Only the latest records in this browser appear here. They do not sync between devices.",
+    "unfinished": "Continue a test",
+    "completed": "Recently completed",
+    "personality": "Personality test",
+    "view": "View result",
+    "unknownDate": "Earlier record · date unknown",
+    "empty": "No test records yet",
+    "emptyHint": "Start the 60-question personality test or explore a 12-question life quiz.",
+    "auto": "Your choice advances automatically",
+    "retry": "Retry result",
+    "retest": "Retake test"
   }
 }
