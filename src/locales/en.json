@@ -4,7 +4,6 @@
     "subtitle": "Explore your personality preferences through everyday choices",
     "privacy": "Answers and recent results stay in this browser; there is no result-upload API. Voluntarily shared results travel in the snapshot link, visible to anyone with it. Hosting may process necessary access logs.",
     "disclaimer": "For self-exploration only. This is not the official MBTI assessment or a medical diagnosis. Type descriptions should not determine career or relationship decisions.",
-    "credit": "Based on the OctopusGarage / MBTI Lab open-source project",
     "switchLanguage": "Switch language"
   },
   "home": {
@@ -18,7 +17,7 @@
     "eyebrow": "GET TO KNOW YOUR EVERYDAY SELF",
     "headline": "You are more\nthan four letters.",
     "orbit": "Every type has its own spark",
-    "free": "Free · No sign-in",
+    "noSignIn": "No sign-in",
     "continue": "Continue your test",
     "draftProgress": "Saved at question {current} of {total}",
     "restartShort": "Start a new 60-question test",
@@ -102,7 +101,7 @@
     "retry": "Generate again",
     "help": "Save the image and share it yourself in a post or chat.",
     "caption": "My personality preference: {type} · {nickname}\n{tagline}\nExplore yours: {url}\n#PersonalityExplorer #PersonalityTest",
-    "appCaption": "Explore your personality preferences through everyday choices. Free, no sign-in: {url}",
+    "appCaption": "Explore your personality preferences through everyday choices. No sign-in: {url}",
     "posterTitle": "PERSONALITY EXPLORER CARD",
     "posterNote": "For reflection · You are more than a type"
   },
