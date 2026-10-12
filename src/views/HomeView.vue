@@ -55,6 +55,7 @@
       <button class="text-button recommend" @click="showPanel = true">
         {{ $t('share.shareApp') }} ↗
       </button>
+      <nav class="feature-nav" :aria-label="$t('social.navigation')"><router-link to="/profile">{{ $t('social.myProfile') }} →</router-link><router-link to="/compare">{{ $t('social.compareTitle') }} →</router-link></nav>
     </main>
     <SharePanel v-if="showPanel" @close="showPanel = false" />
     <div

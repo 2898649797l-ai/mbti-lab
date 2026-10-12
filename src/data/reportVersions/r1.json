@@ -1,0 +1,3005 @@
+{
+  "version": "r1",
+  "dimensions": {
+    "E": [
+      "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。",
+      "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+    ],
+    "I": [
+      "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。",
+      "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+    ],
+    "N": [
+      "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。",
+      "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+    ],
+    "S": [
+      "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。",
+      "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+    ],
+    "F": [
+      "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。",
+      "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+    ],
+    "T": [
+      "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。",
+      "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+    ],
+    "J": [
+      "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。",
+      "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+    ],
+    "P": [
+      "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。",
+      "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+    ]
+  },
+  "balanced": {
+    "zh": [
+      {
+        "key": "EI",
+        "letter": "E",
+        "close": true,
+        "text": "这次 E/I 两侧接近：你可能在熟悉话题里愿意表达，在陌生或疲惫的情境里需要安静。先观察当时的精力与关系，不必用“强烈外向”或“始终内向”概括自己。"
+      },
+      {
+        "key": "NS",
+        "letter": "N",
+        "close": true,
+        "text": "这次 N/S 两侧接近：你可以从具体经历切入，也会关心背后的可能。先确认事实，再讨论意义，未必要固定使用一种理解方式。"
+      },
+      {
+        "key": "FT",
+        "letter": "F",
+        "close": true,
+        "text": "这次 F/T 两侧接近：你可能同时考虑人的感受与方案的依据。两者不是互相排斥的能力，不同情境下的优先顺序也可能改变。"
+      },
+      {
+        "key": "JP",
+        "letter": "J",
+        "close": true,
+        "text": "这次 J/P 两侧接近：你可能想把重要安排讲清楚，也希望小事留有余地。可以对关键承诺设时间，其他步骤保留弹性。"
+      }
+    ],
+    "en": [
+      {
+        "key": "EI",
+        "letter": "E",
+        "close": true,
+        "text": "E/I is close in this answer set. A familiar topic may invite participation while fatigue or an unfamiliar setting calls for quiet. Consider energy and context rather than a strong categorical description."
+      },
+      {
+        "key": "NS",
+        "letter": "N",
+        "close": true,
+        "text": "N/S is close in this answer set. Concrete experience and its possibilities may both matter. Check facts before discussing meaning without fixing one approach."
+      },
+      {
+        "key": "FT",
+        "letter": "F",
+        "close": true,
+        "text": "F/T is close in this answer set. Feelings and evidence can both matter; they are not mutually exclusive abilities, and priorities may change with context."
+      },
+      {
+        "key": "JP",
+        "letter": "J",
+        "close": true,
+        "text": "J/P is close in this answer set. Important plans may need clarity while smaller details stay open. Set times for commitments and allow flexibility elsewhere."
+      }
+    ]
+  },
+  "profiles": {
+    "INTJ": {
+      "nickname": {
+        "zh": "策略家",
+        "en": "The Strategist"
+      },
+      "tagline": {
+        "zh": "脑内先画路线图，再一步步把想法落地。",
+        "en": "You map the route in your head before bringing an idea to life."
+      },
+      "strengths": {
+        "zh": [
+          "长线思考",
+          "独立判断",
+          "规划能力"
+        ],
+        "en": [
+          "Long-term thinking",
+          "Independent judgment",
+          "Planning"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能更在意一件事最终要通向哪里。朋友提出周末出游，你会先考虑这次是想休息还是想探索，再安排路线。这样的认真能减少反复，但不是每次相处都需要最优解；有时一起走一段路，本身就是目的。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里同时出现十个点子时，你可能先在脑中筛掉互相矛盾的选项，再发出一份简短方案。别人只看见结论，未必看见你已经比较过多少路线。补一句“我这样安排是因为……”能让提议变成邀请，而不是通知。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友反复聊同一个困扰，你可能会尝试找出背后的模式，提出一个长期办法。对方却可能只想先被听见。可以先问“你希望我听你说，还是一起想办法？”；准确识别这次对话的任务，比给出更漂亮的答案更有帮助。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能通过认真记住一个约定、一起规划未来来表达重视，却不习惯频繁汇报心情。亲近的人容易把安静误读成疏远。与其等待对方理解你的行动，不如把“我很在意，只是需要一点整理时间”说出来，并约好再谈的时间。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习新技能时，你可能先搭框架，再决定哪些细节值得投入。工作里你愿意为清晰目标负责，但不喜欢没有理由的重复修改。把“必须完成”与“可以优化”分开，先交出可验证的小版本，能防止规划比实践走得太远。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "计划突然被打乱时，你可能急着恢复结构，把别人的犹豫理解为低效率。这个反应也可能来自疲惫或时间压力，不是类型独有的问题。先问变化发生了什么，再决定哪些安排真的不能动，可以避免用控制感代替沟通。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "先把“我希望达到什么”写成一句话，再找一件今天就能验证的小事。与人协作时，把你的判断依据和还不确定的部分同时说清楚。别人提出不同路线，不一定是在否定你；它也可能补上你看不到的条件。"
+              ]
+            }
+          ],
+          "quirks": [
+            "脑内路线图已更新，现实版本还在加载。",
+            "关心你，所以认真研究了三种方案。",
+            "我的安静不是退出，是正在整理。"
+          ],
+          "neighbors": [
+            {
+              "type": "ENTJ",
+              "text": "同一场聚会，ENTJ的故事侧重在互动里整理想法，INTJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ISTJ",
+              "text": "同一个邀约，INTJ的故事侧重可能性和意义，ISTJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "INFJ",
+              "text": "同一次分歧，INFJ的故事先看对人的影响，INTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "INTP",
+              "text": "同一次改计划，INTJ的故事重视明确约定，INTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "长线思考",
+            "独立判断",
+            "规划能力"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may care about where an activity is leading. When friends suggest a weekend trip, you first ask whether the aim is rest or discovery, then plan the route. This can prevent rework, but not every shared moment needs an optimal solution. Sometimes walking together is the point."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "When a group chat produces ten ideas, you may quietly filter out conflicting options before posting a short plan. Others see the conclusion, not the alternatives you considered. Adding “My reason is…” makes the proposal an invitation rather than an announcement.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "When a friend repeatedly brings up the same difficulty, you may look for a pattern and a lasting solution. They may need to be heard first. Ask whether they want listening or problem-solving: identifying the task of this conversation matters more than producing a clever answer.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "You may show care by keeping a promise or planning a future together, without frequently narrating feelings. Someone close can misread silence as distance. Say that you care and need time to organize your thoughts, then agree on when to return to the conversation.",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "With a new skill, you may build a framework before choosing which details deserve attention. Clear goals help at work; unexplained revisions can frustrate you. Separate what must be delivered from what could be improved, and release a small testable version before the plan outruns practice.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "When plans change, you may rush to restore structure and read hesitation as inefficiency. Fatigue or a deadline can produce the same response in anyone. Ask what changed before deciding what must remain fixed; control is not a substitute for communication."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Write the goal in one sentence and choose one small experiment for today. In collaboration, share both your reasoning and what remains uncertain. Another route is not necessarily a rejection: it may reveal a constraint you have not seen."
+              ]
+            }
+          ],
+          "quirks": [
+            "The mental roadmap is updated; reality is still loading.",
+            "I care, so I considered three options.",
+            "Quiet does not mean gone; I am organizing."
+          ],
+          "neighbors": [
+            {
+              "type": "ENTJ",
+              "text": "At the same gathering, ENTJ illustrates thinking through interaction, while INTJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ISTJ",
+              "text": "For the same invitation, INTJ illustrates possibilities and meaning, while ISTJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "INFJ",
+              "text": "In the same disagreement, INFJ illustrates impact on people, while INTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "INTP",
+              "text": "When a plan changes, INTJ illustrates clear agreements and INTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Long-term thinking",
+            "Independent judgment",
+            "Planning"
+          ]
+        }
+      }
+    },
+    "INTP": {
+      "nickname": {
+        "zh": "逻辑玩家",
+        "en": "The Logic Explorer"
+      },
+      "tagline": {
+        "zh": "遇到一个问题，总想顺手拆开看看里面。",
+        "en": "Every question invites you to look under the hood."
+      },
+      "strengths": {
+        "zh": [
+          "分析思路",
+          "概念联想",
+          "求知欲"
+        ],
+        "en": [
+          "Analysis",
+          "Connecting ideas",
+          "Curiosity"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能更享受把问题拆开，而不是尽快选定一个答案。朋友问哪家店最好，你会顺手比较价格、距离和“最好”到底指什么。这样的探索能发现被忽略的条件，但有些日常决定只需要够用的答案，不需要一套完整理论。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊出现一个看似理所当然的说法，你可能忍不住补上例外或追问定义。你想的是让讨论更准确，别人却可能觉得你在抬杠。先说明“我是在好奇这个例外”，再判断大家是否想深入，能让分析保持轻盈。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "聊到喜欢的话题，你可能突然讲得很细；面对寒暄却一时不知道怎样接。朋友需要支持时，你也许把关心放进信息和建议里。试着先复述对方最在意的一句，再分享分析，能让知识真正接住一个人。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "亲近关系中，你可能需要不被打断的思考空间，同时又希望对方愿意分享内心世界。需求没有说清时，独处容易被理解成回避。约定“现在各自休息，晚些时候认真聊”，比一边沉默一边期待被理解更可靠。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习时你可能从一个问题跳到另一个问题，沿着兴趣钻得很深。工作里，发现更优解释会让你想重做方案。给探索和交付分别设时间，把还想研究的内容记到下一轮，能保护好奇心，也让伙伴知道何时能拿到成果。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力增大时，你可能继续收集信息，担心过早决定会错过关键因素。也可能只是任务含糊或资源不足。把“还缺什么证据”和“现在能做什么”分开，允许一个可逆的小决定，通常比等待彻底想明白更容易推进。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "选一个正在拖延的问题，写下“什么条件下我就行动”。向朋友解释想法时，先给一个生活例子，再补概念。你的推理不需要被简化成口号，但对方也需要一个能进入讨论的入口。"
+              ]
+            }
+          ],
+          "quirks": [
+            "不是没听见，我在检查前提。",
+            "话题对了，安静模式自动关闭。",
+            "再研究五分钟——最好真的设个闹钟。"
+          ],
+          "neighbors": [
+            {
+              "type": "ENTP",
+              "text": "同一场聚会，ENTP的故事侧重在互动里整理想法，INTP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ISTP",
+              "text": "同一个邀约，INTP的故事侧重可能性和意义，ISTP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "INFP",
+              "text": "同一次分歧，INFP的故事先看对人的影响，INTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "INTJ",
+              "text": "同一次改计划，INTJ的故事重视明确约定，INTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "分析思路",
+            "概念联想",
+            "求知欲"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may enjoy unpacking a question more than settling it quickly. Asked for the best restaurant, you compare price, distance, and what “best” means. Exploration reveals overlooked assumptions, but an everyday choice can use a sufficient answer without a complete theory."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "A seemingly obvious statement in a group chat may invite an exception or a question about definitions. You want accuracy; others may hear opposition. Explain your curiosity first and check whether the group wants a deeper discussion.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "A favorite topic can bring out detailed conversation while small talk leaves you unsure how to respond. Care may arrive as information or advice. Reflect the most important thing your friend said before adding analysis, so knowledge meets the person.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "You may need uninterrupted thinking time and also want access to a loved one’s inner world. Without explanation, time alone can look like avoidance. Agree on a quiet break and a later conversation instead of hoping silence will explain itself.",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Learning may lead you from one question into another, following curiosity deeply. A better explanation can tempt you to redo work. Give exploration and delivery separate time limits, and keep a list for the next round so curiosity and dependable progress can coexist.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may send you toward more information for fear of deciding too soon. An unclear task or missing resources may be the real issue. Separate evidence still needed from action possible now, and permit a small reversible decision."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "For one delayed decision, write down the conditions that would let you act. When explaining an idea, start with an everyday example before the concept. Your reasoning need not become a slogan, but the listener needs an entry point."
+              ]
+            }
+          ],
+          "quirks": [
+            "I heard you; I am checking the premise.",
+            "The right topic switches quiet mode off.",
+            "Five more minutes of research—set an actual timer."
+          ],
+          "neighbors": [
+            {
+              "type": "ENTP",
+              "text": "At the same gathering, ENTP illustrates thinking through interaction, while INTP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ISTP",
+              "text": "For the same invitation, INTP illustrates possibilities and meaning, while ISTP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "INFP",
+              "text": "In the same disagreement, INFP illustrates impact on people, while INTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "INTJ",
+              "text": "When a plan changes, INTJ illustrates clear agreements and INTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Analysis",
+            "Connecting ideas",
+            "Curiosity"
+          ]
+        }
+      }
+    },
+    "ENTJ": {
+      "nickname": {
+        "zh": "推进队长",
+        "en": "The Momentum Builder"
+      },
+      "tagline": {
+        "zh": "看见目标，就开始盘算怎样带大家向前。",
+        "en": "Once a goal appears, you start finding a way forward together."
+      },
+      "strengths": {
+        "zh": [
+          "组织推进",
+          "决策行动",
+          "目标意识"
+        ],
+        "en": [
+          "Organization",
+          "Decisive action",
+          "Goal awareness"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能习惯把愿望变成可执行的目标。朋友说想一起旅行，你会很快开始确认预算、分工和出发时间。推进力能让计划落地，但大家未必已经决定投入同样的精力。先确认这是认真筹备还是随口想象，可以减少落差。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊讨论很久还没有结论，你可能提出投票或直接整理可选方案。你在意的是大家不被拖住，别人也许还在表达顾虑。给犹豫留一个明确的提问环节，比把所有迟疑都当成阻力，更容易获得真正的配合。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友说最近很难，你可能立即帮他拆任务、找资源，甚至主动接手一部分。行动是你的支持方式，但对方仍需要保留自己的选择。先问他最想解决哪件事，再确认你能参与到哪里，让帮助成为合作而不是代办。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能希望关系里的重要问题能被明确讨论，而不是长期悬着。亲近的人有时需要更慢的情绪整理过程。把“我希望我们解决它”与“你现在就要给答案”区分开，约好时间再谈，可以同时保留诚意和空间。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习或工作中，你可能先看投入能带来什么成果，再安排资源。清晰责任会让你更投入，但人的状态不像进度表那样线性。除了检查完成度，也问问哪里卡住、需要什么支持，能减少靠个人加速维持整个团队的压力。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能把节奏拉得更快，语气也更直接。问题有时不是别人不够努力，而是目标本身已经超出容量。先重新检查范围与期限，再谈执行，可以避免把疲惫包装成意志不足，也保护自己的长期投入。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "下一次分配任务时，先让每个人复述自己理解的目标，再确认可用时间。为计划安排一段真正的缓冲，而不把缓冲当作可以继续塞任务的空位。有效推进也包含知道何时该减速。"
+              ]
+            }
+          ],
+          "quirks": [
+            "“有空再说”已经被我放进待办。",
+            "可以先行动，也可以先听完。",
+            "今天的进度：给计划留了一点空白。"
+          ],
+          "neighbors": [
+            {
+              "type": "INTJ",
+              "text": "同一场聚会，ENTJ的故事侧重在互动里整理想法，INTJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ESTJ",
+              "text": "同一个邀约，ENTJ的故事侧重可能性和意义，ESTJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ENFJ",
+              "text": "同一次分歧，ENFJ的故事先看对人的影响，ENTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ENTP",
+              "text": "同一次改计划，ENTJ的故事重视明确约定，ENTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "组织推进",
+            "决策行动",
+            "目标意识"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may turn wishes into actionable goals. A suggested trip quickly becomes a budget, responsibilities, and a date. Momentum helps ideas happen, but friends may not have committed equal energy. Check whether this is planning or simply imagining together."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "When a group chat stalls, you may suggest a vote or summarize the options. You want progress; others may still be expressing concerns. A clear space for questions can create real cooperation instead of treating every hesitation as resistance.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "A struggling friend may receive a task breakdown, resources, or an offer to take something over. Action is a form of support, but they still need choice. Ask what they want to address and how much involvement they welcome.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "You may prefer relationship problems to be addressed rather than left hanging. Someone close may process feelings more slowly. Distinguish wanting to resolve an issue from requiring an answer now, and agree on a time to return.",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "You may assess the outcome of learning or work before allocating effort. Clear ownership helps, but people’s energy is not a linear progress chart. Ask where someone is stuck and what support they need, alongside checking completion.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure can increase your pace and directness. The issue may be scope exceeding capacity rather than insufficient effort. Revisit the deadline and workload before asking for more execution; fatigue is not automatically a failure of will."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Before assigning tasks, ask everyone to restate the goal and confirm available time. Keep genuine breathing room in the plan rather than filling every buffer with another task. Effective progress includes knowing when to slow down."
+              ]
+            }
+          ],
+          "quirks": [
+            "“Later” has entered my task list.",
+            "We can act—and first hear everyone out.",
+            "Today’s progress: leaving some room in the plan."
+          ],
+          "neighbors": [
+            {
+              "type": "INTJ",
+              "text": "At the same gathering, ENTJ illustrates thinking through interaction, while INTJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ESTJ",
+              "text": "For the same invitation, ENTJ illustrates possibilities and meaning, while ESTJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ENFJ",
+              "text": "In the same disagreement, ENFJ illustrates impact on people, while ENTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ENTP",
+              "text": "When a plan changes, ENTJ illustrates clear agreements and ENTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Organization",
+            "Decisive action",
+            "Goal awareness"
+          ]
+        }
+      }
+    },
+    "ENTP": {
+      "nickname": {
+        "zh": "点子发动机",
+        "en": "The Idea Spark"
+      },
+      "tagline": {
+        "zh": "别人看到惯例，你先看到另一种可能。",
+        "en": "Where others see a routine, you notice another possibility."
+      },
+      "strengths": {
+        "zh": [
+          "灵活联想",
+          "观点碰撞",
+          "尝试精神"
+        ],
+        "en": [
+          "Flexible connections",
+          "Exploring perspectives",
+          "Experimentation"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能先看到一个规则还可以怎样改变。朋友提出常去的聚会地点，你会想到新的玩法或另一条路线。新鲜感能打开选择，但并不是每个人每次都想冒险。把新方案作为额外选项，而不是宣布旧方案无聊，能让创意更容易被接住。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里一个观点刚出现，你可能马上从另一个角度试一试。你想验证想法的弹性，别人可能以为你真的反对。说清“我试着换个角度”，并留意对方是否还有讨论余力，可以让观点碰撞不变成人际消耗。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "你可能用玩笑、新点子或一场热烈讨论表达亲近。朋友心情低落时，这种方式有时能带来轻松，有时却显得跳过了他的感受。先承认“这件事确实很难”，再邀请换个视角，能让机智建立在理解之上。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能希望关系里有自由探索的空间，不喜欢每个变化都被视为承诺动摇。对方也可能需要稳定的回应来安心。把哪些安排可以临时调整、哪些约定需要提前说明讲清楚，比用“我就是这样”解释所有变化更公平。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习新东西时，你可能很快发现跨领域的联系；工作里也擅长提出不同入口。难点往往在新鲜感过去后的收尾。为一个项目写下完成标准，把突然冒出的点子放进下一轮清单，能让探索留下看得见的成果。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力增大时，你可能同时启动更多路线，试图用新的可能性突破卡点。也可能因此让自己更分散。先检查当前任务究竟缺少信息、支持还是休息，再选择一个最小动作，不必靠推翻全部计划才能重新开始。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "下一次想反驳时，先问自己是在解决问题，还是只是觉得这个观点很好玩。为本周选一件值得完成的事，把其他创意暂存。保留变化，也给别人一个能够依赖的时间点。"
+              ]
+            }
+          ],
+          "quirks": [
+            "新点子可以排队，不必同时上岗。",
+            "我在试一个观点，不一定在反对你。",
+            "允许无聊五分钟，让事情真的完成。"
+          ],
+          "neighbors": [
+            {
+              "type": "INTP",
+              "text": "同一场聚会，ENTP的故事侧重在互动里整理想法，INTP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ESTP",
+              "text": "同一个邀约，ENTP的故事侧重可能性和意义，ESTP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ENFP",
+              "text": "同一次分歧，ENFP的故事先看对人的影响，ENTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ENTJ",
+              "text": "同一次改计划，ENTJ的故事重视明确约定，ENTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "灵活联想",
+            "观点碰撞",
+            "尝试精神"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may notice how a rule could change before accepting it. A familiar gathering suggests a new game or route. Novelty opens choices, but not everyone wants an experiment each time. Offer an alternative without declaring the old option boring."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "A new opinion may immediately invite another angle. You are testing an idea’s flexibility; others may hear sincere opposition. Say that you are trying a perspective, and check whether the other person has energy for debate.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "Humor, new ideas, or lively discussion may express closeness. With an upset friend, this can create relief or seem to skip their feelings. Acknowledge the difficulty before inviting another perspective, so wit rests on understanding.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "You may want freedom to explore without every change being read as a broken commitment. A loved one may need steady responses. Discuss which plans can flex and which require notice rather than explaining every change with “That is how I am.”",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Learning can reveal connections across fields, and work may benefit from your alternative starting points. Finishing after novelty fades can be harder. Define completion and park new ideas for a later round, giving exploration a visible outcome.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may open more routes in an attempt to escape a block, increasing fragmentation. Check whether the task needs information, support, or rest before choosing one small action. Restarting need not mean overturning every plan."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Before challenging a claim, ask whether you are solving a problem or simply enjoying the idea. Choose one thing worth finishing this week and save the other ideas. Keep flexibility while giving others a dependable time point."
+              ]
+            }
+          ],
+          "quirks": [
+            "New ideas can queue instead of starting together.",
+            "Testing a view does not mean opposing you.",
+            "Five boring minutes may actually finish the job."
+          ],
+          "neighbors": [
+            {
+              "type": "INTP",
+              "text": "At the same gathering, ENTP illustrates thinking through interaction, while INTP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ESTP",
+              "text": "For the same invitation, ENTP illustrates possibilities and meaning, while ESTP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ENFP",
+              "text": "In the same disagreement, ENFP illustrates impact on people, while ENTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ENTJ",
+              "text": "When a plan changes, ENTJ illustrates clear agreements and ENTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Flexible connections",
+            "Exploring perspectives",
+            "Experimentation"
+          ]
+        }
+      }
+    },
+    "INFJ": {
+      "nickname": {
+        "zh": "心事观察员",
+        "en": "The Quiet Observer"
+      },
+      "tagline": {
+        "zh": "留意话语背后的心情，也在寻找自己的方向。",
+        "en": "You notice the feelings behind the words while seeking your own direction."
+      },
+      "strengths": {
+        "zh": [
+          "细致理解",
+          "意义感",
+          "长期投入"
+        ],
+        "en": [
+          "Attentive understanding",
+          "Sense of meaning",
+          "Sustained commitment"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能会把零散的小事连成一个关于人的故事。朋友换了一种说话方式，你不只听字面，也会思考最近发生了什么。细致观察有时能帮助理解，有时也让猜测越过证据。把感受到的变化当作提问的起点，而不是已经确定的答案。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊热闹时，你可能先观察大家的方向，等想到一句能连接前后的话再参与。没及时接话不代表没有兴趣。需要表达的观点可以先发一个小版本，不必等到它能够概括整场讨论；参与也可以是逐步形成想法。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友倾诉时，你可能愿意陪他把事情的意义慢慢讲清楚。你看重被理解，也可能替对方承担太多情绪。关心不等于随时在线；告诉朋友你现在能听多久，以及之后何时能再联系，能让陪伴更持久。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能重视关系里的深度和共同方向，不满足于只交换日程。期待没有说出口时，对方可能不知道怎样靠近。把“希望你更懂我”改成一件具体的事，例如一起留出不看手机的十分钟，会让亲近更有可操作的入口。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习和工作中，你可能希望知道这件事为何值得投入，也喜欢不被频繁打断的专注时间。若目标过于理想，行动容易一直等待更合适的条件。先确认一个当前能够帮助到人的成果，再逐步扩展意义，不必一次承担所有责任。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能反复琢磨别人没有说清的话，也对自己提出更高要求。这样的反应并不能证明你判断准确。把事实、解释和担忧分开写下来，直接确认一个关键疑问，再安排休息，能减少在脑内独自完成整场对话。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "为一个反复出现的期待找到具体表达：“当发生这件事时，我希望……”同时选一项不必由你承担的责任。你的观察可以帮助关系，但别人也应有机会亲口说明自己，而不是被你的推测提前定义。"
+              ]
+            }
+          ],
+          "quirks": [
+            "脑内小剧场，需要本人来校对。",
+            "想聊深一点，也可以先聊今天吃什么。",
+            "温柔有边界，陪伴才续航。"
+          ],
+          "neighbors": [
+            {
+              "type": "ENFJ",
+              "text": "同一场聚会，ENFJ的故事侧重在互动里整理想法，INFJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ISFJ",
+              "text": "同一个邀约，INFJ的故事侧重可能性和意义，ISFJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "INTJ",
+              "text": "同一次分歧，INFJ的故事先看对人的影响，INTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "INFP",
+              "text": "同一次改计划，INFJ的故事重视明确约定，INFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "细致理解",
+            "意义感",
+            "长期投入"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "Small details may become a story about a person. A friend’s changed tone prompts you to wonder what happened recently. Attention can help understanding, but guesses can outrun evidence. Use the observation to begin a question rather than complete an answer."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "In a busy chat, you may observe the direction before contributing a thought that connects the discussion. A delayed response need not mean disinterest. Share an unfinished version when useful rather than waiting for a sentence that captures everything.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "A friend’s story may invite patient exploration of what it means. You value understanding and can take on too much emotional work. Care does not require constant availability: say how long you can listen and when you can reconnect.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Depth and shared direction may matter more than exchanging schedules. Unspoken expectations leave someone unsure how to approach. Turn “Understand me better” into a concrete request, such as ten phone-free minutes together.",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Purpose and protected focus may support learning and work. An idealized goal can postpone action until conditions improve. Identify one useful outcome possible now before extending the mission; you need not carry every responsibility at once.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may bring rumination about unspoken meanings and higher standards for yourself. Neither makes an interpretation more accurate. Separate facts, explanations, and worries, confirm one question directly, and allow rest."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Put one recurring expectation into concrete words: “When this happens, I would like…” Also identify a responsibility you need not carry. Observation can support a relationship while leaving others room to describe themselves."
+              ]
+            }
+          ],
+          "quirks": [
+            "The inner screenplay needs the other person’s edits.",
+            "Depth can begin with what we ate today.",
+            "Care with boundaries can last longer."
+          ],
+          "neighbors": [
+            {
+              "type": "ENFJ",
+              "text": "At the same gathering, ENFJ illustrates thinking through interaction, while INFJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ISFJ",
+              "text": "For the same invitation, INFJ illustrates possibilities and meaning, while ISFJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "INTJ",
+              "text": "In the same disagreement, INFJ illustrates impact on people, while INTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "INFP",
+              "text": "When a plan changes, INFJ illustrates clear agreements and INFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Attentive understanding",
+            "Sense of meaning",
+            "Sustained commitment"
+          ]
+        }
+      }
+    },
+    "INFP": {
+      "nickname": {
+        "zh": "灵感收藏家",
+        "en": "The Inspiration Keeper"
+      },
+      "tagline": {
+        "zh": "把日常的小触动，收进自己的内心宇宙。",
+        "en": "You collect small everyday moments in your inner universe."
+      },
+      "strengths": {
+        "zh": [
+          "感受细节",
+          "创意表达",
+          "价值坚持"
+        ],
+        "en": [
+          "Sensitivity to detail",
+          "Creative expression",
+          "Commitment to values"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能先问一个选择是否符合自己的在意，再考虑它是否容易解释给别人。朋友推荐热门活动，你会想它有没有真正吸引你的部分。忠于价值能保护热情，但不必把每次小选择都变成对自己的证明；试一次也可以只是收集感受。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊中一个故事或一句话可能让你联想到很多画面，你却未必马上发出来。别人可能只看见你偶尔冒出的灵感。把一个具体片段说出来，比等待整个想法变得完整，更容易找到同样有共鸣的人。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友讲烦恼时，你可能先想象自己处在他的处境，认真陪他感受。共鸣也可能让你把自己的经历带得太快。先问“你最难受的是哪一部分”，让对方的故事保留自己的形状，再分享你想到的相似经验。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能在关系中重视真实，不喜欢为了维持表面和谐而否认自己的感受。受伤时却可能先退回安静，期待对方理解。把感受对应到一件具体事件，并提出一个小请求，比只说“你不懂我”更容易开启修复。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习与工作有意义时，你可能投入得很深；重复又缺少解释的任务则更难开始。可以先找到这件事与你在意的人或目标的连接，再把动作缩小到十分钟。不必等到灵感和情绪都到位，行动也会产生新的感受。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能把一个不顺利的结果理解成自己不够好，或反复寻找理想的表达方式。失败也可能来自条件、时机和沟通差异。把“这件事没做好”与“我没有价值”分开，先处理可调整的部分，能给自己留出重新尝试的空间。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "为一个在意的想法安排固定的小动作，而不是等待最合适的心情。表达不满时，先写下具体事件、自己的感受和希望改变的行为。真诚不仅是感受真实，也包含让别人知道怎样回应你。"
+              ]
+            }
+          ],
+          "quirks": [
+            "内心宇宙很大，今天先落地一小步。",
+            "“都可以”有时需要翻译成真实偏好。",
+            "有共鸣很好，有行动也很好。"
+          ],
+          "neighbors": [
+            {
+              "type": "ENFP",
+              "text": "同一场聚会，ENFP的故事侧重在互动里整理想法，INFP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ISFP",
+              "text": "同一个邀约，INFP的故事侧重可能性和意义，ISFP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "INTP",
+              "text": "同一次分歧，INFP的故事先看对人的影响，INTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "INFJ",
+              "text": "同一次改计划，INFJ的故事重视明确约定，INFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "感受细节",
+            "创意表达",
+            "价值坚持"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may ask whether a choice fits your values before whether you can justify it to others. A popular activity matters if something truly attracts you. Values protect enthusiasm, but a small choice need not prove your identity; trying something can simply gather experience."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "A story in a chat may spark many images without an immediate reply. Others see only the occasional idea that surfaces. Share one concrete fragment rather than waiting for the whole thought to become complete.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "A friend’s difficulty may invite you to imagine being in their situation. Empathy can also bring your own experience into the conversation too quickly. Ask which part hurts most before sharing something similar.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Authenticity may matter more than surface harmony. When hurt, you may retreat and hope to be understood. Link the feeling to one event and a small request; it gives repair a clearer starting point than “You do not understand me.”",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Meaning can draw deep commitment while repetitive unexplained tasks are harder to start. Connect the task to a person or goal you value, then make the first action ten minutes long. Action can create feeling instead of waiting for it.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "A setback under pressure can feel like a verdict on your worth, or send you searching for perfect words. Timing and circumstances matter too. Separate a task that went poorly from your value as a person, and work on what can change."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Give one meaningful idea a regular small action rather than waiting for the right mood. For a complaint, name the event, feeling, and requested behavior. Sincerity includes helping someone understand how to respond."
+              ]
+            }
+          ],
+          "quirks": [
+            "The inner universe is big; today needs one small step.",
+            "“Anything is fine” sometimes needs a real preference.",
+            "Resonance is good; action is good too."
+          ],
+          "neighbors": [
+            {
+              "type": "ENFP",
+              "text": "At the same gathering, ENFP illustrates thinking through interaction, while INFP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ISFP",
+              "text": "For the same invitation, INFP illustrates possibilities and meaning, while ISFP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "INTP",
+              "text": "In the same disagreement, INFP illustrates impact on people, while INTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "INFJ",
+              "text": "When a plan changes, INFJ illustrates clear agreements and INFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Sensitivity to detail",
+            "Creative expression",
+            "Commitment to values"
+          ]
+        }
+      }
+    },
+    "ENFJ": {
+      "nickname": {
+        "zh": "同行召集人",
+        "en": "The Connection Builder"
+      },
+      "tagline": {
+        "zh": "让每个人被看见，也让大家愿意一起向前。",
+        "en": "You help people feel seen and find a shared way forward."
+      },
+      "strengths": {
+        "zh": [
+          "沟通联结",
+          "协调合作",
+          "鼓励他人"
+        ],
+        "en": [
+          "Connection",
+          "Coordination",
+          "Encouragement"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能特别在意一群人是否愿意朝同一个方向走。朋友讨论旅行，你会关注大家期待什么，以及怎样让这次经历有共同意义。连接人是优势，但共同目标也需要允许不同意见；不必把每个人都满意当作你一个人的任务。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊有十个点子时，你可能先问“我们到底最想一起做成什么”，也留意谁还没有参与。这样能帮助讨论聚焦，但安静的人未必需要被马上点名。给选择留下退出空间，邀请才不会变成参与的压力。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友遇到挫折，你可能一边理解心情，一边鼓励他看到未来还能怎样走。对方有时需要的是暂时不振作的许可。先问今天更需要陪伴还是建议，也把自己的时间容量说清楚，能避免你长期充当所有人的情绪协调员。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能把共同成长视为关系里的重要部分，愿意主动讨论下一步。热心建议有时会被听成对方现在还不够好。先表达对当下的接纳，再询问是否愿意一起探索；关心也可以是陪着，而不一定总是推动。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习与工作中，你可能擅长解释一个目标为什么值得投入，把不同的人连接起来。难点是为了维持合作不断接住额外任务。把责任、期限和谁能提供支持写清楚，能让集体热情转成可持续的协作，而不是你的个人兜底。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能更在意别人是否认可你的付出，也急着恢复气氛。一次分歧不等于关系失败，别人没及时回应也可能只是忙。先分清事实与想象，允许对方不同意，再决定自己愿意继续承担什么。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "答应帮忙前，给自己一点检查日程的时间。下一次出现分歧，可以先说“我想听你不同意的部分”，不急着总结成一致。你不需要靠让所有人舒服，才能证明自己值得被喜欢。"
+              ]
+            }
+          ],
+          "quirks": [
+            "群聊主持人也有下班时间。",
+            "可以不同意，关系不用散场。",
+            "今天的温柔：没有替所有人兜底。"
+          ],
+          "neighbors": [
+            {
+              "type": "INFJ",
+              "text": "同一场聚会，ENFJ的故事侧重在互动里整理想法，INFJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ESFJ",
+              "text": "同一个邀约，ENFJ的故事侧重可能性和意义，ESFJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ENTJ",
+              "text": "同一次分歧，ENFJ的故事先看对人的影响，ENTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ENFP",
+              "text": "同一次改计划，ENFJ的故事重视明确约定，ENFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "沟通联结",
+            "协调合作",
+            "鼓励他人"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may care about whether people want to move in a shared direction. Planning a trip includes understanding everyone’s hopes and the experience’s meaning. Connection helps, but shared goals still need disagreement; universal satisfaction is not your personal assignment."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "With ten ideas in a chat, you may ask what everyone most wants to achieve and notice who has not joined. This can focus discussion, but a quiet person may not want to be called on. Invitations work better with room to decline.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "You may offer understanding and encouragement toward a better future. A friend may need permission not to recover immediately. Ask whether today calls for company or suggestions, and state your own capacity instead of becoming everyone’s permanent coordinator.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Shared growth may matter in close relationships, inviting discussion of next steps. Enthusiastic advice can sound like someone is not enough now. Express acceptance first and ask whether exploration is welcome; care can accompany without pushing.",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "You may explain why a goal matters and connect people around it. Extra tasks accepted to preserve cooperation can become a burden. Make responsibility, timing, and support explicit so shared enthusiasm becomes sustainable collaboration.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may increase the wish for recognition and the urge to restore harmony. Disagreement is not a failed relationship, and delayed replies may mean someone is busy. Separate observation from interpretation and decide what you actually want to carry."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Before agreeing to help, take time to check your schedule. In disagreement, invite the part someone sees differently before seeking consensus. You need not make everyone comfortable to deserve affection."
+              ]
+            }
+          ],
+          "quirks": [
+            "The group-chat host has office hours too.",
+            "Disagreement does not end the relationship.",
+            "Today’s kindness: not covering everything alone."
+          ],
+          "neighbors": [
+            {
+              "type": "INFJ",
+              "text": "At the same gathering, ENFJ illustrates thinking through interaction, while INFJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ESFJ",
+              "text": "For the same invitation, ENFJ illustrates possibilities and meaning, while ESFJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ENTJ",
+              "text": "In the same disagreement, ENFJ illustrates impact on people, while ENTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ENFP",
+              "text": "When a plan changes, ENFJ illustrates clear agreements and ENFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Connection",
+            "Coordination",
+            "Encouragement"
+          ]
+        }
+      }
+    },
+    "ENFP": {
+      "nickname": {
+        "zh": "可能性捕手",
+        "en": "The Possibility Hunter"
+      },
+      "tagline": {
+        "zh": "一边认识新世界，一边把热情传给身边的人。",
+        "en": "You explore new possibilities and share the excitement around you."
+      },
+      "strengths": {
+        "zh": [
+          "热情表达",
+          "开放探索",
+          "连接人和想法"
+        ],
+        "en": [
+          "Expressive energy",
+          "Open exploration",
+          "Connecting people and ideas"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能容易被人和想法背后的新可能吸引。朋友提到一项活动，你会想到还能认识谁、试什么、留下什么故事。热情让日常变得开阔，也可能让安排迅速变多。把真正想参加的事选出来，比向每个可能性都点头更能保护兴趣。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里一个点子可能接着长出三个新点子，你愿意把大家的故事串在一起。讨论因此更活跃，但别人也可能不知道最后选了什么。结束时补一句“那我们这次先做这一件”，能让热情有一个共同落点。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友分享烦恼时，你可能愿意听他完整的故事，也很快看到新的出口。轻快的回应有时会让对方觉得问题被缩小。先承认这件事对他有多重要，再分享可能性，鼓励才不需要以跳过难受为代价。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能希望亲近的人愿意一起探索，也需要被看见个人的独特之处。兴奋时答应很多、之后精力不足，容易形成落差。把“我很想”与“我现在能做到”分别表达，允许约定有明确边界，能让自由和可靠同时存在。",
+                "听到一段经历时，你可能先联想到背后的意义或其他可能；也可以先确认当下发生的具体事情，让理解有事实可以落脚。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习和工作中，有意义的新任务可能让你突然很有行动力；兴趣下降后则需要外部结构。为项目保留短反馈周期，把完成标准写成小清单，而不是只依靠开始时的热情。重复步骤也可以是让创意真正进入现实的桥。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能在更多安排中寻找重新振作的感觉，或担心错过每一个机会。也可能只是休息不足。先删掉一项非必要的承诺，再看最在意的任务需要哪一步；减少选择有时比寻找新的刺激更能恢复动力。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "为这周选一个完成后会满意的重点，把新想法先记下来。答应邀约前查看已有安排，不必当场给答案。和朋友约定如何及时说明变化，比要求自己永远保持同样热情更实际。"
+              ]
+            }
+          ],
+          "quirks": [
+            "灵感很多，今天先给一个办入住。",
+            "想参加和有空参加，是两件事。",
+            "热情可以充电，不必全天满格。"
+          ],
+          "neighbors": [
+            {
+              "type": "INFP",
+              "text": "同一场聚会，ENFP的故事侧重在互动里整理想法，INFP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ESFP",
+              "text": "同一个邀约，ENFP的故事侧重可能性和意义，ESFP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ENTP",
+              "text": "同一次分歧，ENFP的故事先看对人的影响，ENTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ENFJ",
+              "text": "同一次改计划，ENFJ的故事重视明确约定，ENFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "热情表达",
+            "开放探索",
+            "连接人和想法"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "People and ideas may invite new possibilities. An activity suggests whom you could meet and what story might emerge. Enthusiasm opens daily life and can overfill the calendar. Choosing what matters protects interest better than saying yes to every possibility."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "One idea in a chat may grow into three, connecting people’s stories. The discussion becomes lively, but the decision can disappear. End with one agreed action so enthusiasm has a shared landing point.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "A friend’s story may draw your interest and quickly reveal alternatives. A bright response can seem to minimize the problem. Acknowledge its importance before offering possibilities, so encouragement does not skip the pain.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "You may want shared exploration and recognition of your individuality. Enthusiastic promises followed by low energy can create disappointment. Distinguish what you want from what you can currently do, making freedom and reliability compatible.",
+                "A story may prompt meaning and possibilities. Check what concretely happened too, giving interpretation a factual starting point."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "A meaningful new task can create sudden energy; later stages may need structure. Use short feedback cycles and a small completion checklist rather than relying only on initial excitement. Repetition can be the bridge that brings an idea into reality.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure can prompt more plans to regain energy or avoid missing out. You may simply need rest. Remove one unnecessary commitment and identify the next step of the task that matters; fewer choices can help more than new stimulation."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Choose one focus that would make this week satisfying, and save new ideas. Check existing commitments before accepting an invitation. Agree on how to communicate changes rather than demanding constant enthusiasm from yourself."
+              ]
+            }
+          ],
+          "quirks": [
+            "Many ideas; let one settle in today.",
+            "Wanting to join and having time are different.",
+            "Enthusiasm can recharge instead of staying full."
+          ],
+          "neighbors": [
+            {
+              "type": "INFP",
+              "text": "At the same gathering, ENFP illustrates thinking through interaction, while INFP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ESFP",
+              "text": "For the same invitation, ENFP illustrates possibilities and meaning, while ESFP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ENTP",
+              "text": "In the same disagreement, ENFP illustrates impact on people, while ENTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ENFJ",
+              "text": "When a plan changes, ENFJ illustrates clear agreements and ENFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Expressive energy",
+            "Open exploration",
+            "Connecting people and ideas"
+          ]
+        }
+      }
+    },
+    "ISTJ": {
+      "nickname": {
+        "zh": "稳稳执行者",
+        "en": "The Steady Builder"
+      },
+      "tagline": {
+        "zh": "不必大声宣布，也能把事情一件件做好。",
+        "en": "You get things done without needing a loud announcement."
+      },
+      "strengths": {
+        "zh": [
+          "责任意识",
+          "细节落实",
+          "持续执行"
+        ],
+        "en": [
+          "Responsibility",
+          "Attention to detail",
+          "Consistency"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能更信任能够说明、检查和兑现的安排。朋友约旅行，你会确认时间、交通和已经约定的事项。可靠让大家安心，但熟悉的方法不一定适合每次新情况。先弄清变化的原因，再判断哪些规则仍有帮助，能让稳定保持弹性。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊迟迟不定时间，你可能提醒大家已经确认的条件，并把遗漏的细节补上。你在意约定能被执行，别人可能仍在讨论可能性。把“现在需要决定什么”写清楚，给出一个合理截止点，比反复催促更容易得到回复。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友需要帮助时，你可能愿意落实一件具体的事：接送、整理资料、按时出现。行动未必自动让对方知道你在关心。补上一句“我知道这对你很重要”，也询问他是否需要另一种支持，能让可靠不只停留在任务完成上。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能把守约和稳定回应看作关系里的基本尊重。临时改变若没有解释，很容易让你不舒服。说清你在意的是哪一个影响，而不是把变化直接归结为不重视；也允许亲近的人提出不同的习惯，再共同约定可接受的范围。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习时，你可能愿意反复练习并用实际结果检查进步；工作里清晰流程会减少不必要的消耗。遇到新方法，可以先小范围试一次，比较它与旧方法分别解决了什么。经验是资源，也可以通过新反馈持续更新。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能更坚持按原要求完成，默默增加自己的负担。问题也可能是要求已经过时，或责任分配不清。把必须守住的底线与可以协商的步骤分开，提前说明困难，能避免可靠变成一个人硬撑。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "下一次对安排不满时，提前讲明具体标准，而不是等别人猜到。定期问一句“这条规则现在还解决问题吗？”为自己保留一段不需要完成任务的时间，休息也能帮助你继续可靠。"
+              ]
+            }
+          ],
+          "quirks": [
+            "“到时候再说”最好也有一个时候。",
+            "我记得约定，也可以讨论变化。",
+            "稳定输出需要安排休息。"
+          ],
+          "neighbors": [
+            {
+              "type": "ESTJ",
+              "text": "同一场聚会，ESTJ的故事侧重在互动里整理想法，ISTJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "INTJ",
+              "text": "同一个邀约，INTJ的故事侧重可能性和意义，ISTJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ISFJ",
+              "text": "同一次分歧，ISFJ的故事先看对人的影响，ISTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ISTP",
+              "text": "同一次改计划，ISTJ的故事重视明确约定，ISTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "责任意识",
+            "细节落实",
+            "持续执行"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may trust arrangements that can be explained, checked, and kept. A trip needs time, transport, and confirmed agreements. Reliability reassures people, but familiar methods do not fit every new situation. Ask why circumstances changed before keeping a rule."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "When a chat cannot settle a date, you may remind everyone of confirmed constraints and missing details. Others may still be exploring. Name what needs deciding and a reasonable deadline rather than repeatedly prompting replies.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "Support may take the form of a ride, organized information, or arriving on time. Action does not automatically communicate care. Say you know this matters and ask whether another form of help is needed.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Promises and steady responses may signal respect in a relationship. Unexplained changes can feel uncomfortable. Describe the actual impact rather than assuming indifference, and allow a loved one’s habits to shape a shared agreement.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Repeated practice and visible progress may support learning, while clear processes reduce friction at work. Try a new method on a small scale and compare what each approach solves. Experience is a resource that can keep updating.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may strengthen adherence to original requirements and quietly increase your load. The requirements may be outdated or responsibility unclear. Separate essential commitments from negotiable steps and explain difficulties before reliability becomes solitary endurance."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "State a standard before expecting others to infer it. Regularly ask whether a rule still solves the problem. Keep some time that does not need a task completed; rest supports reliability too."
+              ]
+            }
+          ],
+          "quirks": [
+            "“Later” works better with an actual time.",
+            "I remember the agreement; we can discuss changes.",
+            "Steady output needs scheduled rest."
+          ],
+          "neighbors": [
+            {
+              "type": "ESTJ",
+              "text": "At the same gathering, ESTJ illustrates thinking through interaction, while ISTJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "INTJ",
+              "text": "For the same invitation, INTJ illustrates possibilities and meaning, while ISTJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ISFJ",
+              "text": "In the same disagreement, ISFJ illustrates impact on people, while ISTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ISTP",
+              "text": "When a plan changes, ISTJ illustrates clear agreements and ISTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Responsibility",
+            "Attention to detail",
+            "Consistency"
+          ]
+        }
+      }
+    },
+    "ISFJ": {
+      "nickname": {
+        "zh": "细节守护者",
+        "en": "The Thoughtful Keeper"
+      },
+      "tagline": {
+        "zh": "把关心藏在小事里，让日常多一点安心。",
+        "en": "You put care into small actions that make everyday life feel steadier."
+      },
+      "strengths": {
+        "zh": [
+          "体贴观察",
+          "耐心支持",
+          "可靠落实"
+        ],
+        "en": [
+          "Thoughtfulness",
+          "Patient support",
+          "Reliability"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能通过记住日常细节来理解一个人。朋友不吃什么、最近哪天很忙，你会自然地放进安排里。体贴能让相处更安心，但关心不能只靠你一直留意。把自己的需要也放进讨论，关系才有机会形成双向的照顾。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊决定聚会时，你可能先确认有没有人被遗漏、地点是否方便、具体东西谁来带。大家只看见安排顺利，未必看见你的投入。把已经完成的事和还需要别人负责的事说清楚，能让细致成为共享资源。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友难过时，你可能用熟悉的小事陪伴他，比如带一顿饭或发消息确认情况。对方有时想独处，有时想详细说说。先询问现在什么方式最舒服，能避免把你觉得贴心的做法变成对方需要回应的额外任务。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能在亲近关系中重视可信任的日常，愿意为对方多做一点。不想添麻烦时，自己的需求却容易一直推后。用“这件事我需要一起承担”提出具体分工，比等到累积失望再表达，更容易让照顾被看见。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习和工作中，你可能留意如何把细节落实，让成果真正方便别人使用。熟悉步骤会给你安全感，但新任务也允许先不熟练。把问题记录下来，及时请求一个示范或反馈，比独自反复确认更能保护时间与精力。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能继续照顾周围的人，觉得只要自己再撑一点就能维持正常。疲惫也可能说明负担已经不公平。先列出哪些事有人共同负责，再明确一项今天不能接的请求，拒绝一次并不等于失去体贴。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "为下一次答应帮忙准备一句缓冲话：“我先看看今天有没有余力。”把一项自己的偏好直接说出来，不必先证明它足够重要。照顾别人和允许被照顾，可以同时发生。"
+              ]
+            }
+          ],
+          "quirks": [
+            "记得你的偏好，也正在练习说自己的。",
+            "贴心服务不是全天营业。",
+            "今天也给自己留了一份。"
+          ],
+          "neighbors": [
+            {
+              "type": "ESFJ",
+              "text": "同一场聚会，ESFJ的故事侧重在互动里整理想法，ISFJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "INFJ",
+              "text": "同一个邀约，INFJ的故事侧重可能性和意义，ISFJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ISTJ",
+              "text": "同一次分歧，ISFJ的故事先看对人的影响，ISTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ISFP",
+              "text": "同一次改计划，ISFJ的故事重视明确约定，ISFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "体贴观察",
+            "耐心支持",
+            "可靠落实"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "Remembering everyday details may help you understand someone: food preferences or an especially busy day become part of the plan. Thoughtfulness creates ease, but care need not depend on your constant attention. Include your own needs so support can go both ways."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "Planning a gathering may involve checking who was missed, whether the venue is convenient, and who brings what. Others see a smooth event, not the effort. Name completed tasks and what still needs an owner, sharing the work of care.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "A meal or a check-in message may be your way of accompanying an upset friend. They may want solitude or a longer conversation. Ask which feels comfortable now, so a kind gesture does not become another demand to respond.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Trustworthy routines may matter in close relationships, and you may gladly do extra. Avoiding inconvenience can push your needs aside. Ask for a concrete shared responsibility before disappointment accumulates.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Details may help you make work genuinely usable for others. Familiar steps feel reassuring, but a new task allows unfamiliarity. Record questions and ask for a demonstration or feedback instead of repeatedly checking alone.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may lead you to keep caring so everything stays normal. Fatigue can signal an unfair workload. Identify shared responsibilities and one request you cannot accept today; declining does not erase thoughtfulness."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Prepare a pause before helping: “Let me check my capacity.” State one preference without first proving it is important enough. Caring for others and allowing care can happen together."
+              ]
+            }
+          ],
+          "quirks": [
+            "I remember your preferences and am learning to state mine.",
+            "Thoughtful service is not open all day.",
+            "I saved a portion for myself today."
+          ],
+          "neighbors": [
+            {
+              "type": "ESFJ",
+              "text": "At the same gathering, ESFJ illustrates thinking through interaction, while ISFJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "INFJ",
+              "text": "For the same invitation, INFJ illustrates possibilities and meaning, while ISFJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ISTJ",
+              "text": "In the same disagreement, ISFJ illustrates impact on people, while ISTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ISFP",
+              "text": "When a plan changes, ISFJ illustrates clear agreements and ISFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Thoughtfulness",
+            "Patient support",
+            "Reliability"
+          ]
+        }
+      }
+    },
+    "ESTJ": {
+      "nickname": {
+        "zh": "秩序搭建者",
+        "en": "The Practical Organizer"
+      },
+      "tagline": {
+        "zh": "把模糊的事情理清，让下一步有据可循。",
+        "en": "You make unclear situations easier to act on."
+      },
+      "strengths": {
+        "zh": [
+          "统筹安排",
+          "执行效率",
+          "务实判断"
+        ],
+        "en": [
+          "Coordination",
+          "Efficiency",
+          "Practical judgment"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能希望事情有清楚的要求和可见的落实。朋友决定旅行，你会把时间、预算和谁负责什么列出来。组织能力让约定更可靠，但有效的规则需要回应现场情况。先确认大家理解同一个任务，再推进，比假设人人知道标准更稳妥。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里，别人说“都可以”，你可能直接挑一个可行安排。你想减少反复，别人却可能还有没说出口的条件。给出方案时顺手问“有没有不能配合的地方”，能让迅速决定保留修正的机会。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友遇到麻烦，你可能很快整理事实并提出具体帮助。直接指出问题有时会被听成批评。先说明“我想帮你把这件事变轻一点”，再询问他现在愿意处理哪一步，能让行动感与被尊重同时出现。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能通过承担责任、按约定行动来表达关心，也希望重要问题能讲明白。亲近的人不一定用同样方式表示重视。先询问他怎样感受到被支持，再表达你需要的回应，能避免把一种可靠方式当作唯一方式。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习和工作中，你可能擅长把要求拆成步骤，并及时检查结果。新任务若缺少标准会让你不舒服。可以先与伙伴约定一个试行版本，明确哪些地方仍需探索；管理不确定性，并不总要先消除全部不确定性。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能加大监督力度，担心一松手事情就会出错。也可能是系统缺少反馈，而非他人不可靠。先补上一个合理检查点，再减少重复追问，让责任和自主空间一起存在，能降低双方的紧张。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "下一次想说“按要求做就好”时，补充这个要求解决的具体问题。给伙伴一次说明困难的机会，也给自己设一个真正停止工作的时间。可靠的流程应当服务人，而不是要求人一直服务流程。"
+              ]
+            }
+          ],
+          "quirks": [
+            "流程写好了，也欢迎补充现场情况。",
+            "“随便”已转成三个可选方案。",
+            "负责推进，不负责替所有人决定。"
+          ],
+          "neighbors": [
+            {
+              "type": "ISTJ",
+              "text": "同一场聚会，ESTJ的故事侧重在互动里整理想法，ISTJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ENTJ",
+              "text": "同一个邀约，ENTJ的故事侧重可能性和意义，ESTJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ESFJ",
+              "text": "同一次分歧，ESFJ的故事先看对人的影响，ESTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ESTP",
+              "text": "同一次改计划，ESTJ的故事重视明确约定，ESTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "统筹安排",
+            "执行效率",
+            "务实判断"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "Clear requirements and visible follow-through may matter to you. A trip gets times, budgets, and owners. Organization strengthens agreements, but good rules respond to real conditions. Confirm a shared understanding rather than assuming everyone knows the standard."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "When everyone says “Anything works,” you may choose a practical plan. Others may still have unspoken constraints. Ask whether any part is unworkable so a quick decision retains room for correction.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "A friend’s problem may prompt an immediate factual summary and practical help. Direct correction can sound critical. Explain your intention to lighten the burden and ask which step they want to address now.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Taking responsibility and keeping agreements may express care, alongside wanting important issues stated clearly. A loved one may show care differently. Ask how support feels to them before naming the response you need.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "You may break requirements into steps and check outcomes promptly. Missing standards can feel uncomfortable. Agree on a trial version with explicit unknowns; managing uncertainty does not require eliminating it first.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure can increase monitoring for fear that work will fail without it. Missing feedback may be the issue, not unreliable people. Add a reasonable checkpoint and reduce repeated questions, preserving both ownership and autonomy."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "When asking someone to follow a requirement, explain the problem it solves. Give them space to describe obstacles and set a real stopping time for yourself. A reliable process should serve people."
+              ]
+            }
+          ],
+          "quirks": [
+            "The process is ready; real-world updates are welcome.",
+            "“Whatever” is now three workable options.",
+            "I can coordinate without deciding for everyone."
+          ],
+          "neighbors": [
+            {
+              "type": "ISTJ",
+              "text": "At the same gathering, ESTJ illustrates thinking through interaction, while ISTJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ENTJ",
+              "text": "For the same invitation, ENTJ illustrates possibilities and meaning, while ESTJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ESFJ",
+              "text": "In the same disagreement, ESFJ illustrates impact on people, while ESTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ESTP",
+              "text": "When a plan changes, ESTJ illustrates clear agreements and ESTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Coordination",
+            "Efficiency",
+            "Practical judgment"
+          ]
+        }
+      }
+    },
+    "ESFJ": {
+      "nickname": {
+        "zh": "日常联络员",
+        "en": "The Everyday Connector"
+      },
+      "tagline": {
+        "zh": "记得大家的小事，也让相处多一些暖意。",
+        "en": "You remember the little things and bring warmth to being together."
+      },
+      "strengths": {
+        "zh": [
+          "照顾氛围",
+          "关系维护",
+          "协作支持"
+        ],
+        "en": [
+          "Creating comfort",
+          "Maintaining connections",
+          "Team support"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能把关心落实在大家能感受到的日常里。朋友约旅行，你会留意交通是否方便、谁需要照顾、约定怎样安排。具体支持能让关系更稳定，但大家舒服不代表你必须一直忙。把自己的容量也算进安排，照顾才不会失去平衡。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里大家都说“随便”，你可能先整理时间、地点和谁还没有回复。与先讨论共同愿景相比，你更容易从眼前可处理的细节推进。也可以请别人负责一部分确认，不必让所有联络都经过你。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友最近状态不好，你可能主动发消息、准备小东西，或邀请他一起吃饭。热心也需要尊重对方的节奏。先问“这样会不会让你更轻松”，并允许他拒绝，能让关心成为可选择的支持，而不是必须回应的好意。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能重视日常回应，希望关系里的关心能够互相看见。对方不按同样频率表达时，未必是不在意。具体说清你需要哪一种回应，例如忙时提前告诉你，能减少把不同习惯理解成感情差距。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习和工作中，你可能善于把任务放进现实协作，留意谁需要支持、哪些细节会影响体验。过于在意气氛时，难说出口的要求可能被延后。把分工和标准提前讲清楚，能让温暖和有效协作互相支持。",
+                "安排活动时，明确时间和步骤可能让你安心；也为临时变化预留一个可协商的位置，区分重要约定与可以调整的小细节。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能更希望得到及时反馈，担心自己的付出没有被看见。别人回应少也可能只是精力不足。先确认一个实际问题，不必猜测整段关系；同时检查有没有承担过多，把感谢和继续帮忙的决定分开。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "为一次聚会明确说出你愿意负责的部分，再请其他人认领剩下的事。表达不满时，用具体需要代替“我为你做了这么多”。被喜欢不需要靠持续提供便利来换取。"
+              ]
+            }
+          ],
+          "quirks": [
+            "聚会安排表，也要给自己留座位。",
+            "热心可以分工，不必全部包办。",
+            "喜欢有回应，也练习直接说需要。"
+          ],
+          "neighbors": [
+            {
+              "type": "ISFJ",
+              "text": "同一场聚会，ESFJ的故事侧重在互动里整理想法，ISFJ的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ENFJ",
+              "text": "同一个邀约，ENFJ的故事侧重可能性和意义，ESFJ的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ESTJ",
+              "text": "同一次分歧，ESFJ的故事先看对人的影响，ESTJ的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ESFP",
+              "text": "同一次改计划，ESFJ的故事重视明确约定，ESFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "照顾氛围",
+            "关系维护",
+            "协作支持"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "Care may become practical everyday support. A trip involves convenient transport, who needs help, and clear arrangements. This creates steadiness, but everyone’s comfort need not require your constant work. Include your capacity in the plan."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "When a chat says “Whatever,” you may organize the date, venue, and missing replies. Rather than beginning with a shared vision, you may move through immediate details. Let others own some confirmations instead of routing every connection through you.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "You may check in, prepare something small, or invite a struggling friend to a meal. Warmth still needs their pace. Ask whether it would help and allow refusal, making support a choice rather than an obligation to respond.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Everyday responses may help you feel care is mutual. Different response frequency does not automatically mean indifference. Make one need concrete, such as advance notice during a busy period, instead of reading habit differences as unequal affection.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "You may connect tasks to real collaboration, noticing support needs and details that affect experience. Maintaining atmosphere can delay a difficult requirement. Clear responsibilities and standards let warmth and effective teamwork support each other.",
+                "Clear times and steps may reassure you. Leave a negotiable space for change, distinguishing important commitments from flexible details."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may increase the need for feedback and recognition. Sparse replies can reflect low energy. Confirm one actual question instead of guessing about the whole relationship, and separate appreciation from deciding whether to help again."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "For a gathering, state what you will handle and ask others to own the rest. Express a concrete need rather than counting favors. Affection need not be earned through continual convenience."
+              ]
+            }
+          ],
+          "quirks": [
+            "The gathering plan needs a seat for me too.",
+            "Warmth can share the workload.",
+            "I like responses and am learning to ask directly."
+          ],
+          "neighbors": [
+            {
+              "type": "ISFJ",
+              "text": "At the same gathering, ESFJ illustrates thinking through interaction, while ISFJ illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ENFJ",
+              "text": "For the same invitation, ENFJ illustrates possibilities and meaning, while ESFJ illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ESTJ",
+              "text": "In the same disagreement, ESFJ illustrates impact on people, while ESTJ illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ESFP",
+              "text": "When a plan changes, ESFJ illustrates clear agreements and ESFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Creating comfort",
+            "Maintaining connections",
+            "Team support"
+          ]
+        }
+      }
+    },
+    "ISTP": {
+      "nickname": {
+        "zh": "现场解题人",
+        "en": "The Hands-on Solver"
+      },
+      "tagline": {
+        "zh": "先观察，再动手，办法常在实践里出现。",
+        "en": "You observe, try and find answers through doing."
+      },
+      "strengths": {
+        "zh": [
+          "动手试验",
+          "冷静观察",
+          "灵活应对"
+        ],
+        "en": [
+          "Hands-on learning",
+          "Calm observation",
+          "Adaptability"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能更愿意先看实际发生了什么，再决定怎样处理。朋友遇到设备问题，你会先试着找到具体卡点，而不是讨论很多抽象原因。动手能快速带来反馈，但关系中的问题未必都能直接修好；先确认对方希望得到什么支持也很重要。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里你可能不常接每一句，但涉及一个实际问题时会给出简短有用的回复。别人容易把少话误读成不参与。适时告诉大家“我在看，决定后叫我”，能保留安静，也让伙伴知道你没有退出。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友需要帮助，你可能更自然地陪他做一件事，而不是长时间描述心情。这样的支持可以很踏实，也可能需要一句明确说明。先问要不要一起处理，再说你能够帮到哪里，能避免善意被理解成未经邀请的干预。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能需要关系里保留独立活动的空间，不希望每段安静都被追问。亲近的人却可能需要一个清楚的时间点。说明“我现在想自己待会儿，晚饭后再聊”，比只说“没事”更能同时保护自由与安心。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习时你可能通过试用、观察和修正掌握技能，工作里也愿意解决具体难题。兴趣之外的沟通容易被省略。把完成了什么、下一步做什么简短记录下来，能让你的实际贡献被接住，而不需要变成长篇汇报。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能把注意力收缩到自己能控制的具体操作，减少解释。别人因此更容易猜测。先给一个短的状态说明，再找真正的卡点；解决问题和说明自己正在处理问题，是两件都值得做的事。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "为一个不想反复解释的需求准备一句清楚的话。动手帮忙前，确认对方是否愿意接受。给长期任务安排一个小检查点，能让灵活行动和对他人的可靠回应兼容。"
+              ]
+            }
+          ],
+          "quirks": [
+            "少说几句，不等于少在意。",
+            "能修设备，也在练习说明心情。",
+            "先试一下，也先问你愿不愿意。"
+          ],
+          "neighbors": [
+            {
+              "type": "ESTP",
+              "text": "同一场聚会，ESTP的故事侧重在互动里整理想法，ISTP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "INTP",
+              "text": "同一个邀约，INTP的故事侧重可能性和意义，ISTP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ISFP",
+              "text": "同一次分歧，ISFP的故事先看对人的影响，ISTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ISTJ",
+              "text": "同一次改计划，ISTJ的故事重视明确约定，ISTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "动手试验",
+            "冷静观察",
+            "灵活应对"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may look at what is actually happening before deciding what to do. A device problem invites hands-on inspection rather than broad theories. Practical feedback helps, but relationship issues are not always repair jobs; ask what support is wanted."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "You may not answer every chat message but offer a concise response when a practical problem appears. Few words can be mistaken for disengagement. A simple “I am following; let me know when we decide” can preserve quiet and connection.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "Helping a friend may mean doing something together rather than narrating feelings. This can be grounding and may still need explicit explanation. Ask whether practical help is welcome and what part you can handle.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Independent time may matter, without every quiet moment prompting questions. A loved one may need a clear time point. Saying you want time alone and will talk after dinner protects both freedom and reassurance.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Trying, observing, and adjusting may support learning and practical problem-solving. Communication around the task can be skipped. Briefly record what is done and next so others can use your contribution without a lengthy report.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may narrow attention to controllable actions and reduce explanation, leaving room for guesses. Give a brief status update before investigating the obstacle. Solving a problem and letting others know you are addressing it are both useful."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Prepare one clear sentence for a recurring need. Confirm consent before hands-on help. A small checkpoint on longer tasks lets flexibility coexist with dependable responses."
+              ]
+            }
+          ],
+          "quirks": [
+            "Fewer words do not mean less care.",
+            "I can fix the device and practice naming feelings.",
+            "Try it—and first ask whether it is welcome."
+          ],
+          "neighbors": [
+            {
+              "type": "ESTP",
+              "text": "At the same gathering, ESTP illustrates thinking through interaction, while ISTP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "INTP",
+              "text": "For the same invitation, INTP illustrates possibilities and meaning, while ISTP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ISFP",
+              "text": "In the same disagreement, ISFP illustrates impact on people, while ISTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ISTJ",
+              "text": "When a plan changes, ISTJ illustrates clear agreements and ISTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Hands-on learning",
+            "Calm observation",
+            "Adaptability"
+          ]
+        }
+      }
+    },
+    "ISFP": {
+      "nickname": {
+        "zh": "当下感受家",
+        "en": "The Everyday Artist"
+      },
+      "tagline": {
+        "zh": "用自己的方式感受世界，把喜欢落在细节里。",
+        "en": "You experience the world your way and express it in the details."
+      },
+      "strengths": {
+        "zh": [
+          "审美感受",
+          "真实表达",
+          "体验观察"
+        ],
+        "en": [
+          "Aesthetic awareness",
+          "Authentic expression",
+          "Experiential observation"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能通过当下的感受判断一个选择是否适合自己。朋友邀请你参加活动，你会留意现场氛围、感官体验和自己是否自在。细腻感受能让生活有质地，但不舒服也可以说清原因；别人不一定能够从你的表情读出边界。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里你可能更愿意分享一张照片、一段音乐或一个具体片刻，而不是为整个话题定方向。这样的表达有温度，也可能让偏好被忽略。选择聚会方式时，直接补一句“我更想去这里”，可以让你的感受进入共同安排。",
+                "参与讨论时，先想清楚再表达可能更舒服；可以提前说明自己需要整理，不必把安静解释为缺少兴趣，也不必等到完美才开口。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友难过时，你可能愿意安静陪着，做一点让当下好受的小事。对方也许希望听到你的想法。问一句“你想我陪你，还是聊聊这件事”，能让不张扬的关心更明确，也不必勉强自己一直说话。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能重视亲近关系中的真实与尊重，不喜欢被要求按统一方式表达。冲突出现时，沉默可能是在保护感受，也可能让对方无从靠近。告诉他你需要暂停多久，以及哪件事让你不舒服，比让对方猜测更能保护边界。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习与工作中，你可能更容易从真实案例和亲手体验找到感觉。自主空间会帮助投入，但不明确的交付容易拖到最后。为一个任务约好最小成果，再允许过程有弹性，可以不牺牲个人表达，也让协作更清楚。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能先远离刺激或把情绪留在心里，希望等状态好一点再说。环境噪音、疲惫和关系紧张都可能影响反应。先处理能改变的条件，再给对方一个简短说明，能减少独自承担感受的时间。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "把一个经常被忽略的偏好表达成具体请求。给想做的事情一个小期限，不必等到全部感觉都对。你的感受值得被尊重，也可以通过清楚表达让别人知道怎样尊重。"
+              ]
+            }
+          ],
+          "quirks": [
+            "把喜欢藏在细节里，也可以直接说。",
+            "不是随便，是偏好还没开口。",
+            "留一点空间，也留一个回应时间。"
+          ],
+          "neighbors": [
+            {
+              "type": "ESFP",
+              "text": "同一场聚会，ESFP的故事侧重在互动里整理想法，ISFP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "INFP",
+              "text": "同一个邀约，INFP的故事侧重可能性和意义，ISFP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ISTP",
+              "text": "同一次分歧，ISFP的故事先看对人的影响，ISTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ISFJ",
+              "text": "同一次改计划，ISFJ的故事重视明确约定，ISFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "审美感受",
+            "真实表达",
+            "体验观察"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may judge a choice through present experience. An invitation brings questions about atmosphere, sensory experience, and comfort. Sensitivity gives daily life texture, but discomfort can be explained; others cannot reliably read your boundary from an expression."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "A photo, song, or concrete moment may feel more natural in a chat than setting its direction. This warmth can still leave preferences invisible. Say where you would like to go so your experience shapes the shared plan.",
+                "Preparing a thought may feel comfortable. Explain the need for time; quiet is not necessarily disinterest, and a thought need not be perfect to share."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "Quiet company and a small comforting action may support a friend. They may also want your thoughts. Ask whether they prefer company or discussion, making understated care explicit without forcing constant conversation.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Authenticity and respect may matter more than a prescribed way of expressing affection. Silence during conflict can protect feelings while leaving someone unable to approach. State how long a pause is needed and the specific discomfort.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Real examples and hands-on experience may support learning. Autonomy helps, while vague delivery can slip late. Agree on a minimum outcome and keep the process flexible, protecting expression and clarity together.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may prompt distance from stimulation or keeping feelings private until you feel better. Noise, fatigue, and tension all matter. Change a manageable condition and give a brief explanation instead of carrying the feeling alone."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Turn an overlooked preference into a concrete request. Give one desired activity a small deadline without waiting for every feeling to align. Your experience deserves respect, and clear words help others offer it."
+              ]
+            }
+          ],
+          "quirks": [
+            "Care can live in details and in direct words.",
+            "It is not indifference; the preference is unspoken.",
+            "Leave some space and a time to reconnect."
+          ],
+          "neighbors": [
+            {
+              "type": "ESFP",
+              "text": "At the same gathering, ESFP illustrates thinking through interaction, while ISFP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "INFP",
+              "text": "For the same invitation, INFP illustrates possibilities and meaning, while ISFP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ISTP",
+              "text": "In the same disagreement, ISFP illustrates impact on people, while ISTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ISFJ",
+              "text": "When a plan changes, ISFJ illustrates clear agreements and ISFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Aesthetic awareness",
+            "Authentic expression",
+            "Experiential observation"
+          ]
+        }
+      }
+    },
+    "ESTP": {
+      "nickname": {
+        "zh": "行动体验派",
+        "en": "The Action Explorer"
+      },
+      "tagline": {
+        "zh": "先走进现场，再看看有哪些路可以试。",
+        "en": "You step into the situation and discover what can be tried."
+      },
+      "strengths": {
+        "zh": [
+          "即时行动",
+          "现场判断",
+          "适应变化"
+        ],
+        "en": [
+          "Immediate action",
+          "Situational judgment",
+          "Adaptability"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能更相信在现场试一下得到的信息。朋友提议新活动，你会先看看眼前有什么可玩、哪里可以马上行动。反应快能带来活力，但别人可能还需要准备。把尝试做成可以退出的小步骤，比用你的速度要求所有人同步更轻松。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里你可能很快提出“那现在就去”，用一个具体行动结束空转。别人也许还有交通、时间或精力限制。确认一个最基本的条件，再带大家行动，能让爽快不变成临时压力。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友遇到烦恼，你可能邀请他出门、做点别的，或直接陪他解决眼前问题。有时行动确实能松动情绪，有时他需要先说完。给两种选择，而不是替他决定哪种更有效，能让你的陪伴更合身。",
+                "回应分歧时，你可能先检查依据和可行办法；说明理由时也留意对方怎样接收，准确和有温度的表达可以同时做到。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能希望关系里有直接、鲜活的互动，不喜欢长期绕着一个问题猜。亲近的人未必能立刻表达。允许他用一段暂停换一个认真回应，再约定重新联系的时间，可以让坦率不必依靠当场解决一切。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习和工作中，你可能善于在现实反馈里调整方法，也愿意面对突发情况。长线任务不一定持续提供刺激。把阶段目标做成可见成果，定期检查后果和承诺，能让灵活应对不只停留在一次漂亮的救场。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能更想马上做点什么，甚至先答应再考虑代价。也可能是事情拖得太久让人焦躁。先暂停一分钟，确认这个行动是否可逆、会影响谁，能让果断保留选择，而不是替未来制造额外问题。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "行动前检查一次时间、成本和别人是否愿意。对重要承诺设置一个后续确认，而不是只靠当时的热情。下次帮助朋友时，先问他想出门换个环境，还是需要把事情说完整。"
+              ]
+            }
+          ],
+          "quirks": [
+            "先行动，也记得看一下后果。",
+            "现场能量充足，承诺也要续航。",
+            "爽快邀请附带一个“可以不来”。"
+          ],
+          "neighbors": [
+            {
+              "type": "ISTP",
+              "text": "同一场聚会，ESTP的故事侧重在互动里整理想法，ISTP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ENTP",
+              "text": "同一个邀约，ENTP的故事侧重可能性和意义，ESTP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ESFP",
+              "text": "同一次分歧，ESFP的故事先看对人的影响，ESTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ESTJ",
+              "text": "同一次改计划，ESTJ的故事重视明确约定，ESTP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "即时行动",
+            "现场判断",
+            "适应变化"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "You may trust information gained by trying something in the moment. A new activity invites immediate possibilities. Quick responses add energy, but others may need preparation. Make the experiment easy to leave rather than demanding the same pace from everyone."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "A chat may get “Let us go now,” replacing circular discussion with action. Others may have travel, time, or energy constraints. Check one basic condition before moving so spontaneity does not create pressure.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "You may invite a troubled friend out or help with the immediate problem. Action can shift a mood, while sometimes they need to finish speaking. Offer both options instead of deciding which works for them.",
+                "In disagreement, evidence and workable solutions may come first. Notice how the explanation lands; precision and warmth can coexist."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Direct and lively interaction may appeal to you, while prolonged guessing does not. A loved one may need a pause before a thoughtful reply. Agree on when to reconnect instead of requiring every issue to be resolved immediately.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Real feedback and unexpected situations may suit your learning and work. Long tasks offer less constant stimulation. Visible milestones and checks on consequences can turn quick adaptation into sustained contribution.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure can invite immediate action or a promise before considering its cost. Frustration from prolonged delay may explain it too. Pause to ask whether the action is reversible and whom it affects."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Before acting, check time, cost, and others’ willingness. Add a follow-up to an important promise rather than relying on the moment. Ask a friend whether they want a change of setting or room to finish the story."
+              ]
+            }
+          ],
+          "quirks": [
+            "Act—and check the consequences too.",
+            "Energy for now; follow-through for later.",
+            "A lively invitation includes permission to decline."
+          ],
+          "neighbors": [
+            {
+              "type": "ISTP",
+              "text": "At the same gathering, ESTP illustrates thinking through interaction, while ISTP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ENTP",
+              "text": "For the same invitation, ENTP illustrates possibilities and meaning, while ESTP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ESFP",
+              "text": "In the same disagreement, ESFP illustrates impact on people, while ESTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ESTJ",
+              "text": "When a plan changes, ESTJ illustrates clear agreements and ESTP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Immediate action",
+            "Situational judgment",
+            "Adaptability"
+          ]
+        }
+      }
+    },
+    "ESFP": {
+      "nickname": {
+        "zh": "快乐现场派",
+        "en": "The Moment Maker"
+      },
+      "tagline": {
+        "zh": "把此刻过得有声有色，也邀请别人加入。",
+        "en": "You bring the moment to life and invite others in."
+      },
+      "strengths": {
+        "zh": [
+          "活跃表达",
+          "体验投入",
+          "氛围感知"
+        ],
+        "en": [
+          "Lively expression",
+          "Engagement",
+          "Reading the atmosphere"
+        ]
+      },
+      "reports": {
+        "zh": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "你可能更容易从眼前的人和体验获得活力。朋友聚会，你会留意谁的状态、什么气氛能让大家放松。鲜活回应能让日常有温度，但热闹并不是所有人的恢复方式。允许有人安静参与或早点离开，也是一种体贴。"
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "群聊里你可能用照片、表情或具体邀约带动气氛，让讨论很快变成体验。别人可能只是暂时没有精力回复。给出清楚时间，同时保留拒绝的余地，能让你的热情更像欢迎，而不是必须跟上的节奏。",
+                "参与讨论时，边表达边整理想法可能更自然；给安静的人一点接话时间，也为自己留出不需要回应任何人的休息。"
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "朋友难过时，你可能很自然地陪在身边，尝试用活动或轻松片刻帮助他缓一缓。也要允许难过暂时留着。先问他想安静聊、一起做事还是各自休息，能让陪伴回应真实需要，而不是一定要把气氛变好。",
+                "回应分歧时，你可能先顾及这件事对人的影响；照顾感受不等于回避判断，可以把自己的要求和对他人的理解一起说出来。"
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "你可能通过及时回应、一起体验和自然表达来维持亲近。对方若表达克制，容易让你担心热情没有被接住。先确认他习惯怎样表示在意，再具体说出你希望的回应，能让两种节奏有机会相遇。",
+                "听到一段经历时，你可能先留意发生了什么、哪里需要实际支持；也可以问问这件事对对方意味着什么，让细节与感受连接。"
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "学习和工作中，你可能从实际互动和即时反馈得到动力，愿意让成果被真实的人体验。重复任务容易缺少吸引力。把它拆成短阶段，保留一个清楚的完成点，能让日常的活力支持长期投入。",
+                "安排活动时，保留选择可能让你更轻松；关键承诺仍可约定清楚的确认时间，不必用固定全部细节来换取可靠。"
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "压力下，你可能想用更多活动转移注意力，或把一次冷淡回应当作关系出了问题。疲惫和时间限制都可能造成同样感觉。先检查身体需要和当前负担，再直接确认一个疑问，不必靠不断增加热闹来证明一切正常。"
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "为本周的安排留一段没有活动的空白。答应邀约前确认自己真的有空，也让朋友知道怎样拒绝你不会有压力。你的热情不需要一直保持满格，才能继续让人感到温暖。"
+              ]
+            }
+          ],
+          "quirks": [
+            "负责带来气氛，也允许今天安静。",
+            "快乐有很多种，休息也算一种。",
+            "热情邀请，不强制参与。"
+          ],
+          "neighbors": [
+            {
+              "type": "ISFP",
+              "text": "同一场聚会，ESFP的故事侧重在互动里整理想法，ISFP的故事侧重先留出整理时间；这不是谁更会交朋友。"
+            },
+            {
+              "type": "ENFP",
+              "text": "同一个邀约，ENFP的故事侧重可能性和意义，ESFP的故事侧重具体体验与条件；两种关注可以互相补充。"
+            },
+            {
+              "type": "ESTP",
+              "text": "同一次分歧，ESFP的故事先看对人的影响，ESTP的故事先检查依据和办法；实际的人可以兼顾两者。"
+            },
+            {
+              "type": "ESFJ",
+              "text": "同一次改计划，ESFJ的故事重视明确约定，ESFP的故事重视调整空间；可靠与灵活都不是某一类人的专属。"
+            }
+          ],
+          "strengths": [
+            "活跃表达",
+            "体验投入",
+            "氛围感知"
+          ]
+        },
+        "en": {
+          "version": "r1",
+          "sections": [
+            {
+              "id": "core",
+              "paragraphs": [
+                "People and present experience may energize you. At a gathering, you notice moods and what helps everyone relax. Warm responses enliven daily life, but noise is not restorative for everyone. Quiet participation and leaving early can belong too."
+              ]
+            },
+            {
+              "id": "daily",
+              "paragraphs": [
+                "Photos, expressions, or concrete invitations may turn a chat into an experience. Someone may simply lack energy to reply. Give a clear time and room to decline so enthusiasm feels welcoming rather than compulsory.",
+                "Thinking aloud may feel natural in a discussion. Leave quiet people time to join, and keep some rest without needing to respond."
+              ]
+            },
+            {
+              "id": "friendship",
+              "paragraphs": [
+                "You may accompany an upset friend with an activity or light moment. Sadness can also remain for a while. Ask whether they want conversation, shared activity, or rest, without making an improved mood the condition of support.",
+                "In disagreement, the impact on people may come first. Care need not avoid a judgment: state your requirement and your understanding together."
+              ]
+            },
+            {
+              "id": "close",
+              "paragraphs": [
+                "Timely responses, shared experiences, and open expression may sustain closeness. A restrained response can leave you unsure whether enthusiasm is welcome. Ask how care is usually expressed before naming the response you need.",
+                "A story may prompt attention to events and practical support. Ask what it means to the person too, connecting details with feelings."
+              ]
+            },
+            {
+              "id": "work",
+              "paragraphs": [
+                "Interaction and immediate feedback may motivate learning and work, especially when real people experience the outcome. Repetition can be less engaging. Short stages with clear completion points help present energy support longer work.",
+                "Keeping options may feel comfortable. Give key commitments a confirmation time; reliability does not require fixing every detail."
+              ]
+            },
+            {
+              "id": "blindspots",
+              "paragraphs": [
+                "Pressure may invite more activity or turn a reserved reply into a worry about the relationship. Fatigue and limited time matter too. Check physical needs and current workload, then ask one direct question instead of adding more excitement."
+              ]
+            },
+            {
+              "id": "growth",
+              "paragraphs": [
+                "Leave an unscheduled space this week. Check availability before accepting an invitation and make refusal easy for friends. Warmth does not require enthusiasm to remain at full charge."
+              ]
+            }
+          ],
+          "quirks": [
+            "I can bring energy and welcome quiet today.",
+            "Rest is one of the many forms of enjoyment.",
+            "An enthusiastic invitation is not mandatory."
+          ],
+          "neighbors": [
+            {
+              "type": "ISFP",
+              "text": "At the same gathering, ESFP illustrates thinking through interaction, while ISFP illustrates preparing time alone. This is not a ranking of social skill."
+            },
+            {
+              "type": "ENFP",
+              "text": "For the same invitation, ENFP illustrates possibilities and meaning, while ESFP illustrates concrete experience and conditions. Both can contribute."
+            },
+            {
+              "type": "ESTP",
+              "text": "In the same disagreement, ESFP illustrates impact on people, while ESTP illustrates evidence and workable options. Real people can consider both."
+            },
+            {
+              "type": "ESFJ",
+              "text": "When a plan changes, ESFJ illustrates clear agreements and ESFP room to adapt. Reliability and flexibility belong to everyone."
+            }
+          ],
+          "strengths": [
+            "Lively expression",
+            "Engagement",
+            "Reading the atmosphere"
+          ]
+        }
+      }
+    }
+  }
+}
