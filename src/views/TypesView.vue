@@ -1,17 +1,29 @@
 <template>
   <div class="types-page">
     <header class="page-header">
-      <router-link to="/" class="text-button">← {{ $t('types.backHome') }}</router-link
+      <router-link to="/" class="text-button"
+        >← {{ $t("types.backHome") }}</router-link
       ><LangToggle />
     </header>
     <main class="types-main">
       <template v-if="!selected"
         ><div class="types-intro">
           <span class="eyebrow">16 PERSONALITIES</span>
-          <h1>{{ $t('types.title') }}</h1>
-          <p>{{ $t('home.exploreDesc') }}</p>
+          <h1>{{ $t("types.title") }}</h1>
+          <p>{{ $t("home.exploreDesc") }}</p>
         </div>
-        <label class="feature-label">{{ $t('ux.searchTypes') }}<input class="feature-input" v-model="search" type="search" :placeholder="$t('ux.searchPlaceholder')" /></label><p v-if="!Object.keys(filtered).length" class="notice">{{ $t('ux.noTypes') }}</p><div class="type-grid">
+        <label class="feature-label"
+          >{{ $t("ux.searchTypes")
+          }}<input
+            class="feature-input"
+            v-model="search"
+            type="search"
+            :placeholder="$t('ux.searchPlaceholder')"
+        /></label>
+        <p v-if="!Object.keys(filtered).length" class="notice">
+          {{ $t("ux.noTypes") }}
+        </p>
+        <div class="type-grid">
           <button
             v-for="(data, code) in filtered"
             :key="code"
@@ -26,32 +38,63 @@
       </template>
       <template v-else
         ><button class="text-button detail-back" @click="select(null)">
-          ← {{ $t('types.backToList') }}</button
-        ><ResultCard :type="selected"
+          ← {{ $t("types.backToList") }}</button
+        ><ResultCard ref="reader" :type="selected"
       /></template>
     </main>
+    <ReportDock
+      v-if="selected"
+      @contents="reader?.contents()"
+      @share="showShare = true"
+    /><ShareSheet
+      v-if="showShare && selected"
+      :model="posterModel"
+      @close="showShare = false"
+    />
   </div>
 </template>
 <script setup>
-import { ref, watch, nextTick, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import LangToggle from '../components/LangToggle.vue'
-import ResultCard from '../components/ResultCard.vue'
-import {useRoute,useRouter} from 'vue-router'
-import { types } from '../data/types.js'
-const { locale } = useI18n()
-const route=useRoute(),router=useRouter(),search=ref('')
-const selected = computed(()=>Object.hasOwn(types,route.query.type) ? route.query.type : null)
-const filtered=computed(()=>Object.fromEntries(Object.entries(types).filter(([code,d])=>(code+' '+d.nickname.zh+' '+d.nickname.en).toLowerCase().includes(search.value.trim().toLowerCase()))))
-function select(type){router.push({path:'/types',query:type?{type}:{}})}
+import { ref, watch, nextTick, computed } from "vue";
+import { useI18n } from "vue-i18n";
+import ShareSheet from "../components/ShareSheet.vue";
+import ReportDock from "../components/ReportDock.vue";
+import { personalityPoster } from "../utils/posterModels.js";
+const reader = ref(null),
+  showShare = ref(false);
+import LangToggle from "../components/LangToggle.vue";
+import ResultCard from "../components/ResultCard.vue";
+import { useRoute, useRouter } from "vue-router";
+import { types } from "../data/types.js";
+const { locale } = useI18n();
+const route = useRoute(),
+  router = useRouter(),
+  search = ref("");
+const posterModel = computed(() =>
+  selected.value ? personalityPoster(selected.value, locale.value) : null,
+);
+const selected = computed(() =>
+  Object.hasOwn(types, route.query.type) ? route.query.type : null,
+);
+const filtered = computed(() =>
+  Object.fromEntries(
+    Object.entries(types).filter(([code, d]) =>
+      (code + " " + d.nickname.zh + " " + d.nickname.en)
+        .toLowerCase()
+        .includes(search.value.trim().toLowerCase()),
+    ),
+  ),
+);
+function select(type) {
+  router.push({ path: "/types", query: type ? { type } : {} });
+}
 watch(selected, async () => {
-  await nextTick()
-  window.scrollTo?.({ top: 0 })
-})
+  await nextTick();
+  window.scrollTo?.({ top: 0 });
+});
 </script>
 <style scoped>
 .types-main {
-  padding: 12px 20px 20px;
+  padding: 12px 20px 110px;
 }
 .types-intro {
   margin-bottom: 24px;
@@ -73,7 +116,7 @@ h1 {
 .type-grid {
   display: grid;
   grid-template-columns: 1fr;
-  margin-top:18px;
+  margin-top: 18px;
   gap: 12px;
 }
 .type-chip {
@@ -102,5 +145,9 @@ h1 {
 .detail-back {
   margin-bottom: 12px;
 }
-@media(min-width:375px){.type-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width: 375px) {
+  .type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 </style>

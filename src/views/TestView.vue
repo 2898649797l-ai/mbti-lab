@@ -1,19 +1,29 @@
 <template>
   <div class="test-page">
     <header class="page-header">
-      <router-link class="text-button" to="/">{{ $t('test.exit') }}</router-link
+      <router-link class="text-button" to="/">{{ $t("test.exit") }}</router-link
       ><LangToggle />
     </header>
     <main class="test-main">
       <ProgressBar :current="currentIndex" :total="questions.length" />
-      <p v-if="invalid" role="status" class="notice">{{ $t('test.invalidDraft') }}</p>
-      <p v-if="!storageAvailable" role="status" class="notice">{{ $t('test.storageWarning') }}</p>
+      <p v-if="invalid" role="status" class="notice">
+        {{ $t("test.invalidDraft") }}
+      </p>
+      <p v-if="!storageAvailable" role="status" class="notice">
+        {{ $t("test.storageWarning") }}
+      </p>
+      <section v-if="failure" class="notice" role="alert">
+        <p>{{ $t("ux.resultFailure") }}</p>
+        <button class="secondary-button" @click="finish">
+          {{ $t("ux.retry") }}
+        </button>
+      </section>
       <div class="question-heading">
         <span class="question-kicker">{{
-          $t(mode === 'short' ? 'home.startShort' : 'home.startFull')
+          $t(mode === "short" ? "home.startShort" : "home.startFull")
         }}</span>
-        <h1>{{ $t('test.prompt') }}</h1>
-        <p>{{ $t('test.hint') }}</p>
+        <h1>{{ $t("test.prompt") }}</h1>
+        <p>{{ $t("test.hint") }}</p>
       </div>
       <QuestionCard
         v-if="currentQuestion"
@@ -23,81 +33,132 @@
         @answer="onAnswer"
       />
       <p class="saved-note" role="status">
-        {{ $t(busy ? 'test.next' : storageAvailable ? 'test.saved' : 'test.unsaved') }}
+        {{
+          $t(
+            busy
+              ? "test.next"
+              : storageAvailable
+                ? "test.saved"
+                : "test.unsaved",
+          )
+        }}
       </p>
     </main>
     <footer class="test-footer">
-      <button class="secondary-button" :disabled="busy || currentIndex === 0" @click="back">
-        {{ $t('test.prev') }}</button
-      ><span>{{ $t('test.exitHint') }}</span>
+      <button
+        class="secondary-button"
+        :disabled="busy || currentIndex === 0"
+        @click="back"
+      >
+        {{ $t("test.prev") }}</button
+      ><span>{{ $t("test.exitHint") }}</span>
     </footer>
   </div>
 </template>
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import ProgressBar from '../components/ProgressBar.vue'
-import QuestionCard from '../components/QuestionCard.vue'
-import LangToggle from '../components/LangToggle.vue'
-import { useTest } from '../composables/useTest.js'
-import { useResultStore } from '../composables/useResultStore.js'
-import { useDraftStore } from '../composables/useDraftStore.js'
-import { questions as allQuestions } from '../data/questions.js'
+import { computed, ref, onMounted, onUnmounted } from "vue";
+import {
+  useRouter,
+  useRoute,
+  onBeforeRouteLeave,
+  onBeforeRouteUpdate,
+} from "vue-router";
+import ProgressBar from "../components/ProgressBar.vue";
+import QuestionCard from "../components/QuestionCard.vue";
+import LangToggle from "../components/LangToggle.vue";
+import { useTest } from "../composables/useTest.js";
+import { useResultStore } from "../composables/useResultStore.js";
+import { useDraftStore } from "../composables/useDraftStore.js";
+import { questions as allQuestions } from "../data/questions.js";
 const router = useRouter(),
   route = useRoute(),
-  draftStore = useDraftStore()
-const { questions, currentIndex, answers, loadQuestions, answer, goBack, isComplete, result } =
-  useTest()
-const mode = ref('short'),
+  draftStore = useDraftStore();
+const {
+  questions,
+  currentIndex,
+  answers,
+  loadQuestions,
+  answer,
+  goBack,
+  isComplete,
+  result,
+} = useTest();
+const mode = ref("short"),
   busy = ref(false),
   invalid = ref(false),
-  storageAvailable = ref(true)
-let nextTimer = null
-const currentQuestion = computed(() => questions.value[currentIndex.value] ?? null)
+  storageAvailable = ref(true);
+const failure = ref(false);
+let nextTimer = null;
+const currentQuestion = computed(
+  () => questions.value[currentIndex.value] ?? null,
+);
 function persist() {
-  storageAvailable.value = draftStore.save(mode.value, answers.value, currentIndex.value)
+  storageAvailable.value = draftStore.save(
+    mode.value,
+    answers.value,
+    currentIndex.value,
+  );
 }
 function finish() {
-  const persisted = useResultStore().submit(result.value)
-  draftStore.clear()
-  router.replace({ path: '/result', query: persisted ? {} : { unsaved: '1' } })
+  try {
+    failure.value = false;
+    const persisted = useResultStore().submit(result.value);
+    draftStore.clear();
+    router.replace({
+      path: "/result",
+      query: persisted ? {} : { unsaved: "1" },
+    });
+  } catch {
+    failure.value = true;
+    busy.value = false;
+  }
 }
 onMounted(() => {
-  const state = draftStore.load()
-  invalid.value = state.invalid
-  storageAvailable.value = state.available
-  mode.value = state.draft ? state.draft.mode : route.query.mode === 'full' ? 'full' : 'short'
-  loadQuestions(allQuestions, mode.value === 'short')
+  const state = draftStore.load();
+  invalid.value = state.invalid;
+  storageAvailable.value = state.available;
+  mode.value = state.draft
+    ? state.draft.mode
+    : route.query.mode === "full"
+      ? "full"
+      : "short";
+  loadQuestions(allQuestions, mode.value === "short");
   if (state.draft) {
-    answers.value = [...state.draft.answers]
-    currentIndex.value = state.draft.currentIndex
+    answers.value = [...state.draft.answers];
+    currentIndex.value = state.draft.currentIndex;
   }
-  if (isComplete.value) finish()
-  else persist()
-})
+  if (isComplete.value) finish();
+  else persist();
+});
 function onAnswer(choice) {
-  if (busy.value || !['a', 'b'].includes(choice)) return
-  busy.value = true
-  answer(choice, false)
-  persist()
+  if (busy.value || !["a", "b"].includes(choice)) return;
+  busy.value = true;
+  answer(choice, false);
+  persist();
   nextTimer = setTimeout(() => {
-    if (currentIndex.value === questions.value.length - 1 && isComplete.value) finish()
+    if (currentIndex.value === questions.value.length - 1 && isComplete.value)
+      finish();
     else {
-      currentIndex.value++
-      persist()
-      busy.value = false
-      window.scrollTo?.({ top: 0, behavior: 'instant' })
+      currentIndex.value++;
+      persist();
+      busy.value = false;
+      window.scrollTo?.({ top: 0, behavior: "instant" });
     }
-  }, 280)
+  }, 280);
 }
 function back() {
   if (!busy.value) {
-    goBack()
-    window.scrollTo?.({ top: 0, behavior: 'instant' })
-    persist()
+    goBack();
+    window.scrollTo?.({ top: 0, behavior: "instant" });
+    persist();
   }
 }
-onUnmounted(() => clearTimeout(nextTimer))
+function cancel() {
+  clearTimeout(nextTimer);
+}
+onBeforeRouteLeave(cancel);
+onBeforeRouteUpdate(cancel);
+onUnmounted(cancel);
 </script>
 <style scoped>
 .test-page {

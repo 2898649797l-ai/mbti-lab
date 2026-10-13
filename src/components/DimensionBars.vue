@@ -6,26 +6,35 @@
         ><span>{{ labels[key][1] }}</span>
       </div>
       <div class="bar-track">
-        <div class="bar-fill" :style="{ width: percents[key][letters[0]] + '%' }" />
+        <div
+          class="bar-fill"
+          :style="{ width: percents[key][letters[0]] + '%' }"
+        />
         <div class="bar-divider" />
       </div>
       <div class="dim-pcts">
         <span>{{ percents[key][letters[0]] }}%</span
-        ><span v-if="Math.abs(percents[key][letters[0]] - 50) <= 5" class="close-label">{{
-          $t('result.close')
-        }}</span
+        ><span
+          v-if="Math.abs(percents[key][letters[0]] - 50) <= 5"
+          class="close-label"
+          >{{ $t("result.close") }}</span
         ><span>{{ percents[key][letters[1]] }}%</span>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-defineProps({ percents: Object })
-const { tm } = useI18n()
-const labels = computed(() => tm('result.dimLabel'))
-const dimensions = { EI: ['E', 'I'], NS: ['N', 'S'], FT: ['F', 'T'], JP: ['J', 'P'] }
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+defineProps({ percents: Object });
+const { tm } = useI18n();
+const labels = computed(() => tm("result.dimLabel"));
+const dimensions = {
+  EI: ["E", "I"],
+  NS: ["N", "S"],
+  FT: ["F", "T"],
+  JP: ["J", "P"],
+};
 </script>
 <style scoped>
 .dim-bars {
@@ -48,7 +57,7 @@ const dimensions = { EI: ['E', 'I'], NS: ['N', 'S'], FT: ['F', 'T'], JP: ['J', '
 .bar-track {
   height: 10px;
   margin: 8px 0;
-  background: #ffcfb5;
+  background: #e5e7eb;
   border-radius: 10px;
   overflow: hidden;
   position: relative;

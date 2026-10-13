@@ -6,14 +6,14 @@
 
 | 项目 | 当前记录 |
 | --- | --- |
-| 最后核查日期 | 2026-10-12，Asia/Shanghai |
+| 最后核查日期 | 2026-10-13，Asia/Shanghai |
 | 仓库 | https://github.com/2898649797l-ai/mbti-lab |
 | 主分支 | `main` |
 | 线上地址 | https://mbti-lab.pages.dev/ |
-| 最近功能/配置基线 | `980811f58bed678547df72cd9cbb7d56238b33a5`，移除闲置架构审核工作流 |
-| 本文件建立时状态 | 本地代码与上述基线一致；PR #1–#9均已合并，当前没有打开的PR |
-| 开发阶段 | 全流程改版阶段1已合并部署；阶段2内容与阅读完成，阶段3社交分享继续开发 |
-| 本次验证 | 内容阅读：本地22个测试文件、185项测试通过；构建通过；报告/图鉴窄屏检查见第12节 |
+| 已部署功能基线 | `2d032d3662e4f265bb62e4ac0d786f2bfaed37a4`，PR #10–#11基础体验与r2报告已部署；第三阶段见第12节 |
+| 交付状态 | PR #1–#11已合并；第三阶段分支 `codex/mobile-ux-sharing` 等待PR验证与发布 |
+| 开发阶段 | 全流程三个阶段实现完成；第三阶段发布核查进行中，旧真机/微信/授权待验保留 |
+| 本次验证 | 24个测试文件、203项测试及构建通过；60次本地布局检查、42张中英文PNG尺寸与二维码通过；部署依据见第7/12节 |
 
 这里记录的是可核查的功能基线，**不是宣称文档更新后仓库HEAD仍等于该提交**。最新HEAD用 `git log -1 --oneline` 查看；文档修订用 `git log -1 -- PROJECT_STATUS.md` 查看，避免为了写入文档自身提交SHA反复提交。
 
@@ -30,15 +30,16 @@
 
 | 功能 | 已实现行为 | 主要位置 |
 | --- | --- | --- |
-| 首页与人格问卷 | 手机单列、60题主要入口、93题次要入口、继续草稿、重测确认、答题反馈和重复点击锁、返回原答案并修改 | `src/views/HomeView.vue`、`TestView.vue`、`src/composables/useTest.js` |
+| 首页与人格问卷 | 白底浅灰单列、60题主要入口、93题次要入口、继续草稿、重测确认、280ms反馈/自动推进/锁、返回改答，主页面三栏导航 | `src/views/HomeView.vue`、`TestView.vue`、`src/composables/useTest.js` |
+| 本机结果中心 | 未完成置顶、每测试最近结果按时间倒序、旧无时间记录排后；继续/查看/重测；各存储键独立读取、失败提示 | `src/views/MeView.vue`、`src/utils/localResults.js` |
 | 本地恢复 | 每题及返回保存位置/答案，版本与损坏校验；存储拒绝时提示并保留本次结果 | `src/composables/useDraftStore.js`、`useResultStore.js` |
-| 16类双语报告 | 一句话画像、优势、生活故事、友情与亲近关系、学习工作、盲点、成长提示和4个相邻类型对照；r2中文正文（含成长行动，不含邻型补充）1203–1259汉字，英文对应；三条重点和三项情境/动作/话术 | `src/data/types.js`、`reportStories.js`、`src/utils/detailedReport.js` |
-| 维度与图表 | 45%–55%显示两侧接近；报告分区折叠、雷达图按需展开与加载 | `src/components/DetailedResult.vue`、`DimensionBars.vue`、`RadarChart.vue` |
-| 人格主页 | 选择公开字段后生成版本化快照；可只分享生活小测；四维比例和每项小测默认不公开 | `src/views/ProfileBuilderView.vue`、`ProfileView.vue`、`src/utils/profileSnapshot.js` |
-| 朋友对照 | 手选类型或读取本站快照，区分友情/亲密关系；双方许可才显示数值，近中间不描述为强烈对立，无契合度百分比 | `src/views/CompareView.vue`、`src/utils/comparison.js` |
-| 三项生活小测 | 聊天与回应、距离与边界、分歧与修复；各12题、两轴、五级回答，独立草稿/最近结果，支持不先做人格测试 | `src/data/scenes/v1.js`、`testRegistry.js`、`src/views/SceneQuizView.vue`、`SceneResultView.vue` |
-| 图片与分享 | 人格卡、个人说明卡、双人卡、小测卡；1080×1440 PNG、预览/下载/长按提示/失败重试、复制文案与链接 | `src/components/PosterExporter.vue`、`SocialPoster.vue`、`SharePanel.vue`、`CopyText.vue` |
-| 导出确认 | 预览文本、标签与二维码目标；默认首页，快照目标必须先预览并明确选择；输入改变使旧图片及目标确认失效 | `PosterExporter.vue` |
+| 16类双语报告 | 一句话画像、优势、生活故事、友情与亲近关系、学习工作、盲点、成长提示和4个相邻类型对照；r2中文正文（含成长行动，不含邻型补充）1203–1259汉字，英文对应；三条重点和三项情境/动作/话术 | `src/data/types.js`、`reportContentR2.js`、`src/utils/detailedReport.js` |
+| 维度与图表 | 45%–55%显示两侧接近并融入正文；概览优先、独立折叠、目录展开定位；四维条优先，雷达按需展开，报告使用目录/分享底栏 | `src/components/DetailedResult.vue`、`DimensionBars.vue`、`RadarChart.vue` |
+| 人格主页 | 选择公开字段→摘要预览→创建版本化链接，长报告按需展开；可只分享小测，比例与小测默认不公开 | `src/views/ProfileBuilderView.vue`、`ProfileView.vue`、`src/utils/profileSnapshot.js` |
+| 朋友对照 | 先选手选/读取来源，再准备双方信息与关系情境，点击查看；共性/差异/建议/三个问题；双方许可才显示比例，来源/类型/输入变化清理失效状态 | `src/views/CompareView.vue`、`src/utils/comparison.js` |
+| 三项生活小测 | 聊天与回应、距离与边界、分歧与修复；各12题、两轴、五个纵向按钮，280ms自动推进，独立草稿/最近结果，支持不先做人格测试 | `src/data/scenes/v1.js`、`testRegistry.js`、`src/views/SceneQuizView.vue`、`SceneResultView.vue` |
+| 图片与分享 | 人格/主页/双人/小测共用ShareSheet、PosterExporter、SocialPoster；1080×1440 PNG、预览/下载/长按/重试与可编辑复制文案 | `src/components/PosterExporter.vue`、`SocialPoster.vue`、`SharePanel.vue`、`CopyText.vue` |
+| 导出确认 | 预览文本、标签与二维码目标；默认首页，包括传入链接在内的快照目标必须预览公开字段，再明确选择；输入改变使旧图片、导入状态及确认失效，进行中的旧输出也丢弃 | `PosterExporter.vue` |
 
 所有新增页面字段、题目、报告和分享文案同步提供中文与英文。未经核实的全球占比、名人类型、最佳匹配和认知功能栈已从展示移除，工作建议采用工作方式提示。
 
@@ -65,7 +66,9 @@ Node 24；Vue 3、Vite、Vue Router（Hash）、Vue I18n、ECharts、html2canvas
 - `src/data/questions.js` / `src/composables/useTest.js`：原题库与计分，修改前要核查60/93题回归。
 - `src/data/testRegistry.js` / `src/utils/sceneScoring.js`：小测注册、版本、计分与报告适配。每轴6题，正反向各3题，等权换算0–100，45–55保留中间。
 - `src/data/reportVersions/r1.json`：已发布快照的人格报告字典；`src/data/scenes/v1.js`：已发布小测定义。**保持旧版本不变，内容升级建立新版本并保留旧字典。** r2编辑源为`src/data/reportContentR2.js`，冻结字典`src/data/reportVersions/r2.json`；冻结脚本接收版本参数并拒绝覆盖已有版本。
-- `src/utils/profileSnapshot.js`：快照校验、编码/解码、链接限制与同站导入。
+- `src/utils/profileSnapshot.js`：快照校验、编码/解码、链接限制与同站导入；保留r1、r2字典。
+- `src/components/ReportReader.vue` / `ReportDock.vue`：概览、折叠、目录与成长动作；`ShareSheet.vue` / `PosterExporter.vue` / `SocialPoster.vue`：所有结果共用的分享面板和PNG模板。
+- `src/data/reportStories.js`为r1历史编辑源，当前报告使用`reportContentR2.js`；新的公开内容变化需另建版本，不能覆盖r1/r2或小测v1。
 - `src/config.js`：首页分享地址由访问域名与Vite base生成；绑定域名后核查二维码，不能硬编码localhost。
 - `src/locales/zh.json` / `en.json`：双语界面；`src/App.vue`与`src/styles/features.css`：全局布局。
 - `tests/`：计分、恢复、兼容、快照、社交、小测和导出行为测试。
@@ -88,16 +91,16 @@ Node 24；Vue 3、Vite、Vue Router（Hash）、Vue I18n、ECharts、html2canvas
 
 | 检查 | 最新依据 | 状态 |
 | --- | --- | --- |
-| 本地自动化 | 2026-10-12在当前功能基线重跑：20个文件、175项测试，Node24 | 通过 |
-| 本地生产构建 | 同日`npm run build`，输出`dist/` | 通过 |
+| 本地自动化 | 2026-10-13第三阶段：24文件、203测试，Node24 | 通过 |
+| 本地生产构建 | 2026-10-13 `npm run build`，输出`dist/` | 通过 |
 | 文档同步CI规则 | 本地执行工作流中的实际脚本：同步更新、漏更新、删除记录、首次分支推送、无变化，共5种情况 | 通过；漏更新/删除按预期拒绝，其余按预期允许 |
-| GitHub CI | [Mobile product checks](https://github.com/2898649797l-ai/mbti-lab/actions/runs/38229503389)，基线`980811f` | completed / success |
-| Cloudflare检查 | 同一提交的Cloudflare Pages check，部署ID见第7节 | completed / success；本次未重新操作控制台或线上页面 |
+| GitHub CI | 阶段2 main `2d032d3`：[verify](https://github.com/2898649797l-ai/mbti-lab/actions/runs/38270841828) | success；阶段3发布后另核实 |
+| Cloudflare检查 | 阶段2 main `2d032d3`：`a5c77f5f-b1b6-4bc4-9fe1-ad6e92e6cb42` | success；阶段3发布后另核实 |
 | 桌面完整流程 | 既有记录：60题与三项12题小测、刷新恢复、返回改答、结果隔离、跨来源快照读取 | 历史验证通过，本次未重复浏览器流程 |
-| 窄屏布局 | 既有记录：320/375/390/430px共25次检查，含英文小测结果 | 历史验证通过；不能代替真实手机 |
-| 新分享卡 | 既有记录：32张个人卡、18张小测卡、2张双人卡，均1080×1440，52张二维码解码通过 | 历史验证通过，本次未重新导出 |
+| 窄屏布局 | 本轮本地60次检查，320/375/390/430/960px；对照、弹层、报告/目录、图鉴、结果中心、主页、公开快照、中英文小测报告 | 无横向溢出/两套底栏；真机仍待验 |
+| 新分享卡 | 本轮实际42张PNG：16类型×中英=32，主页2/双人2/三小测×中英=6；尺寸、文字边界与二维码逐张核对 | 42张均1080×1440，42码与确认目标一致；QR基于本地访问域名，生产另核查 |
 | 旧版真机/微信 | 仓库记载2026-10-12用户反馈未发现问题，未提供设备和逐项清单 | 用户反馈，不能扩写为所有设备通过 |
-| 新版线上完整流程 | 先前公网连续操作超时，仅确认新入口，完整小测/快照/导出未全验 | 待验证 |
+| 新版线上完整流程 | 本地12题完整自动完成、r2主页字段预览/打开/实际导出、中英文小测保存已检查；生产第三阶段发布后抽检 | 本地通过；不等同生产全覆盖 |
 | 新版iPhone/安卓/微信 | 设备工具未获得可操作手机；新快照、小测和导出未获得真机证据 | 待验证 |
 | 国内三网、5–10人试用 | 既有决定本轮暂缓 | 暂缓，未通过 |
 | 上游代码/题库/图标授权 | 上游README标注MIT但完整LICENSE与材料来源未核实 | 暂缓，未确认授权 |
@@ -168,7 +171,7 @@ npm ci
 | 后续 | 正式名称、域名与小红书试发 | 完成验收后确认，草案见`docs/XIAOHONGSHU_DRAFTS.md`；发布由用户操作 |
 | 后续 | 产品调整 | 根据试用反馈再决定问卷长度、内容扩展或统计；尚无已实施承诺 |
 
-本轮授权三个顺序PR：基础体验 → 内容与阅读 → 社交与分享；当前分支 `codex/mobile-ux-foundation`，正在交付第一阶段。上表是当前交接待办；不代表已经分派、约定日期或已邀请参与者。
+本轮授权三个顺序PR：基础体验 → 内容与阅读 → 社交与分享。前两阶段已合并部署；当前第三阶段分支 `codex/mobile-ux-sharing`，本地验证完成，待PR/生产检查。上表是当前交接待办；不代表已经分派、约定日期或已邀请参与者。
 
 ## 10. 每次更新本文件的规则
 
@@ -210,3 +213,15 @@ npm ci
 - r1 SHA256：04adc656fc10c49b73e860add708f4946d90d071fbdbba960edb416387bb9413。旧r1快照保留原文，r2快照和本机旧结果使用新报告；原章节ID及v=1载荷不改，r1缺省highlights/actions仍可渲染。新快照r=r2，原问卷/小测版本与键不改。
 - 验证：185项/22文件与构建通过；含16类内容长度、双语字段、冻结版本拒绝覆盖、旧新快照和目录独立展开。剩余阶段3：对照来源/提交、主页摘要、统一分享/实际卡片验证；真实设备和旧暂停项继续保留。
 - 浏览器本地检查：ENFJ直达报告320/375/390/430/960px无横向溢出；点击目录后亲近关系章节展开、核心仍展开，定位标题距视口顶部约20px；ENFJ搜索仅显示一项。阶段1生产CI与Cloudflare均已成功。
+
+### 阶段3交接（2026-10-13）
+
+- 阶段2 PR #11已合并至main 2d032d3，CI run 38270841828成功；Cloudflare生产成功部署 a5c77f5f-b1b6-4bc4-9fe1-ad6e92e6cb42，为第三阶段回退依据。旧部署是否仍保留须控制台确认。
+- 对照改为显式来源→双方类型/情境→查看；代码与昵称同显，三讨论问题，共性/差异概括后分维度建议；来源、类型、链接编辑清理许可与旧结果。
+- 主页采用字段选择→摘要→创建，详细公开报告默认折叠；比例与小测保持默认私有。所有结果/图鉴/公开主页接统一分享弹层；传入快照也需先预览才可选其QR。模型/链接/目标改变废弃旧图，异步旧结果不发布；复制失败保持手动文本。
+- 简洁白底单模板，四类1080×1440卡共用。字体有实际空间检测，超长不能容纳时失败而非截断，可重试。42张中英实际PNG与逐张QR解码通过；抽看八张组合预览，文字与QR无覆盖。之前保存长图片字符串曾被工具截断，已完整分段保存并重新解码42/42通过，不能误认为产品导出损坏。
+- 完成60次本地五宽度布局检查，无横向溢出或双底栏；目录定位约20px且保留其他展开章节。完整12题小测自动完成、中英文报告保存、本机结果与r2主页链接/字段预览/图片生成可用。旧r1/r2字典、小测v1、问卷、计分/存储键没有改动。
+- 补齐小测真实纵向按钮、同答案可继续、路由离开/更新时取消反馈，原60/93已答完草稿刷新交付；生成失败保留答案与重试入口，存储拒绝仍完成并提示。
+- 自动化最终203项/24文件与构建通过；覆盖导航模式、旧结果/快照、修改恢复/末题/定时器/存储失败、导入许可、二维码审阅/失效/重试/剪贴板降级。待第三PR的CI与Cloudflare成功后合并；发布后的证据写入本文件。
+- 本地证据为忽略目录outputs/ux-cards（PNG/manifest/checks）、outputs/ux-review/layout-checks.json、report-375.png；不随Git同步，不含真人测试记录。跨设备复验运行测试/构建，再按第6节页面和宽度复查，用默认首页与明确预览快照分别导出并解码；域名由访问地址生成。
+- 无账号、云同步、统计、新问卷或生产依赖；真机/微信/三网/试用与材料授权保留既有待验/暂停状态，不以此阻止本轮正常开发发布。
