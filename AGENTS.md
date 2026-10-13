@@ -13,6 +13,6 @@
 - Vue 3, Vite, Hash Router; Node24. Use the lockfile with `npm ci`. Relevant validation: `npm test -- --run`, `npm run build`, and `git diff --check`. No separate lint toolchain.
 - Mobile first, 320–430px coverage and 480px centered desktop shell. Every new UI/content field needs Chinese and English.
 - Preserve original 60/93-question scoring and `{ type, percents }` result compatibility. Independent scene quiz drafts/results must stay isolated by test ID.
-- Published `src/data/reportVersions/r1.json` and `src/data/scenes/v1.js` are versioned compatibility contracts. Create a new version for changed published content and keep old dictionaries available.
+- Published `src/data/reportVersions/r1.json`, `r2.json` and `src/data/scenes/v1.js` are versioned compatibility contracts. Create a new version for changed published content and keep old dictionaries available. Active reports are r2; update the editorial source/version together and freeze a new dictionary for the next release.
 - No new production dependencies, backend APIs, databases, accounts, payments or analytics without a new user instruction. Follow snapshot field consent, preview and QR destination rules described in `PROJECT_STATUS.md`.
 - Distinguish automated tests, desktop narrow-screen checks, user feedback, production browser checks and real phone/WeChat checks. Preserve paused or unresolved acceptance/source-permission items until there is evidence of completion or a new user decision.

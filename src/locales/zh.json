@@ -62,22 +62,10 @@
     "notFound": "暂无测试结果。",
     "backHome": "← 返回首页",
     "dimLabel": {
-      "EI": [
-        "外向 E",
-        "内向 I"
-      ],
-      "NS": [
-        "直觉 N",
-        "感知 S"
-      ],
-      "FT": [
-        "情感 F",
-        "思维 T"
-      ],
-      "JP": [
-        "判断 J",
-        "随性 P"
-      ]
+      "EI": ["外向 E", "内向 I"],
+      "NS": ["直觉 N", "感知 S"],
+      "FT": ["情感 F", "思维 T"],
+      "JP": ["判断 J", "随性 P"]
     },
     "tagline": "一句话认识你",
     "daily": "日常里的你",
@@ -180,7 +168,7 @@
     "tryTogether": "双方可以试试",
     "me": "我",
     "friend": "朋友",
-    "question": "一个值得一起聊的问题",
+    "question": "三个可以一起聊的问题",
     "pairTagline": "同一件事，不同入口",
     "scan": "扫码继续探索",
     "cardPreview": "分享卡内容预览",
@@ -277,6 +265,25 @@
     },
     "searchTypes": "搜索人格图鉴",
     "searchPlaceholder": "类型代码或昵称，例如 ENFJ",
-    "noTypes": "没有找到，试试类型代码或其他昵称。"
+    "noTypes": "没有找到，试试类型代码或其他昵称。",
+    "editCaption": "文案可手动复制、编辑后发布到小红书。",
+    "selectPublic": "选择公开内容",
+    "summaryPreview": "摘要预览",
+    "fullPreview": "按需查看完整公开报告",
+    "manual": "手选类型",
+    "fromLink": "读取链接",
+    "source": "朋友信息来源",
+    "compare": "查看对照",
+    "differences": "不同的关注点",
+    "notReady": "请先准备双方类型，再查看对照。",
+    "same": "字母相同不代表需求相同，具体安排仍要询问。",
+    "differenceSummary": "本次类型对照在 {different} 的入口不同，可先从下一次具体安排聊起。",
+    "axisNames": {
+      "EI": "交流与整理",
+      "NS": "具体与可能",
+      "FT": "感受与依据",
+      "JP": "约定与弹性"
+    },
+    "resultFailure": "暂时无法生成结果，答案仍在当前页面，可以重试或返回修改。"
   }
 }

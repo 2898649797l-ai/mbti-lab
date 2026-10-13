@@ -62,22 +62,10 @@
     "notFound": "No result found.",
     "backHome": "← Back to home",
     "dimLabel": {
-      "EI": [
-        "Extraverted E",
-        "Introverted I"
-      ],
-      "NS": [
-        "Intuitive N",
-        "Observant S"
-      ],
-      "FT": [
-        "Feeling F",
-        "Thinking T"
-      ],
-      "JP": [
-        "Judging J",
-        "Prospecting P"
-      ]
+      "EI": ["Extraverted E", "Introverted I"],
+      "NS": ["Intuitive N", "Observant S"],
+      "FT": ["Feeling F", "Thinking T"],
+      "JP": ["Judging J", "Prospecting P"]
     },
     "tagline": "You in one line",
     "daily": "You in everyday life",
@@ -180,7 +168,7 @@
     "tryTogether": "Both can try",
     "me": "Me",
     "friend": "Friend",
-    "question": "A question to discuss together",
+    "question": "Three questions to discuss",
     "pairTagline": "One situation, different starting points",
     "scan": "Scan to keep exploring",
     "cardPreview": "Sharing card preview",
@@ -277,6 +265,25 @@
     },
     "searchTypes": "Search personality types",
     "searchPlaceholder": "Type code or nickname, e.g. ENFJ",
-    "noTypes": "No match. Try a type code or another nickname."
+    "noTypes": "No match. Try a type code or another nickname.",
+    "editCaption": "Copy and edit the caption before posting it.",
+    "selectPublic": "Choose public fields",
+    "summaryPreview": "Preview the summary",
+    "fullPreview": "Expand the complete public report",
+    "manual": "Choose a type",
+    "fromLink": "Read a link",
+    "source": "Friend information source",
+    "compare": "View comparison",
+    "differences": "Different starting points",
+    "notReady": "Prepare both types before viewing the comparison.",
+    "same": "Shared letters do not guarantee shared needs. Ask about the situation.",
+    "differenceSummary": "The type examples start differently in {different}. Begin with a specific upcoming situation.",
+    "axisNames": {
+      "EI": "interaction and reflection",
+      "NS": "details and possibilities",
+      "FT": "feelings and evidence",
+      "JP": "agreements and flexibility"
+    },
+    "resultFailure": "The result could not be generated. Your answers are still available on this page; retry or go back to edit."
   }
 }

@@ -1,79 +1,135 @@
 <template>
   <header class="page-header">
-    <router-link to="/explore" class="text-button">{{ $t('scene.exploreTitle') }}</router-link
+    <router-link to="/explore" class="text-button">{{
+      $t("scene.exploreTitle")
+    }}</router-link
     ><LangToggle />
   </header>
   <main class="feature-main">
     <template v-if="report"
-      ><section class="feature-card scene-hero">
-        <p class="feature-muted">{{ $t('scene.eyebrow') }}</p>
+      ><section id="scene-overview" class="feature-card scene-hero">
+        <p class="feature-muted">{{ $t("scene.eyebrow") }}</p>
         <h1>{{ report.title }}</h1>
-        <p>{{ $t('scene.reportIntro') }}</p>
+        <p>{{ $t("scene.reportIntro") }}</p>
         <div class="feature-tags">
           <span v-for="a in report.axes" :key="a.id">{{
-            a.band === 'middle' ? $t('scene.flexible') : a.band === 'left' ? a.left : a.right
+            a.band === "middle"
+              ? $t("scene.flexible")
+              : a.band === "left"
+                ? a.left
+                : a.right
           }}</span>
         </div>
       </section>
       <p v-if="route.query.unsaved === '1'" class="notice" role="status">
-        {{ $t('result.storageWarning') }}
+        {{ $t("result.storageWarning") }}
       </p>
-      <p class="feature-muted">{{ $t('scene.scoreNote') }}</p>
-      <SceneReportBody :result="result" />
-      <section class="feature-card">
-        <h2>{{ $t('scene.summary') }}</h2>
+      <p class="feature-muted">{{ $t("scene.scoreNote") }}</p>
+      <details ref="contentsRef" class="feature-card">
+        <summary>{{ $t("ux.contents") }}</summary>
+        <nav class="report-toc">
+          <button @click="go('overview')">{{ $t("ux.overview") }}</button
+          ><button @click="go('scenes')">{{ $t("ux.context") }}</button
+          ><button @click="go('summary')">{{ $t("scene.summary") }}</button>
+        </nav>
+      </details>
+      <div id="scene-sections"><SceneReportBody :result="result" /></div>
+      <section id="scene-summary" class="feature-card">
+        <h2>{{ $t("scene.summary") }}</h2>
         <p v-for="a in report.axes" :key="a.id">{{ a.share }}</p>
         <CopyText :value="caption" :label="$t('share.copyText')" />
       </section>
       <router-link to="/profile" class="primary-button"
-        >{{ $t('scene.shareProfile') }} →</router-link
-      ><PosterExporter :model="posterModel" />
+        >{{ $t("scene.shareProfile") }} →</router-link
+      ><button class="secondary-button" @click="showShare = true">
+        {{ $t("ux.share") }}</button
+      ><ShareSheet
+        v-if="showShare"
+        :model="posterModel"
+        @close="showShare = false"
+      />
       <router-link :to="'/quiz/' + id" class="secondary-button">{{
-        $t('scene.retake')
+        $t("scene.retake")
       }}</router-link
-      ><router-link to="/explore" class="secondary-button">{{ $t('scene.more') }} →</router-link>
+      ><router-link to="/explore" class="secondary-button"
+        >{{ $t("scene.more") }} →</router-link
+      >
     </template>
     <section v-else class="feature-card">
-      <h1>{{ $t('result.notFound') }}</h1>
-      <p>{{ $t('scene.resultMissing') }}</p>
-      <router-link to="/explore" class="primary-button">{{ $t('scene.exploreTitle') }}</router-link>
+      <h1>{{ $t("result.notFound") }}</h1>
+      <p>{{ $t("scene.resultMissing") }}</p>
+      <router-link to="/explore" class="primary-button">{{
+        $t("scene.exploreTitle")
+      }}</router-link>
     </section>
   </main>
+  <ReportDock
+    v-if="report"
+    @contents="openContents"
+    @share="showShare = true"
+  />
 </template>
 <script setup>
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import { useI18n } from 'vue-i18n'
-import LangToggle from '../components/LangToggle.vue'
-import SceneReportBody from '../components/SceneReportBody.vue'
-import CopyText from '../components/CopyText.vue'
-import PosterExporter from '../components/PosterExporter.vue'
-import { useSceneStore } from '../composables/useSceneStore.js'
-import { sceneReport } from '../data/testRegistry.js'
-import { APP_URL } from '../config.js'
+import { computed, ref } from "vue";
+import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
+import LangToggle from "../components/LangToggle.vue";
+import SceneReportBody from "../components/SceneReportBody.vue";
+import CopyText from "../components/CopyText.vue";
+import ShareSheet from "../components/ShareSheet.vue";
+import ReportDock from "../components/ReportDock.vue";
+const showShare = ref(false),
+  contentsRef = ref(null);
+function openContents() {
+  contentsRef.value.open = true;
+  contentsRef.value.scrollIntoView?.({ block: "start" });
+}
+function go(id) {
+  document
+    .getElementById(id === "scenes" ? "scene-sections" : "scene-" + id)
+    ?.scrollIntoView?.({ block: "start", behavior: "instant" });
+}
+import { useSceneStore } from "../composables/useSceneStore.js";
+import { sceneReport } from "../data/testRegistry.js";
+import { APP_URL } from "../config.js";
 const route = useRoute(),
   { t, locale } = useI18n(),
   id = computed(() => String(route.params.testId)),
-  store = useSceneStore()
+  store = useSceneStore();
 const result = computed(() => store.readResult(id.value)),
-  report = computed(() => sceneReport(result.value, locale.value))
+  report = computed(() => sceneReport(result.value, locale.value));
 const caption = computed(() =>
-  [report.value.title, ...report.value.axes.map((a) => a.share), t('scene.eyebrow'), APP_URL].join(
-    '\n',
-  ),
-)
+  [
+    report.value.title,
+    ...report.value.axes.map((a) => a.share),
+    t("scene.eyebrow"),
+    APP_URL,
+  ].join("\n"),
+);
 const posterModel = computed(() => ({
-  kind: 'scene',
-  kicker: t('scene.eyebrow'),
+  kind: "scene",
+  kicker: t("scene.eyebrow"),
   title: report.value.title,
-  subtitle: t('scene.posterSubtitle'),
+  subtitle: t("scene.posterSubtitle"),
   lines: report.value.axes.map((a) => a.share),
   tags: report.value.axes.map((a) =>
-    a.band === 'middle' ? t('scene.flexible') : a.band === 'left' ? a.left : a.right,
+    a.band === "middle"
+      ? t("scene.flexible")
+      : a.band === "left"
+        ? a.left
+        : a.right,
   ),
-}))
+}));
 </script>
 <style scoped>
+.feature-main {
+  padding-bottom: 110px;
+}
+#scene-sections,
+#scene-overview,
+#scene-summary {
+  scroll-margin: 20px;
+}
 .scene-hero {
   background: #f8f9fb;
 }

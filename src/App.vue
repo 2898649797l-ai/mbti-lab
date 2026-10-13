@@ -8,31 +8,52 @@
         (!route.path.startsWith('/quiz/') || route.path.endsWith('/result'))
       "
       class="site-footer"
-      :style="showNav ? { paddingBottom: 'calc(100px + env(safe-area-inset-bottom))' } : {}"
-      :class="{ 'result-footer': route.path === '/result' }"
+      :style="
+        showNav
+          ? { paddingBottom: 'calc(100px + env(safe-area-inset-bottom))' }
+          : {}
+      "
+      :class="{
+        'result-footer':
+          route.path === '/result' ||
+          route.path.startsWith('/p/') ||
+          isTypeReport,
+      }"
     >
-      <p>{{ $t('app.privacy') }}</p>
-      <p>{{ $t('app.disclaimer') }}</p>
+      <p>{{ $t("app.privacy") }}</p>
+      <p>{{ $t("app.disclaimer") }}</p>
     </footer>
   </div>
 </template>
 <script setup>
-import { RouterView, useRoute } from 'vue-router'
-import BottomNav from './components/BottomNav.vue'
-import { computed, watch } from 'vue'
-import './styles/features.css'
-import { useI18n } from 'vue-i18n'
-const route = useRoute()
-const showNav = computed(() => !['/test', '/result'].includes(route.path) && !route.path.startsWith('/quiz/') && !route.path.startsWith('/p/'))
-const { t, locale } = useI18n()
+import { RouterView, useRoute } from "vue-router";
+import BottomNav from "./components/BottomNav.vue";
+import { computed, watch } from "vue";
+import "./styles/features.css";
+import { useI18n } from "vue-i18n";
+const route = useRoute();
+const isTypeReport = computed(
+  () =>
+    route.path === "/types" &&
+    typeof route.query.type === "string" &&
+    /^[EI][NS][TF][JP]$/.test(route.query.type),
+);
+const showNav = computed(
+  () =>
+    !["/test", "/result"].includes(route.path) &&
+    !route.path.startsWith("/quiz/") &&
+    !route.path.startsWith("/p/") &&
+    !isTypeReport.value,
+);
+const { t, locale } = useI18n();
 watch(
   locale,
   (value) => {
-    document.documentElement.lang = value
-    document.title = t('app.title')
+    document.documentElement.lang = value;
+    document.title = t("app.title");
   },
   { immediate: true },
-)
+);
 </script>
 <style>
 *,
@@ -60,7 +81,8 @@ html {
   background: #f4f5f7;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
   color: var(--ink);
   font-size: 16px;
   line-height: 1.6;
